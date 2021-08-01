@@ -23,16 +23,90 @@ class FirstComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisSpacing: 15.0, //水平间距
-        mainAxisSpacing: 15.0, //垂直间距
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+      child: GridView.count(
         crossAxisCount: 2,
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
+            child: Image.asset(
+              "images/thumb_unit_profile_100211.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
       ),
-      // padding: EdgeInsets.all(15.0),
-      //childAspectRatio: 0.7,  //宽/高比例
-      itemCount: listImage.length,
-      itemBuilder: this._getInfo,
     );
   }
 }
