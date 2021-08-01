@@ -27,9 +27,9 @@ class FirstComponent extends StatelessWidget {
       height: 500.0,
       width: 400.0,
       color: Colors.yellow,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,     //X轴上的布局
-        crossAxisAlignment: CrossAxisAlignment.start,         //Y轴上的布局
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,     //Y轴上的布局
+        crossAxisAlignment: CrossAxisAlignment.start,         //X轴上的布局
         children: [
           Image.asset("images/icon_quest_31075.png"),
           Image.asset("images/icon_quest_31075.png"),
