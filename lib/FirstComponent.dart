@@ -23,88 +23,18 @@ class FirstComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
-      child: GridView.count(
-        crossAxisCount: 2,
+    return Container(
+      height: 500.0,
+      width: 400.0,
+      color: Colors.yellow,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,     //X轴上的布局
+        crossAxisAlignment: CrossAxisAlignment.start,         //Y轴上的布局
         children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(15.0, 15.0, 0, 0),
-            child: Image.asset(
-              "images/thumb_unit_profile_100211.png",
-              fit: BoxFit.cover,
-            ),
-          ),
+          Image.asset("images/icon_quest_31075.png"),
+          Image.asset("images/icon_quest_31075.png"),
+          Image.asset("images/icon_quest_31075.png"),
+          Image.asset("images/icon_quest_31075.png"),
         ],
       ),
     );
