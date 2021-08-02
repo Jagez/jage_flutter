@@ -24,28 +24,16 @@ class FirstComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400.0,
-      width: 400.0,
-      color: Colors.yellow,
-      child: Stack(
-        children: [
-          Align(
-            alignment: Alignment(1.0, -0.3),
-            child: Image.asset("images/icon_quest_31002.png"),
-          ),
-          Align(
-            alignment: Alignment(0.3, 1.0),
-            child: Image.asset("images/icon_quest_31002.png"),
-          ),
-          Align(
-            alignment: Alignment(-1.0, 0.3),
-            child: Image.asset("images/icon_quest_31002.png"),
-          ),
-          Align(
-            alignment: Alignment(-0.3, -1.0),
-            child: Image.asset("images/icon_quest_31002.png"),
-          ),
-        ],
+      width: 512.0,
+      child: AspectRatio(
+        aspectRatio: 2.0/1.0,
+        child: Container(
+          color: Colors.yellow,
+          child: Image.asset(
+            "images/thumb_unit_profile_100231.png",
+            fit: BoxFit.cover,
+          )
+        ),
       ),
     );
   }
