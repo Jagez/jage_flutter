@@ -23,18 +23,14 @@ class FirstComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 512.0,
-      child: AspectRatio(
-        aspectRatio: 2.0/1.0,
-        child: Container(
+    return AspectRatio(
+      aspectRatio: 2.0 / 1.0,
+      child: Container(
           color: Colors.yellow,
           child: Image.asset(
             "images/thumb_unit_profile_100231.png",
             fit: BoxFit.cover,
-          )
-        ),
-      ),
+          )),
     );
   }
 }
