@@ -23,14 +23,26 @@ class FirstComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2.0 / 1.0,
-      child: Container(
-          color: Colors.yellow,
-          child: Image.asset(
-            "images/thumb_unit_profile_100231.png",
-            fit: BoxFit.cover,
-          )),
+    return ListView(
+      children: [
+        Card(
+          margin: EdgeInsets.all(15.0),
+          child: Column(
+            children: [
+              ListTile(
+                title: Text("Jage"),
+                subtitle: Text("kkkkk"),
+              ),
+              ListTile(
+                title: Text("住址："),
+              ),
+              ListTile(
+                title: Text("邮箱："),
+              ),
+            ],
+          ),
+        )
+      ],
     );
   }
 }
