@@ -23,30 +23,32 @@ class FirstComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Card(
-          margin: EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-              AspectRatio(
-                aspectRatio: 16.0/9.0,
-                child: Image.asset(
-                  "images/thumb_unit_profile_100211.png",
-                  fit: BoxFit.cover,
-                ),
-              ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage("icon_quest_31001"),  //暂没创建assert目录
-                ),
-                title: Text("Jage"),
-                subtitle: Text("xxx"),
-              ),
-            ],
-          ),
-        ),
-      ]
+    return Padding(
+      padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 0),
+      child: Wrap(
+          direction: Axis.vertical,     //主轴的方向 默认时水平 horizental
+          alignment: WrapAlignment.spaceBetween,
+          spacing: 15.0,        //此时主轴元素之间的间距---X
+          runSpacing: 15.0,     //此时次轴元素之间的间距---Y
+          children: [
+            ElevatedButton(
+              child: Text("jagejagejagejagejagejagejage"),
+              //style: ,
+              onPressed: () {},
+            ),
+            ElevatedButton(
+              child: Text("jssqqqqage"),
+              onPressed: () {},
+            ),
+            ElevatedButton(
+              child: Text("jafsjagejagejagege"),
+              onPressed: () {},
+            ),
+            ElevatedButton(
+              child: Text("jsdage"),
+              onPressed: () {},
+            ),
+          ]),
     );
   }
 }
