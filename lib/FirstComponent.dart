@@ -29,20 +29,24 @@ class FirstComponent extends StatelessWidget {
           margin: EdgeInsets.all(15.0),
           child: Column(
             children: [
+              AspectRatio(
+                aspectRatio: 16.0/9.0,
+                child: Image.asset(
+                  "images/thumb_unit_profile_100211.png",
+                  fit: BoxFit.cover,
+                ),
+              ),
               ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage("icon_quest_31001"),  //暂没创建assert目录
+                ),
                 title: Text("Jage"),
-                subtitle: Text("kkkkk"),
-              ),
-              ListTile(
-                title: Text("住址："),
-              ),
-              ListTile(
-                title: Text("邮箱："),
+                subtitle: Text("xxx"),
               ),
             ],
           ),
-        )
-      ],
+        ),
+      ]
     );
   }
 }
