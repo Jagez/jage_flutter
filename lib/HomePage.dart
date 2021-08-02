@@ -13,6 +13,22 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: MyHome(),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.category),
+              label: "Category",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: "Settings",
+            ),
+          ],
+        ),
       ),
       theme: ThemeData(primarySwatch: Colors.red),
     );
