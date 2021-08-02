@@ -23,36 +23,16 @@ class FirstComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 500.0,
-      width: 750.0,
-      color: Colors.orange,
-      child: Row(
-        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,     //Y轴上的布局
-        //crossAxisAlignment: CrossAxisAlignment.start,         //X轴上的布局
-        children: [
-          Expanded(
-            flex: 1,
-            child: IconContainer(
-              Icons.search,
-              color: Colors.blue,
-              size: 32,
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: IconContainer(
-              Icons.file_copy_sharp,
-              size: 32,
-            ),
-          ),
-          IconContainer(
-            Icons.home,
-            color: Colors.red,
-            size: 32,
-          ),
-        ],
-      ),
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          width: 300.0,
+          height: 300.0,
+          color: Colors.yellow,
+        ),
+        Image.asset("images/icon_quest_31002.png")
+      ],
     );
   }
 }
