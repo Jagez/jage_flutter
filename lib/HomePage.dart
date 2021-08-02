@@ -12,13 +12,39 @@ class HomePage extends StatelessWidget {
             "Jage Flutter",
           ),
         ),
-        body: FirstComponent(),
-
+        body: MyHome(),
       ),
+      theme: ThemeData(primarySwatch: Colors.red),
+    );
+  }
+}
 
-      theme: ThemeData(
-        primarySwatch: Colors.red
-      ),
+class MyHome extends StatefulWidget {
+  MyHome({Key? key}) : super(key: key);
+
+  @override
+  _MyHomeState createState() => _MyHomeState();
+}
+
+class _MyHomeState extends State<MyHome> {
+  int itemNum = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        // Chip(
+        //   label: Text("${this.itemNum}"),
+        // ),
+        Text("${this.itemNum}"),
+        ElevatedButton(
+          child: Text("Let's go."),
+          onPressed: () {
+            setState(() {
+              this.itemNum++;
+            });
+          },
+        ),
+      ],
     );
   }
 }
