@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'page/HomePage.dart';
 import 'page/Setting.dart';
 import 'page/Category.dart';
+
 class Tabs extends StatefulWidget {
   Tabs({Key? key}) : super(key: key);
 
@@ -15,7 +16,7 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     this._tabsList.add(HomePage());
-    this._tabsList.add(Category());
+    this._tabsList.add(CategoryPage());
     this._tabsList.add(Setting());
     return Container(
       child: MaterialApp(
