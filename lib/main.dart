@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //import 'FirstComponent.dart';
-import 'HomePage.dart';
+import 'tabs/Tabs.dart';
 void main() {
-  runApp(HomePage());
+  runApp(Tabs());
 }
