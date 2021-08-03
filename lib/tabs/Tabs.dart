@@ -18,41 +18,36 @@ class _TabsState extends State<Tabs> {
     this._tabsList.add(HomePage());
     this._tabsList.add(CategoryPage());
     this._tabsList.add(Setting());
-    return Container(
-      child: MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              "Jage Flutter",
-            ),
-          ),
-          body: this._tabsList[this._bottomNavIndex],
-          bottomNavigationBar: BottomNavigationBar(
-            fixedColor: Theme.of(context).accentColor,
-            currentIndex: this._bottomNavIndex,
-            onTap: (int index) {
-              setState(() {
-                this._bottomNavIndex = index;
-
-              });
-            },
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: "Home",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.category),
-                label: "Category",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: "Settings",
-              ),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Jage Flutter",
         ),
-      )
+      ),
+      body: this._tabsList[this._bottomNavIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Theme.of(context).accentColor,
+        currentIndex: this._bottomNavIndex,
+        onTap: (int index) {
+          setState(() {
+            this._bottomNavIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.category),
+            label: "Category",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: "Settings",
+          ),
+        ],
+      ),
     );
   }
 }

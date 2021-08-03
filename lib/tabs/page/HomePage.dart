@@ -18,17 +18,20 @@ class _HomePageState extends State<HomePage> {
         ElevatedButton(
           child: Text("Open"),
           onPressed: (){
+            //普通路由
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context)=>NewPage()
               )
             );
+            
           },
         ),
         ElevatedButton(
           child: Text("Return"),
           onPressed: (){
-
+            //命名路由
+            Navigator.of(context).pushNamed('/page');
           },
         ),
       ],
