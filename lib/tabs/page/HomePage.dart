@@ -31,7 +31,15 @@ class _HomePageState extends State<HomePage> {
           child: Text("Return"),
           onPressed: (){
             //命名路由
-            Navigator.of(context).pushNamed('/page');
+            //Navigator.of(context).pushNamed('/page');
+
+            //传参路由
+            Navigator.of(context).pushNamed(
+              '/page', 
+              arguments: {
+                "name": "12"
+              },
+            );
           },
         ),
       ],
