@@ -24,6 +24,8 @@ class _HomePageState extends State<HomePage> {
                 builder: (context)=>NewPage()
               )
             );
+            //替换路由
+            //Navigator.of(context).pushReplacementNamed('routeName');
             
           },
         ),

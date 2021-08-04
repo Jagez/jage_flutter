@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
+import '../Tabs.dart';
 
 class NewPage extends StatefulWidget {
   final dynamic arguments;
@@ -29,9 +30,15 @@ class _NewPageState extends State<NewPage> {
           style: TextStyle(fontSize: 18.0),
         ),
         child: FloatingActionButton(
-          child: Text("Get"),
+          child: Text("Home"),
           onPressed: () {
-            //Navigator.of(context).pop();
+            //返回根路由
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (context) => new Tabs(),
+                ),
+                //将路由清空
+                (route) => false);
             setState(() {
               this.content = widget.arguments['name'].toString();
             });

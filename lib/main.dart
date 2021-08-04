@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'FirstComponent.dart';
 import 'tabs/Tabs.dart';
 import 'tabs/page/NewPage.dart';
 void main() {
@@ -8,6 +7,7 @@ void main() {
 class JageApp extends StatelessWidget {
   final Map<String, Widget Function(BuildContext)> routes = {
     //此处添加路由,可以传参
+    //'/': (context)=>Tabs(),
     '/page': (context, {arguments})=>(NewPage(arguments: arguments)),
   };
   JageApp({Key? key}) : super(key: key);
@@ -15,6 +15,7 @@ class JageApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Tabs(),
+        //initialRoute: '/',    //初始化根组件
         onGenerateRoute: (RouteSettings settings) {
           final String? name = settings.name;
           final Function? pageContentBuilder = this.routes[name];
