@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'tabs/Tabs.dart';
 import 'tabs/page/NewPage.dart';
+import 'tabs/page/TabBarController.dart';
 void main() {
   runApp(JageApp());
 }
@@ -9,6 +10,7 @@ class JageApp extends StatelessWidget {
     //此处添加路由,可以传参
     //'/': (context)=>Tabs(),
     '/page': (context, {arguments})=>(NewPage(arguments: arguments)),
+    '/tabBarController': (context)=>TabBarControllerPage(),
   };
   JageApp({Key? key}) : super(key: key);
   @override
@@ -21,10 +23,17 @@ class JageApp extends StatelessWidget {
           final String? name = settings.name;
           final Function? pageContentBuilder = this.routes[name];
           if (pageContentBuilder != null) {
+            //带参
             if (settings.arguments != null) {
               final Route route = MaterialPageRoute(
                 builder: (context)=>
                     pageContentBuilder(context, arguments: settings.arguments),
+              );
+              return route;
+            //不带参
+            }else{
+              final Route route = MaterialPageRoute(
+                builder: (context) => pageContentBuilder(context),
               );
               return route;
             }
