@@ -14,9 +14,22 @@ class _NewPageState extends State<NewPage> {
   String content = '';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
       appBar: AppBar(
         title: Text("NewPage"),
+        bottom: TabBar(
+          isScrollable: true,                         //Tab比较多时允许滚动
+          labelColor: Colors.yellowAccent,
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorColor: Colors.yellowAccent,
+          unselectedLabelColor: Colors.white,
+          tabs: [
+            Tab(text: "Hot",),
+            Tab(text: "Pop",),
+          ],
+        ),
       ),
       body: Center(
         child: Badge(
@@ -45,6 +58,7 @@ class _NewPageState extends State<NewPage> {
           },
         ),
       ),
+    ),
     );
   }
 }

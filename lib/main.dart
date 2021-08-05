@@ -14,6 +14,7 @@ class JageApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Tabs(),
         //initialRoute: '/',    //初始化根组件
         onGenerateRoute: (RouteSettings settings) {

@@ -11,7 +11,23 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+      appBar: AppBar(
+        //title可以是widget，所有可以把TabBar写在title中，而不是bottom
+        title: TabBar(
+          tabs: [
+            Tab(text: "ooo",),
+            Tab(text: "xxx",),
+          ],
+        ),
+        // bottom: TabBar(
+        //   tabs: [
+        //     Tab(text: "ss",),
+        //     Tab(text: "xx",),
+        //   ],
+        // ),
+      ),
+      body: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -45,6 +61,7 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       ],
+    ),
     );
   }
 }
