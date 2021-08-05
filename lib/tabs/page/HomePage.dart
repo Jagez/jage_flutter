@@ -60,6 +60,12 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ),
+        ElevatedButton(
+          child: Text("跳转到TabControllerPage"),
+          onPressed: (){
+            Navigator.pushNamed(context, '/tabBarController');
+          },
+        ),
       ],
     ),
     );
