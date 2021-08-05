@@ -31,20 +31,20 @@ class _HomePageState extends State<HomePage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ElevatedButton(
-          child: Text("Open"),
-          onPressed: (){
-            //普通路由
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context)=>NewPage()
-              )
-            );
-            //替换路由
-            //Navigator.of(context).pushReplacementNamed('routeName');
+        // ElevatedButton(
+        //   child: Text("Open"),
+        //   onPressed: (){
+        //     //普通路由
+        //     Navigator.of(context).push(
+        //       MaterialPageRoute(
+        //         builder: (context)=>NewPage()
+        //       )
+        //     );
+        //     //替换路由
+        //     //Navigator.of(context).pushReplacementNamed('routeName');
             
-          },
-        ),
+        //   },
+        // ),
         ElevatedButton(
           child: Text("Return"),
           onPressed: (){

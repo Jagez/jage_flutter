@@ -44,6 +44,31 @@ class _TabsState extends State<Tabs> {
           // ),
           backgroundColor: Colors.black,
         ),
+        endDrawer: Drawer(),
+        drawer: Drawer(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: DrawerHeader(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("images/thumb_unit_profile_100231.png"),
+                        ),
+                      ),
+                      child: Image.asset("images/icon_quest_31002.png"),
+                    ),
+                  )
+                ],
+              ),
+              ListTile(
+                title: Text("dssd"),
+              ),
+            ],
+          ),
+        ),
         body: this._tabsList[this._bottomNavIndex],
         bottomNavigationBar: BottomNavigationBar(
           fixedColor: Theme.of(context).accentColor,
