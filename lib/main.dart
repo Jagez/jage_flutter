@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'tabs/Tabs.dart';
 import 'tabs/page/NewPage.dart';
 import 'tabs/page/TabBarController.dart';
+import 'tabs/page/UserInfo.dart';
 void main() {
   runApp(JageApp());
 }
@@ -11,6 +12,7 @@ class JageApp extends StatelessWidget {
     //'/': (context)=>Tabs(),
     '/page': (context, {arguments})=>(NewPage(arguments: arguments)),
     '/tabBarController': (context)=>TabBarControllerPage(),
+    '/userinfo': (context) => UserInfoPage(),
   };
   JageApp({Key? key}) : super(key: key);
   @override
