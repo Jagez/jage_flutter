@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:jage_app/tabs/page/NewPage.dart';
 import 'page/HomePage.dart';
 import 'page/Setting.dart';
 import 'page/Category.dart';
+import 'page/News.dart';
+import 'page/Zoom.dart';
 
 class Tabs extends StatefulWidget {
   Tabs({Key? key}) : super(key: key);
@@ -12,12 +15,16 @@ class Tabs extends StatefulWidget {
 
 class _TabsState extends State<Tabs> {
   int _bottomNavIndex = 0;
-  List<Widget> _tabsList = List.empty(growable: true);
+  final List<Widget> _tabsList = [
+    HomePage(), 
+    CategoryPage(),
+    Setting(),
+    NewsPage(),
+    ZoomPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    this._tabsList.add(HomePage());
-    this._tabsList.add(CategoryPage());
-    this._tabsList.add(Setting());
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -55,7 +62,8 @@ class _TabsState extends State<Tabs> {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("images/thumb_unit_profile_100231.png"),
+                          image: AssetImage(
+                              "images/thumb_unit_profile_100231.png"),
                         ),
                       ),
                       child: Image.asset("images/icon_quest_31002.png"),
@@ -64,13 +72,21 @@ class _TabsState extends State<Tabs> {
                 ],
               ),
               ListTile(
-                title: Text("dssd"),
+                title: Text("用户中心"),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/userinfo');
+                },
               ),
             ],
           ),
         ),
         body: this._tabsList[this._bottomNavIndex],
         bottomNavigationBar: BottomNavigationBar(
+          showSelectedLabels: true,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.yellow,
+          iconSize: 30.0,
           fixedColor: Theme.of(context).accentColor,
           currentIndex: this._bottomNavIndex,
           onTap: (int index) {
@@ -80,6 +96,7 @@ class _TabsState extends State<Tabs> {
           },
           items: [
             BottomNavigationBarItem(
+              backgroundColor: Colors.yellow,
               icon: Icon(Icons.home),
               label: "Home",
             ),
@@ -89,10 +106,45 @@ class _TabsState extends State<Tabs> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: "Settings",
+              label: "发布",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: "News",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: "Zoom",
             ),
           ],
         ),
+        floatingActionButton: Container(
+          width: 80.0,
+          height: 80.0,
+          padding: EdgeInsets.all(8.0),
+          margin: EdgeInsets.only(bottom: 10.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(40.0),
+            color: Colors.white,
+          ),
+          child: FloatingActionButton(
+            child: Icon(
+              Icons.add,
+              color: Colors.black,
+              size: 40,
+            ),
+            backgroundColor: Colors.yellow,
+            onPressed: () {
+              setState(() {
+                this._bottomNavIndex =  this._tabsList.length ~/ 2;
+                //this._bottomNavIndex = 2;
+              });
+              print(this._bottomNavIndex);
+              print(this._tabsList.length);
+            },
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }
