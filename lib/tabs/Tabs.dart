@@ -16,7 +16,7 @@ class Tabs extends StatefulWidget {
 class _TabsState extends State<Tabs> {
   int _bottomNavIndex = 0;
   final List<Widget> _tabsList = [
-    HomePage(), 
+    HomePage(),
     CategoryPage(),
     Setting(),
     NewsPage(),
@@ -122,21 +122,39 @@ class _TabsState extends State<Tabs> {
           width: 80.0,
           height: 80.0,
           padding: EdgeInsets.all(8.0),
-          margin: EdgeInsets.only(bottom: 10.0),
+          margin: EdgeInsets.only(bottom: 20.0),
+          // decoration: BoxDecoration(
+          //   borderRadius: BorderRadius.circular(40.0),
+          //   color: Colors.white,
+          // ),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(40.0),
-            color: Colors.white,
-          ),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(50.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.yellow,//.withOpacity(0.5)
+                  //offset: Offset(-6.0,-6.0),
+                  blurRadius: 0,
+                  spreadRadius: 10,
+                ),
+              ]),
           child: FloatingActionButton(
             child: Icon(
               Icons.add,
               color: Colors.black,
               size: 40,
             ),
+            //focusColor: Colors.red,
+            //foregroundColor: Colors.yellowAccent,
+            //hoverColor: Colors.yellowAccent,
+            //高亮时候的阴影
+            highlightElevation: 0.0,
+            elevation: 10.0,
+            splashColor: Colors.yellowAccent,
             backgroundColor: Colors.yellow,
             onPressed: () {
               setState(() {
-                this._bottomNavIndex =  this._tabsList.length ~/ 2;
+                this._bottomNavIndex = this._tabsList.length ~/ 2;
                 //this._bottomNavIndex = 2;
               });
               print(this._bottomNavIndex);

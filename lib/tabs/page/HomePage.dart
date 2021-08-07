@@ -112,22 +112,101 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: 100.0,
                 width: 100.0,
-                child: ElevatedButton(
-                  child: Text("圆形按钮"),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(
-                      CircleBorder(
-                        //side: BorderSide(color: Colors.red, width: 2.0),
-                        
+                //padding: EdgeInsets.all(8.0),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(150),
+                    color: Colors.yellow,
+                    // image: DecorationImage(
+                    //   fit: BoxFit.cover,
+                    //   image: AssetImage("images/thumb_unit_profile_100231.png"),
+                    // )
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.yellowAccent.withOpacity(0.5),
+                        blurRadius: 10,
+                        spreadRadius: 10,
                       )
-                    ),
+                    ],
+                  ),
+                child: ElevatedButton(
+                  child: Text(""),
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(0.0),
+                    backgroundColor: MaterialStateProperty.all(Colors.yellow),
+                    // side: MaterialStateProperty.all(
+                    //   BorderSide(
+                    //     width: 2.0,
+                    //     color: Colors.yellow,
+                    //     style: BorderStyle.solid,
+                    //   ),
+                    // ),
+                    shape: MaterialStateProperty.all(CircleBorder(
+                        //side: BorderSide(color: Colors.red, width: 2.0),
+
+                        )),
                   ),
                   onPressed: () {},
                 ),
               )
             ],
-          )
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.all(20.0),
+                margin: EdgeInsets.all(20.0),
+                decoration: new BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  border: new Border.all(
+                    width: 1,
+                    color: Colors.black,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withOpacity(0.5),
+                        //offset: Offset(-6.0, 6.0), //阴影x轴偏移量
+                        blurRadius: 10, //阴影模糊程度
+                        spreadRadius: 10 //阴影扩散程度
+                        ),
+                  ],
+                ),
+                child: Text("BoxShadow(绘制阴影)+Container+BoxDecoration"),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.all(8.0),
+                decoration: BoxDecoration(
+                    color: Colors.yellow,
+                    borderRadius: BorderRadius.circular(50.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.yellowAccent.withOpacity(0.5),
+                        blurRadius: 10,
+                        spreadRadius: 10,
+                      ),
+                    ]),
+                child: ElevatedButton(
+                  child: Text("bu"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.yellow),
+                    shape: MaterialStateProperty.all(
+                      CircleBorder(
+                        //side: BorderSide(color: Colors.red, width: 2.0),
 
+                        )
+                      ),
+                  ),
+                  onPressed: () {},
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
