@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'tabs/Tabs.dart';
 import 'tabs/page/NewPage.dart';
 import 'tabs/page/TabBarController.dart';
 import 'tabs/page/UserInfo.dart';
+import 'tabs/page/Dates.dart';
+import 'tabs/page/Design.dart';
+import 'tabs/page/Charts.dart';
+import 'tabs/page/ButtonDemo.dart';
+import 'tabs/page/Login.dart';
 void main() {
   runApp(JageApp());
 }
@@ -13,6 +19,11 @@ class JageApp extends StatelessWidget {
     '/page': (context, {arguments})=>(NewPage(arguments: arguments)),
     '/tabBarController': (context)=>TabBarControllerPage(),
     '/userinfo': (context) => UserInfoPage(),
+    '/dates': (context) => DatesPage(),
+    '/design': (context) => DesignPage(),
+    '/charts': (context) => ChartsPage(),
+    '/buttons': (context) => ButtonDemoPage(),
+    '/login': (context) => LoginPage(),
   };
   JageApp({Key? key}) : super(key: key);
   @override
@@ -41,6 +52,15 @@ class JageApp extends StatelessWidget {
             }
           }
         },
+        //国际化
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale('en', 'US'),
+          Locale('zh', 'CH'),
+        ],
     );
   }
 }
