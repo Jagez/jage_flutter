@@ -23,6 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
   
     #本地库
   # flutter_package:
@@ -55,6 +58,35 @@ dependencies:
   provider: ^5.0.0
   firebase_auth: ^3.0.1
 
+  intl: ^0.17.0
+  flutter_swiper: ^1.1.6
+  wakelock: ^0.5.3+3
+  sensors_plus: ^1.0.2
+  flutter_spinkit: ^5.0.0
+  flutter_slidable: ^0.6.0
+  battery_plus: ^1.1.1
+  path_provider: ^2.0.2
+  # speech_to_text: ^5.0.0
+  signature: ^4.1.1
+  url_launcher: ^6.0.10
+  rxdart: ^0.27.2
+  flutter_blurhash: ^0.6.0
+  sentry_flutter: ^6.0.0
+  animated_text_kit: ^4.2.1
+  just_audio: ^0.9.11
+  connectivity_plus: ^1.1.0
+  share_plus: ^2.1.4
+  lottie: ^1.1.0
+  get: ^4.3.8
+  hive: ^2.0.4
+ # audioplayers: ^0.20.1
+  timeline_tile: ^2.0.0
+  qr_flutter: ^4.0.0
+  qr_code_scanner: ^0.5.2
+  syncfusion_flutter_charts: ^19.3.45+1
+  flutter_local_notifications: ^5.0.0+4
+  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -75,6 +107,11 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - assets/icon/a10.png
+    - assets/icon/rain.png
+    - images/sewa/beginning.png
+    - images/sewa/last.png
+    - images/sewa/mid.png
     - images/thumb_unit_profile_100111.png
     - images/thumb_unit_profile_100131.png
     - images/thumb_unit_profile_100211.png
@@ -531,6 +568,7 @@ flutter:
     - images/icon_quest_32058.png
     - images/icon_quest_32059.png
     - images/icon_quest_32060.png
+    - assets/lottie/bullseye.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -557,3 +595,18 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: DIGI
+      fonts:
+      - asset: assets/fonts/ttf/DS-DIGIB.TTF
+    - family: lover
+      fonts:
+      - asset: assets/fonts/ttf/lovers.ttf
+    - family: SAO
+      fonts:
+      - asset: assets/fonts/sao/FZZY.ttf
+    - family: loverROB
+      fonts:
+      - asset: assets/fonts/ttf/Lovers_Quarrel_ROB.ttf
+
+  generate: true

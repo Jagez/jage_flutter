@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:jage_app/tabs/page/Signature.dart';
+import 'package:jage_app/theme.dart';
 import 'tabs/Tabs.dart';
 import 'tabs/page/NewPage.dart';
 import 'tabs/page/TabBarController.dart';
@@ -9,6 +11,16 @@ import 'tabs/page/Design.dart';
 import 'tabs/page/Charts.dart';
 import 'tabs/page/ButtonDemo.dart';
 import 'tabs/page/Login.dart';
+import 'tabs/page/ConnectivityPlusPage.dart';
+import 'tabs/page/LottiePage.dart';
+import 'tabs/page/DesignCardPage.dart';
+import 'tabs/page/Qr.dart';
+import 'tabs/page/QrScanner.dart';
+import 'tabs/page/flchart.dart';
+import 'tabs/page/SewaDesign.dart';
+import 'tabs/page/Dinner.dart';
+import 'tabs/page/FloatBottomBar.dart';
+import 'tabs/page/BatteryInfo.dart';
 void main() {
   runApp(JageApp());
 }
@@ -21,9 +33,20 @@ class JageApp extends StatelessWidget {
     '/userinfo': (context) => UserInfoPage(),
     '/dates': (context) => DatesPage(),
     '/design': (context) => DesignPage(),
-    '/charts': (context) => ChartsPage(),
+    '/charts': (context, {arguments}) => ChartsPage(arguments: arguments,),
     '/buttons': (context) => ButtonDemoPage(),
     '/login': (context) => LoginPage(),
+    '/signature': (context) => SignaturePage(),
+    '/connectivity': (context) => ConnectivityPlusPage(),
+    '/lottie': (context) => LottiePage(),
+    '/stackCard': (context) => DesignCardPage(),
+    '/qr': (context) => QrPage(), 
+    '/qrscanner': (context) => QRViewExample(),
+    '/flchart': (context) => ChartPage(),
+    '/sewa': (context) => SewaDesignPage(),
+    '/dinner': (context) => DinnerPage(),
+    '/floatbottombar': (context) => FloatBottomBarPage(),
+    '/battery': (context) => BatteryInfo(),
   };
   JageApp({Key? key}) : super(key: key);
   @override
@@ -31,6 +54,8 @@ class JageApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Tabs(),
+        darkTheme: darkThemeData(context),
+        //themeMode: ThemeMode.dark,
         //initialRoute: '/',    //初始化根组件
         onGenerateRoute: (RouteSettings settings) {
           final String? name = settings.name;

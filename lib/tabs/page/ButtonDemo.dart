@@ -11,6 +11,12 @@ class ButtonDemoPage extends StatefulWidget {
 class _ButtonDemoPageState extends State<ButtonDemoPage> {
   List<bool> _isSelected = [false, false, false];
   bool _flag = false;
+  String curStr = "jhon";
+  final List<String> info = <String>[
+    "jhon" ,
+    "limu",
+    "zuei",
+  ].toList();
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +129,20 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
               ),
             ),
             DropdownButton(
-              items: [],
+              value: curStr,
+              underline: Container(color: const Color(0x00ff00ff), height: 1,),
+              onChanged: (dynamic value){
+                setState(() {
+                  curStr = value;
+                });
+              },
+              items: info.map((String value) {
+                return DropdownMenuItem<String>(
+                  // ignore: unnecessary_null_comparison
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
             ),
           ],
         ),

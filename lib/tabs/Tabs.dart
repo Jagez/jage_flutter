@@ -31,11 +31,15 @@ class _TabsState extends State<Tabs> {
         appBar: AppBar(
           title: Text(
             "Jage Flutter",
+            style: TextStyle(
+              fontFamily: "loverROB",
+            ),
           ),
           //定义可点击的图标按钮
           leading: IconButton(
             icon: Icon(Icons.menu),
-            onPressed: () {},
+            onPressed: () {
+            },
           ),
           actions: [
             IconButton(
@@ -82,62 +86,110 @@ class _TabsState extends State<Tabs> {
           ),
         ),
         body: this._tabsList[this._bottomNavIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          showSelectedLabels: true,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.yellow,
-          iconSize: 30.0,
-          fixedColor: Theme.of(context).accentColor,
-          currentIndex: this._bottomNavIndex,
-          onTap: (int index) {
-            setState(() {
-              this._bottomNavIndex = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              backgroundColor: Colors.yellow,
-              icon: Icon(Icons.home),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              label: "Category",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: "发布",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: "News",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: "Zoom",
-            ),
-          ],
+        //backgroundColor: Color.fromRGBO(30, 30, 30, 0.0),
+        bottomNavigationBar: BottomAppBar(
+          shape: CircularNotchedRectangle(),
+          color: Colors.yellow,
+          notchMargin: 5,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      _bottomNavIndex = 0;
+                    });
+                  },
+                  child: Wrap(
+                    direction: Axis.vertical,
+                    alignment: WrapAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.home),
+                      Text("Home"),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      _bottomNavIndex = 1;
+                    });
+                  },
+                  child: Wrap(
+                    direction: Axis.vertical,
+                    alignment: WrapAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.category),
+                      Text("Category"),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      _bottomNavIndex = 2;
+                    });
+                  },
+                  child: Wrap(
+                    direction: Axis.vertical,
+                    alignment: WrapAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.settings),
+                      Text("Setting"),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      _bottomNavIndex = 3;
+                    });
+                  },
+                  child: Wrap(
+                    direction: Axis.vertical,
+                    alignment: WrapAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.people_outlined),
+                      Text("Profile"),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
         floatingActionButton: Container(
-          width: 80.0,
-          height: 80.0,
-          padding: EdgeInsets.all(8.0),
-          margin: EdgeInsets.only(bottom: 20.0),
+          width: 60.0,
+          height: 60.0,
+          padding: EdgeInsets.all(5.0),
+          //margin: EdgeInsets.only(bottom: 2.0),
           // decoration: BoxDecoration(
           //   borderRadius: BorderRadius.circular(40.0),
           //   color: Colors.white,
           // ),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(50.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.yellow,//.withOpacity(0.5)
-                  //offset: Offset(-6.0,-6.0),
-                  blurRadius: 0,
-                  spreadRadius: 10,
-                ),
-              ]),
+          // decoration: BoxDecoration(
+          //     color: Colors.white,
+          //     borderRadius: BorderRadius.circular(50.0),
+          //     // boxShadow: [
+          //     //   BoxShadow(
+          //     //     color: Colors.yellow, //.withOpacity(0.5)
+          //     //     //offset: Offset(-6.0,-6.0),
+          //     //     blurRadius: 0,
+          //     //     spreadRadius: 10,
+          //     //   ),
+          //     // ]
+          //     ),
           child: FloatingActionButton(
             child: Icon(
               Icons.add,
