@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:jage_app/tabs/page/Signature.dart';
+import 'package:jage_app/tabs/page/TimeLine.dart';
+import 'package:jage_app/tabs/page/Weather.dart';
+import 'package:jage_app/tabs/page/WeatherDetail.dart';
 import 'package:jage_app/theme.dart';
 import 'tabs/Tabs.dart';
 import 'tabs/page/NewPage.dart';
@@ -47,6 +50,9 @@ class JageApp extends StatelessWidget {
     '/dinner': (context) => DinnerPage(),
     '/floatbottombar': (context) => FloatBottomBarPage(),
     '/battery': (context) => BatteryInfo(),
+    '/timeline': (context) => TimelinePage(),
+    '/weather': (context) => WeatherPage(),
+    '/weatherDetail': (context) => WeatherDetailPage(),
   };
   JageApp({Key? key}) : super(key: key);
   @override

@@ -40,21 +40,23 @@ class _ConnectivityPlusPageState extends State<ConnectivityPlusPage> {
 
   @override
   Widget build(BuildContext context) {
+    String str = "show Connectivity res";
     return Scaffold(
       appBar: AppBar(
         title: Text("ConnectivityPlusPage"),
         
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
+      body: Center(
         child: ElevatedButton(
           onPressed: (){
             setState(() {
-              getConnectivityRes().then((value) => print(value));
+              getConnectivityRes().then((value) {
+                print(value);
+                str = value;
+              });
             });
           },
-          child: Text("show Connectivity res"),
+          child: Text(str),
         ),
       ),
     );

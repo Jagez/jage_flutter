@@ -23,7 +23,8 @@ class _SewaDesignPageState extends State<SewaDesignPage> {
   }
 
   Widget _pageBuilder(BuildContext context, int index) {
-    return Theme.of(context).brightness == Brightness.dark ? images[index % images.length] : images[index % images.length];
+    return Theme.of(context).brightness == Brightness.dark ? 
+      images[index % images.length] : images[index % images.length];
   }
 
   @override

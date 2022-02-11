@@ -83,8 +83,10 @@ dependencies:
   timeline_tile: ^2.0.0
   qr_flutter: ^4.0.0
   qr_code_scanner: ^0.5.2
-  syncfusion_flutter_charts: ^19.3.45+1
+  syncfusion_flutter_charts: ^19.3.55
   flutter_local_notifications: ^5.0.0+4
+  #easy_localization: ^3.0.0
+  shared_preferences: ^2.0.7
   
 
 dev_dependencies:
@@ -107,6 +109,21 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - assets/icon/Albums.png
+    - assets/icon/Artists.png
+    - assets/icon/Crown.png
+    - assets/icon/Crown_1.png
+    - assets/icon/Download Items.png
+    - assets/icon/Exit_.png
+    - assets/icon/Exit_1.png
+    - assets/icon/Favourite.png
+    - assets/icon/Recent History.png
+    - assets/icon/Songs.png
+    - images/weather/Category.png
+    - images/weather/Search.png
+    - images/weather/Line.png
+    - images/weather/Flat.png
+    - images/weather/location.png
     - assets/icon/a10.png
     - assets/icon/rain.png
     - images/sewa/beginning.png

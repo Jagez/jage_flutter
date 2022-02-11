@@ -26,78 +26,76 @@ class _MessageItemWidgetState extends State<MessageItemWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Dismissible(
-        key: Key(widget.targetId.toString()),
-        onDismissed: (direction) {
+      child: GestureDetector(
+        onHorizontalDragStart: (DragStartDetails dragStartDetails) {
+          print(dragStartDetails.globalPosition);
+        },
+        onHorizontalDragUpdate: (DragUpdateDetails updateDetails) {
+          print(updateDetails.globalPosition);
+        },
+        onTap: () {
+          //print(widget.key.toString());
           setState(() {
-            print(direction);
+            Navigator.pushNamed(
+              context
+              , '/charts'
+              , arguments: {
+                  "targetId": widget.targetId,
+                }
+              );
           });
         },
-        child: GestureDetector(
-          onTap: () {
-            //print(widget.key.toString());
-            setState(() {
-              Navigator.pushNamed(
-                context
-                , '/charts'
-                , arguments: {
-                    "targetId": widget.targetId,
-                  }
-                );
-            });
-          },
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
-            child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: _getBGThemeColor(1.0)),
-              child: ListTile(
-                leading: Hero(
-                  tag: widget.targetId.toString(),
-                  child: CircleAvatar(
-                  backgroundImage: AssetImage("images/icon_quest_31002.png"),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                color: _getBGThemeColor(1.0)),
+            child: ListTile(
+              leading: Hero(
+                tag: widget.targetId.toString(),
+                child: CircleAvatar(
+                backgroundImage: AssetImage("images/icon_quest_31002.png"),
+              ),
+              ),
+              title: Text(
+                "Jage",
+                style: TextStyle(color: Colors.white, fontFamily: "SAO"),
+              ),
+              subtitle: Text(
+                "MIT Assistant manager",
+                style: TextStyle(
+                  color: Colors.white30,
+                  fontFamily: "SAO",
                 ),
-                ),
-                title: Text(
-                  "Jage",
-                  style: TextStyle(color: Colors.white, fontFamily: "SAO"),
-                ),
-                subtitle: Text(
-                  "MIT Assistant manager",
-                  style: TextStyle(
-                    color: Colors.white30,
-                    fontFamily: "SAO",
-                  ),
-                ),
-                trailing: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0, 5, 5, 0),
-                      child: Badge(
-                        badgeContent: Text(
-                          "3",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'SAO',
-                            fontStyle: FontStyle.italic,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0, 2, 5, 0),
-                      child: Text(
-                        "2 mini ago",
+              ),
+              trailing: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 5, 5, 0),
+                    child: Badge(
+                      badgeContent: Text(
+                        "3",
                         style: TextStyle(
-                          color: Colors.white30,
-                          fontFamily: "SAO",
-                          fontSize: 10.0,
+                          color: Colors.white,
+                          fontFamily: 'SAO',
+                          fontStyle: FontStyle.italic,
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, 2, 5, 0),
+                    child: Text(
+                      "2 mini ago",
+                      style: TextStyle(
+                        color: Colors.white30,
+                        fontFamily: "SAO",
+                        fontSize: 10.0,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

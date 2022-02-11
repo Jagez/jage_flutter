@@ -8,8 +8,8 @@ class ChartPage extends StatefulWidget {
   @override
   _ChartPageState createState() => _ChartPageState();
 }
-class ChartSampleData {
 
+class ChartSampleData {
   final String x;
   final num y;
 
@@ -21,6 +21,7 @@ class ChartFunelData {
   final num y;
   ChartFunelData(this.x, this.y);
 }
+
 class _SparkBarData {
   final dynamic x;
   final num y;
@@ -40,22 +41,23 @@ class _StepLineData {
 }
 
 class _ChartPageState extends State<ChartPage> {
-
   PyramidSeries<ChartSampleData, String> _getPyramidSeriesData() {
-    return PyramidSeries<ChartSampleData, String> (
-      dataSource: <ChartSampleData>[
-        ChartSampleData("walnuts", 222),
-        ChartSampleData("almonds", 575),
-        ChartSampleData("soybeans", 446),
-      ],
-      height: '90%',
-      pyramidMode: PyramidMode.linear,
-      xValueMapper: (ChartSampleData data, _) => data.x,
-      yValueMapper: (ChartSampleData data, _) => data.y,
-      dataLabelSettings: const DataLabelSettings(
-        isVisible: true,
-      )
-    );
+    return PyramidSeries<ChartSampleData, String>(
+        dataSource: <ChartSampleData>[
+          ChartSampleData("walnuts", 222),
+          ChartSampleData("almonds", 575),
+          ChartSampleData("soybeans", 446),
+        ],
+        height: '90%',
+        pyramidMode: PyramidMode.linear,
+        explode: true,
+        explodeOffset: '10%',
+        explodeIndex: 2,
+        xValueMapper: (ChartSampleData data, _) => data.x,
+        yValueMapper: (ChartSampleData data, _) => data.y,
+        dataLabelSettings: const DataLabelSettings(
+          isVisible: true,
+        ));
   }
 
   FunnelSeries<ChartFunelData, String> _getFunnelSeriesData() {
@@ -73,7 +75,7 @@ class _ChartPageState extends State<ChartPage> {
   }
 
   final List<_SparkBarData> _chartSparkBarData = <_SparkBarData>[
-    _SparkBarData(DateTime(2012,10,5), 3),
+    _SparkBarData(DateTime(2012, 10, 5), 3),
     _SparkBarData(DateTime(2013, 12, 19), 46),
     _SparkBarData(DateTime(2014, 10, 28), 90),
     _SparkBarData(DateTime(2015, 5, 25), 43),
@@ -123,6 +125,7 @@ class _ChartPageState extends State<ChartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //floatingActionButton: Draggable,
       appBar: AppBar(
         title: Text("flchart"),
       ),
@@ -133,24 +136,37 @@ class _ChartPageState extends State<ChartPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SfCartesianChart(
-                  primaryXAxis: CategoryAxis(),
-                  title: ChartTitle(text: "test SfCartesianChart"),
-                  legend: Legend(isVisible: true),
-                  tooltipBehavior: TooltipBehavior(enable: true),
-                  series: <LineSeries<_PieData, String>>[
-                    LineSeries(
-                      dataSource: <_PieData>[
-                        _PieData("jan", 35),
-                        _PieData("Feb", 28),
-                        _PieData("apr", 32),
-                        _PieData("may", 40),
-                      ], 
-                      xValueMapper: (_PieData pieData, _) => pieData.xData, 
-                      yValueMapper: (_PieData pieData, _) => pieData.yData,
-                      dataLabelSettings: DataLabelSettings(isVisible: true),
-                    ),
-                  ]
-                ),
+                    onMarkerRender: (MarkerRenderArgs markerargs) {
+                      if (markerargs.pointIndex == 2) {
+                        markerargs.markerHeight = 40.0;
+                        markerargs.markerWidth = 40.0;
+                        markerargs.shape = DataMarkerType.triangle;
+                      }
+                      markerargs.markerHeight = 40.0;
+                      markerargs.markerWidth = 40.0;
+                      markerargs.shape = DataMarkerType.triangle;
+                      print(markerargs.toString());
+                    },
+                    onLegendTapped: (LegendTapArgs legendTapArgs) {
+                      print(legendTapArgs.toString());
+                    },
+                    primaryXAxis: CategoryAxis(),
+                    title: ChartTitle(text: "test SfCartesianChart"),
+                    legend: Legend(isVisible: true),
+                    tooltipBehavior: TooltipBehavior(enable: true),
+                    series: <LineSeries<_PieData, String>>[
+                      LineSeries(
+                        dataSource: <_PieData>[
+                          _PieData("jan", 35),
+                          _PieData("Feb", 28),
+                          _PieData("apr", 32),
+                          _PieData("may", 40),
+                        ],
+                        xValueMapper: (_PieData pieData, _) => pieData.xData,
+                        yValueMapper: (_PieData pieData, _) => pieData.yData,
+                        dataLabelSettings: DataLabelSettings(isVisible: true),
+                      ),
+                    ]),
                 Container(
                   height: 250.0,
                   width: double.infinity,
@@ -182,7 +198,23 @@ class _ChartPageState extends State<ChartPage> {
                   child: SfSparkLineChart(
                     //axisLineDashArray: [10, 10, 10, 10, 10],
                     data: <double>[
-                      1, 5, -6, 0, 1, -2, 7, -7, -4, -10, 13, -6, 7, 5, 11, 5, 3
+                      1,
+                      5,
+                      -6,
+                      0,
+                      1,
+                      -2,
+                      7,
+                      -7,
+                      -4,
+                      -10,
+                      13,
+                      -6,
+                      7,
+                      5,
+                      11,
+                      5,
+                      3
                     ],
                   ),
                 ),
@@ -196,24 +228,40 @@ class _ChartPageState extends State<ChartPage> {
                     ),
                     labelDisplayMode: SparkChartLabelDisplayMode.all,
                     data: <double>[
-                      1, 5, -6, 0, 1, -2, 7, -7, -4, -10, 13, -6, 7, 5, 11, 5, 3
+                      1,
+                      5,
+                      -6,
+                      0,
+                      1,
+                      -2,
+                      7,
+                      -7,
+                      -4,
+                      -10,
+                      13,
+                      -6,
+                      7,
+                      5,
+                      11,
+                      5,
+                      3
                     ],
                   ),
                 ),
                 SfPyramidChart(
-                  smartLabelMode: SmartLabelMode.shift,
+                  //smartLabelMode: SmartLabelMode.shift,
                   title: ChartTitle(text: "SfPyramidChart test"),
                   tooltipBehavior: TooltipBehavior(enable: true),
                   series: _getPyramidSeriesData(),
                 ),
                 SfFunnelChart(
-                  smartLabelMode: SmartLabelMode.shift,
+                  //smartLabelMode: SmartLabelMode.shift,
                   title: ChartTitle(text: "SfFunnelChart test"),
                   tooltipBehavior: TooltipBehavior(enable: true),
                   series: _getFunnelSeriesData(),
                 ),
                 // SfSparkAreaChart(
-                  
+
                 // ),
                 SfSparkBarChart(
                   data: const <double>[
@@ -221,8 +269,7 @@ class _ChartPageState extends State<ChartPage> {
                   ],
                   highPointColor: const Color.fromRGBO(29, 30, 122, 1),
                   trackball: const SparkChartTrackball(
-                    activationMode:SparkChartActivationMode.tap
-                  ),
+                      activationMode: SparkChartActivationMode.tap),
                 ),
                 SfSparkBarChart.custom(
                   dataCount: 11,
@@ -235,28 +282,30 @@ class _ChartPageState extends State<ChartPage> {
                 SfSparkWinLossChart(
                   data: _winlossData[2],
                   trackball: SparkChartTrackball(
-                    activationMode: SparkChartActivationMode.tap
-                  ),
+                      activationMode: SparkChartActivationMode.tap),
                 ),
                 SfCartesianChart(
                   series: <ColumnSeries<_ColumnData, String>>[
                     ColumnSeries(
-                      dataSource: _chartColumnSeriesData, 
-                      xValueMapper: (_ColumnData data, _) => data.x as String, 
+                      dataSource: _chartColumnSeriesData,
+                      xValueMapper: (_ColumnData data, _) => data.x as String,
                       yValueMapper: (_ColumnData data, _) => data.y,
                       emptyPointSettings: EmptyPointSettings(
-                        mode: EmptyPointMode.drop, color: Colors.red,
+                        mode: EmptyPointMode.drop,
+                        color: Colors.red,
                       ),
-                      dataLabelSettings: const DataLabelSettings(isVisible: true),
+                      dataLabelSettings:
+                          const DataLabelSettings(isVisible: true),
                     ),
                   ],
                 ),
                 SfCartesianChart(
                   plotAreaBorderWidth: 0,
-                  primaryXAxis: 
-                    NumericAxis(majorGridLines: const MajorGridLines(width: 0)),
+                  primaryXAxis: NumericAxis(
+                      majorGridLines: const MajorGridLines(width: 0)),
                   primaryYAxis: NumericAxis(
-                    majorTickLines: const MajorTickLines(color: Colors.transparent),
+                    majorTickLines:
+                        const MajorTickLines(color: Colors.transparent),
                     axisLine: const AxisLine(width: 0),
                     minimum: 0,
                     maximum: 100,
@@ -270,11 +319,10 @@ class _ChartPageState extends State<ChartPage> {
                         _StepLineData(5, 55),
                         _StepLineData(6, 22),
                         _StepLineData(7, 19),
-                      ], 
-                      xValueMapper: (_StepLineData data, _) => data.xData, 
+                      ],
+                      xValueMapper: (_StepLineData data, _) => data.xData,
                       yValueMapper: (_StepLineData data, _) => data.yData,
                     ),
-
                   ],
                 ),
               ],

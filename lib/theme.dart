@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:jage_app/config.dart';
+import 'package:jage_app/function/JageNoSplashFactory.dart';
 
 ThemeData darkThemeData(BuildContext context) {
   return ThemeData.dark().copyWith(
+    splashFactory: new JageNoSplashFactory(),
     primaryColor: kPrimaryColor,
     buttonColor: kButtonColor,
     scaffoldBackgroundColor: kContextColorLightTheme,
