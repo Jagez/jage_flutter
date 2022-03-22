@@ -1,3 +1,4 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
@@ -40,7 +41,12 @@ class _StepLineData {
   _StepLineData(this.xData, this.yData);
 }
 
+
 class _ChartPageState extends State<ChartPage> {
+
+  
+late int _touchIndex = -1;
+
   PyramidSeries<ChartSampleData, String> _getPyramidSeriesData() {
     return PyramidSeries<ChartSampleData, String>(
         dataSource: <ChartSampleData>[
@@ -122,6 +128,48 @@ class _ChartPageState extends State<ChartPage> {
     _ColumnData("dk", 200),
   ];
 
+
+  List<PieChartSectionData> _getPieChartData() {
+    return List.generate(4, (index) {
+    final bool isTouched = index == _touchIndex;
+    final double fontSize = isTouched ? 25.0 : 16.0;
+    final double radius = isTouched ? 60.0 : 50.0;
+    switch (index) {
+      case 0:
+        return PieChartSectionData(
+          color: Color(0xFF508AFF),
+          value: 40.0,
+          title: '40%',
+          radius: radius,
+        );
+      case 1:
+        return PieChartSectionData(
+          color: Color(0xFFFFC355),
+          value: 10.0,
+          title: '10%',
+          radius: radius,
+        );
+      case 2:
+        return PieChartSectionData(
+          color: Color(0xFFFF7EAD),
+          value: 5.0,
+          title: '5%',
+          radius: radius,
+        );
+      case 3:
+        return PieChartSectionData(
+          color: Color(0xFF8255FF),
+          value: 45.0,
+          title: '45%',
+          radius: radius,
+        );
+      default:
+        throw Error();
+    }
+  });
+  }
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -190,6 +238,32 @@ class _ChartPageState extends State<ChartPage> {
                         dataLabelSettings: DataLabelSettings(isVisible: true),
                       )
                     ],
+                  ),
+                ),
+                Container(
+                  height: 300.0,
+                  width: double.infinity,
+                  child: PieChart(
+                    PieChartData(
+                      pieTouchData: PieTouchData(
+                        touchCallback: (PieTouchResponse pieTouchResponse) {
+                          setState(() {
+                            if (pieTouchResponse.touchedSection == null) {
+                              _touchIndex = -1;
+                              return;
+                            }
+                            _touchIndex = pieTouchResponse
+                                .touchedSection!.touchedSectionIndex;
+                          });
+                        },
+                      ),
+                      borderData: FlBorderData(
+                        show: false,
+                      ),
+                      sectionsSpace: 2.0,
+                      centerSpaceRadius: 40.0,
+                      sections: _getPieChartData(),
+                    ),
                   ),
                 ),
                 Container(
@@ -265,7 +339,16 @@ class _ChartPageState extends State<ChartPage> {
                 // ),
                 SfSparkBarChart(
                   data: const <double>[
-                    10, 3, -4, 5.8, 3.4, 9.0, -2, 1.8, 4.9, -3,
+                    10,
+                    3,
+                    -4,
+                    5.8,
+                    3.4,
+                    9.0,
+                    -2,
+                    1.8,
+                    4.9,
+                    -3,
                   ],
                   highPointColor: const Color.fromRGBO(29, 30, 122, 1),
                   trackball: const SparkChartTrackball(

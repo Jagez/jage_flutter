@@ -109,6 +109,19 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - assets/icon/icon_music.png
+    - assets/icon/icon_doc.png
+    - assets/icon/icon_video.png
+    - assets/icon/icon_pic.png
+    - assets/icon/icon_none.png
+    - assets/icon/voice1_2x.png
+    - assets/icon/annulus_2.png
+    - assets/icon/emot2_2x.png
+    - assets/icon/file2_2x.png
+    - assets/icon/voice_2x.png
+    - assets/icon/annulus_1.png
+    - assets/icon/emot_2x.png
+    - assets/icon/file_2x.png
     - assets/icon/Albums.png
     - assets/icon/Artists.png
     - assets/icon/Crown.png
