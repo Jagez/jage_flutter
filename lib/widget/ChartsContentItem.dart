@@ -34,8 +34,10 @@ class _ChartsContentState extends State<ChartsContent> {
                   "contentText":
                       "fslakjfsasdfsdfadsfasdfewrwrefsdfsdfewrwdsfasdgwerwerwdfaldfkjslfjksl但是咖啡机拉萨的飞机塑料袋放进离开即使对方螺丝扣搭街坊",
                   'textDirection': TextDirection.rtl,
-                  'textStyle':
-                      TextStyle(color: Color.fromRGBO(244, 244, 247, 1.0)),
+                  'textStyle': TextStyle(
+                    color: Color.fromRGBO(244, 244, 247, 1.0),
+                  ),
+                  //'decoration': BoxDecoration(),
                 },
               ),
             ),

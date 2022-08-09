@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+//import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:jage_app/tabs/page/MediaPage.dart';
+import 'package:jage_app/tabs/page/PrincessConnectPage.dart';
 import 'package:jage_app/tabs/page/Signature.dart';
+import 'package:jage_app/tabs/page/SocialPage.dart';
 import 'package:jage_app/tabs/page/TimeLine.dart';
 import 'package:jage_app/tabs/page/Weather.dart';
 import 'package:jage_app/tabs/page/WeatherDetail.dart';
+import 'package:jage_app/tabs/page/princess/BattlePage.dart';
+import 'package:jage_app/tabs/page/princess/MusicPage.dart';
 import 'package:jage_app/theme.dart';
 import 'tabs/Tabs.dart';
 import 'tabs/page/NewPage.dart';
@@ -25,8 +31,13 @@ import 'tabs/page/Dinner.dart';
 import 'tabs/page/FloatBottomBar.dart';
 import 'tabs/page/BatteryInfo.dart';
 import 'tabs/page/FileManager.dart';
+import 'tabs/page/QuestionPage.dart';
+import 'tabs/page/FileSelectPage.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
+  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(JageApp());
 }
 
@@ -59,6 +70,16 @@ class JageApp extends StatelessWidget {
     '/weather': (context) => WeatherPage(),
     '/weatherDetail': (context) => WeatherDetailPage(),
     '/filemanager': (context) => FileManager(),
+    '/media': (context) => MediaPage(),
+    '/social': (context) => SocialPage(),
+    //'/getx': (context) => GetxTestPage(),
+    '/question': (context) => QuestionPage(),
+    '/selectUploadFile': (context, {arguments}) => FileSelectPage(
+          arguments: arguments,
+        ),
+    '/pcr': (context) => PrincessConnectPage(),
+    '/battle': (context) => BattlePage(),
+    '/music': (context) => MusicPage(),
   };
   JageApp({Key? key}) : super(key: key);
   @override

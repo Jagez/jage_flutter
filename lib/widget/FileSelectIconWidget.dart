@@ -24,13 +24,20 @@ class _FileSelectIconWidgetState extends State<FileSelectIconWidget> {
             //边框的颜色
             color: Color.fromRGBO(233, 233, 233, 0.7),
           ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.yellow,
+              blurRadius: 313.0,
+              spreadRadius: 213.0,
+            ),
+          ],
         ),
         child: Column(
           children: [
             Container(
               //width: 512.0,
               child: AspectRatio(
-                aspectRatio: 2.0 / 1.7,
+                aspectRatio: 2.0 / 1.7, //,
                 child: Container(
                   color: Colors.yellow,
                   child: Image.asset(
@@ -62,47 +69,56 @@ class _FileSelectIconWidgetState extends State<FileSelectIconWidget> {
     var data = fileTypeList.map((value) {
       return Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(40.0),
+          borderRadius: BorderRadius.circular(20.0),
           border: Border.all(color: Colors.white),
           color: Color(value["color"]),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.blueGrey,
+              offset: Offset(5.0, 10.0),
+              blurRadius: 13.0,
+              spreadRadius: 0.0,
+            ),
+          ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(value["icon"]),
             Container(
-              height: 60.0,
+              height: 40.0,
+              //设置最大最小宽高
               constraints: const BoxConstraints(
-                minHeight: 60.0,
+                minHeight: 30.0,
               ),
               child: Stack(
                 children: [
                   Align(
-                    alignment: Alignment(-0.6, -0.6),
+                    alignment: Alignment(-0.6, -1.0),
                     child: Text(
                       value["file_type"],
                       style: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 13.0,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                   Align(
-                    alignment: Alignment(-0.6, 0.6),
+                    alignment: Alignment(-0.6, 1.0),
                     child: Text(
-                      value["files"] + "Files",
+                      value["amount"] + "Files",
                       style: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 13.0,
                           color: Colors.white,
                           fontWeight: FontWeight.w300),
                     ),
                   ),
                   Align(
-                    alignment: Alignment(0.6, 0.6),
+                    alignment: Alignment(0.6, 1.0),
                     child: Text(
                       value["size"] + "MB",
                       style: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 13.0,
                           color: Colors.white,
                           fontWeight: FontWeight.normal),
                     ),
@@ -122,9 +138,12 @@ class _FileSelectIconWidgetState extends State<FileSelectIconWidget> {
       padding: EdgeInsets.all(15.0),
       crossAxisSpacing: 15.0, //水平间距
       mainAxisSpacing: 15.0, //垂直间距
+
       crossAxisCount: 2,
-      childAspectRatio: 1.5, //宽/高比例
+      //scrollDirection: Axis.horizontal,
+      //childAspectRatio: 1.5, //宽/高比例
       children: this._getFileTypeIcons(),
+      primary: false,
     );
   }
 }

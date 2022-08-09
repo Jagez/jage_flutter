@@ -295,3 +295,13 @@ List listData = [
         "在OpenGL渲染管线中，几何数据和纹理经过多次转化和多次测试，最后以二维像素的形式显示在屏幕上。OpenGL管线的最终渲染目的地被称作帧缓存（framebuffer）。帧缓冲是一些二维数组和OpenG所使用的存储区的集合：颜色缓存、深度缓存、模板缓存和累计缓存。一般情况下，帧缓存完全由window系统生成和管理，由OpenGL使用。这个默认的帧缓存被称作“window系统生成”（window-system-provided）的帧缓存。"
   }
 ];
+
+// List listPrincessConnectData = [
+//   {
+//     "ids" : [
+//       "100000"
+//     ],
+//     "isDouble": false,
+//     "" :
+//   }
+// ];

@@ -34,8 +34,8 @@ class _DesignPageState extends State<DesignPage> {
       child: ListView(
         children: [
           Container(
-            height: 200,
-            width: 200,
+            height: 20,
+            width: 20,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
               color: Color(0x18183A),
@@ -50,6 +50,15 @@ class _DesignPageState extends State<DesignPage> {
           ),
           MessageItemWidget(targetId: 10,),
           MessageItemWidget(targetId: 11,),
+          MessageItemWidget(targetId: 12,),
+          MessageItemWidget(targetId: 13,),
+          MessageItemWidget(targetId: 14,),
+          MessageItemWidget(targetId: 15,),
+          MessageItemWidget(targetId: 16,),
+          MessageItemWidget(targetId: 17,),
+          MessageItemWidget(targetId: 18,),
+          MessageItemWidget(targetId: 19,),
+          MessageItemWidget(targetId: 21,),
         ],
       ),
     ),
@@ -59,6 +68,7 @@ class _DesignPageState extends State<DesignPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       backgroundColor: _getBackgroundColor(1.0),
       appBar: AppBar(
         elevation: 0.0,

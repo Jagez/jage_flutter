@@ -24,8 +24,8 @@ class _TabsState extends State<Tabs> {
     NewsPage(),
   ];
 
-  
   var _position = 0;
+  bool bShowDetail = false;
   var _location = FloatingActionButtonLocation.centerDocked;
   final iconsMap = {
     "图鉴": Icons.home,
@@ -40,6 +40,7 @@ class _TabsState extends State<Tabs> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        extendBody: true, //bottombar缺口为透明
         appBar: AppBar(
           title: Text(
             "Jage Flutter",
@@ -72,7 +73,7 @@ class _TabsState extends State<Tabs> {
           child: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF592BBC),Color(0xFF8455E8)],
+                colors: [Color(0xFF592BBC), Color(0xFF8455E8)],
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
               ),
@@ -96,9 +97,23 @@ class _TabsState extends State<Tabs> {
                 //   ],
                 // ),
                 UserAccountsDrawerHeader(
+                  otherAccountsPictures: [
+                    FlutterLogo(
+                      textColor: Colors.green,
+                    ),
+                    FlutterLogo(
+                      textColor: Colors.green,
+                    ),
+                  ],
+                  arrowColor: Colors.white,
+                  onDetailsPressed: () {
+                    setState(() {
+                      bShowDetail = !bShowDetail;
+                    });
+                  },
                   decoration: BoxDecoration(
-              color: Color(0xFF8455E8),
-            ),
+                    color: Color(0xFF8455E8),
+                  ),
                   currentAccountPicture: CircleAvatar(
                     backgroundImage: AssetImage("assets/icon/a10.png"),
                   ),
@@ -108,17 +123,19 @@ class _TabsState extends State<Tabs> {
                       fontSize: 20.0,
                       color: Color(0xFF592BBC),
                     ),
-                  ), 
-                  accountEmail: Text(
-                    "lwk283587151@outlook.com",
-                    style: TextStyle(
-                      fontSize: 15.0,
-                      color: Color(0xFF592BBC),
-                    ),
+                  ),
+                  accountEmail: Container(
+                    child: Text(
+                          "lwk283587151@outlook.com",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: Color(0xFF592BBC),
+                          ),
+                        ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: ListTile(
                     leading: Image.asset("assets/icon/Songs.png"),
                     //trailing: ,
@@ -130,7 +147,7 @@ class _TabsState extends State<Tabs> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: ListTile(
                     leading: Image.asset("assets/icon/Songs.png"),
                     //trailing: ,
@@ -145,12 +162,12 @@ class _TabsState extends State<Tabs> {
             ),
           ),
         ),
-        
+
         body: this._tabsList[this._bottomNavIndex],
         //backgroundColor: Color.fromRGBO(30, 30, 30, 0.1),
         bottomNavigationBar: _buildBottomBar(),
         //backgroundColor: Colors.transparent,
-        
+
         // floatingActionButton: FloatingActionButton(
         //     child: Icon(
         //       Icons.add,
@@ -173,9 +190,7 @@ class _TabsState extends State<Tabs> {
         //     },
         //   ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            
-          },
+          onPressed: () {},
           child: Icon(Icons.add),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -187,99 +202,99 @@ class _TabsState extends State<Tabs> {
 
   Widget _buildBottomBar() {
     return BottomAppBar(
-      elevation: 0,
+      elevation: 2,
       shape: CircularNotchedRectangle(),
       color: Colors.yellow,
       notchMargin: 5,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        // children: [
-        //   Padding(
-        //     padding: EdgeInsets.all(10),
-        //     child: GestureDetector(
-        //       child: Wrap(
-        //         crossAxisAlignment: WrapCrossAlignment.center,
-        //         direction: Axis.vertical,
-        //         children: <Widget>[
-        //           Icon(Icons.home),
-        //           Text("Home"),
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        //   Padding(
-        //     padding: EdgeInsets.all(10),
-        //     child: GestureDetector(
-        //       onTap: (){
-        //         setState(() {
-        //         });
-        //       },
-        //       child: Wrap(
-        //         crossAxisAlignment: WrapCrossAlignment.center,
-        //         direction: Axis.vertical,
-        //         children: <Widget>[
-        //           Icon(Icons.category),
-        //           Text("Category"),
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        //   Padding(
-        //     padding: EdgeInsets.all(10),
-        //     child: GestureDetector(
-        //       onTap: (){
-        //         setState(() {
-        //         });
-        //       },
-        //       child: Wrap(
-        //         direction: Axis.vertical,
-        //         crossAxisAlignment: WrapCrossAlignment.center,
-        //         children: <Widget>[
-        //           Icon(Icons.settings),
-        //           Text("Setting"),
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        //   Padding(
-        //     padding: EdgeInsets.all(10),
-        //     child: GestureDetector(
-        //       onTap: (){
-        //         setState(() {
-        //         });
-        //       },
-        //       child: Wrap(
-        //         direction: Axis.vertical,
-        //         crossAxisAlignment: WrapCrossAlignment.center,
-        //         children: <Widget>[
-        //           Icon(Icons.people_outlined),
-        //           Text("Profile"),
-        //         ],
-        //       ),
-        //     ),
-        //   ),
-        //   // Padding(
-        //   //   padding: EdgeInsets.all(10),
-        //   //   child: GestureDetector(
-        //   //     onTap: (){
-        //   //       setState(() {
-        //   //         _bottomNavIndex = 3;
-        //   //       });
-        //   //     },
-        //   //     child: Wrap(
-        //   //       direction: Axis.vertical,
-        //   //       crossAxisAlignment: WrapCrossAlignment.center,
-        //   //       children: <Widget>[
-        //   //         Icon(Icons.people_outlined),
-        //   //         Text("Profile"),
-        //   //       ],
-        //   //     ),
-        //   //   ),
-        //   // )
-        // ],
+        children: [
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: GestureDetector(
+              child: Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                direction: Axis.vertical,
+                children: <Widget>[
+                  Icon(Icons.home),
+                  Text("Home"),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {});
+              },
+              child: Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                direction: Axis.vertical,
+                children: <Widget>[
+                  Icon(Icons.category),
+                  Text("Category"),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 30,
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {});
+              },
+              child: Wrap(
+                direction: Axis.vertical,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.settings),
+                  Text("Setting"),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {});
+              },
+              child: Wrap(
+                direction: Axis.vertical,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.people_outlined),
+                  Text("Profile"),
+                ],
+              ),
+            ),
+          ),
+          // Padding(
+          //   padding: EdgeInsets.all(10),
+          //   child: GestureDetector(
+          //     onTap: (){
+          //       setState(() {
+          //         _bottomNavIndex = 3;
+          //       });
+          //     },
+          //     child: Wrap(
+          //       direction: Axis.vertical,
+          //       crossAxisAlignment: WrapCrossAlignment.center,
+          //       children: <Widget>[
+          //         Icon(Icons.people_outlined),
+          //         Text("Profile"),
+          //       ],
+          //     ),
+          //   ),
+          // )
+        ],
 
-        children: info.asMap().keys.map((i) => _buildChild(i)).toList()
-            ..insertAll(isCenter ? 2 : 4, [SizedBox(width: 30)]),
+        // children: info.asMap().keys.map((i) => _buildChild(i)).toList()
+        //     ..insertAll(isCenter ? 2 : 4, [SizedBox(width: 30)]),
       ),
     );
   }
@@ -311,5 +326,4 @@ class _TabsState extends State<Tabs> {
       ),
     );
   }
-
 }

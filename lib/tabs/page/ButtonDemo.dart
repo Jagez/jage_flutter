@@ -87,7 +87,8 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: _flag ? Color.fromRGBO(65, 193, 242, 1.0) : Color.fromRGBO(0, 172, 237, 1.0),
+                color: _flag ? Color.fromRGBO(65, 193, 242, 1.0) 
+                            : Color.fromRGBO(0, 172, 237, 1.0),
                 borderRadius: BorderRadius.circular(40),
                 border: Border.all(color: Colors.white),
               ),
@@ -129,8 +130,9 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
               ),
             ),
             DropdownButton(
-              value: curStr,
               underline: Container(color: const Color(0x00ff00ff), height: 1,),
+              //disabled  指定value和onChanged为null
+              value: curStr,
               onChanged: (dynamic value){
                 setState(() {
                   curStr = value;
@@ -143,6 +145,13 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                   child: Text(value),
                 );
               }).toList(),
+              //指定图标
+              icon: const Icon(Icons.flutter_dash),
+              isExpanded: true,
+              //文本样式
+              style: TextStyle(
+
+              ),
             ),
           ],
         ),

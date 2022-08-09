@@ -41,11 +41,8 @@ class _StepLineData {
   _StepLineData(this.xData, this.yData);
 }
 
-
 class _ChartPageState extends State<ChartPage> {
-
-  
-late int _touchIndex = -1;
+  late int _touchIndex = -1;
 
   PyramidSeries<ChartSampleData, String> _getPyramidSeriesData() {
     return PyramidSeries<ChartSampleData, String>(
@@ -128,47 +125,45 @@ late int _touchIndex = -1;
     _ColumnData("dk", 200),
   ];
 
-
   List<PieChartSectionData> _getPieChartData() {
     return List.generate(4, (index) {
-    final bool isTouched = index == _touchIndex;
-    final double fontSize = isTouched ? 25.0 : 16.0;
-    final double radius = isTouched ? 60.0 : 50.0;
-    switch (index) {
-      case 0:
-        return PieChartSectionData(
-          color: Color(0xFF508AFF),
-          value: 40.0,
-          title: '40%',
-          radius: radius,
-        );
-      case 1:
-        return PieChartSectionData(
-          color: Color(0xFFFFC355),
-          value: 10.0,
-          title: '10%',
-          radius: radius,
-        );
-      case 2:
-        return PieChartSectionData(
-          color: Color(0xFFFF7EAD),
-          value: 5.0,
-          title: '5%',
-          radius: radius,
-        );
-      case 3:
-        return PieChartSectionData(
-          color: Color(0xFF8255FF),
-          value: 45.0,
-          title: '45%',
-          radius: radius,
-        );
-      default:
-        throw Error();
-    }
-  });
+      final bool isTouched = index == _touchIndex;
+      final double fontSize = isTouched ? 25.0 : 16.0;
+      final double radius = isTouched ? 60.0 : 50.0;
+      switch (index) {
+        case 0:
+          return PieChartSectionData(
+            color: Color(0xFF508AFF),
+            value: 40.0,
+            title: '40%',
+            radius: radius,
+          );
+        case 1:
+          return PieChartSectionData(
+            color: Color(0xFFFFC355),
+            value: 10.0,
+            title: '10%',
+            radius: radius,
+          );
+        case 2:
+          return PieChartSectionData(
+            color: Color(0xFFFF7EAD),
+            value: 5.0,
+            title: '5%',
+            radius: radius,
+          );
+        case 3:
+          return PieChartSectionData(
+            color: Color(0xFF8255FF),
+            value: 45.0,
+            title: '45%',
+            radius: radius,
+          );
+        default:
+          throw Error();
+      }
+    });
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -186,35 +181,197 @@ late int _touchIndex = -1;
                 SfCartesianChart(
                     onMarkerRender: (MarkerRenderArgs markerargs) {
                       if (markerargs.pointIndex == 2) {
-                        markerargs.markerHeight = 40.0;
-                        markerargs.markerWidth = 40.0;
-                        markerargs.shape = DataMarkerType.triangle;
+                        markerargs.markerHeight = 10.0;
+                        markerargs.markerWidth = 10.0;
+                        markerargs.shape = DataMarkerType.circle;
+                        markerargs.color = Colors.blueAccent;
+                      } else {
+                        markerargs.markerHeight = 10.0;
+                        markerargs.markerWidth = 10.0;
+                        markerargs.shape = DataMarkerType.circle;
                       }
-                      markerargs.markerHeight = 40.0;
-                      markerargs.markerWidth = 40.0;
-                      markerargs.shape = DataMarkerType.triangle;
-                      print(markerargs.toString());
+
+                      //print(markerargs.toString());
                     },
                     onLegendTapped: (LegendTapArgs legendTapArgs) {
                       print(legendTapArgs.toString());
                     },
                     primaryXAxis: CategoryAxis(),
+                    primaryYAxis: NumericAxis(
+                      minimum: 0.0,
+                      maximum: 300.0,
+                    ),
                     title: ChartTitle(text: "test SfCartesianChart"),
                     legend: Legend(isVisible: true),
                     tooltipBehavior: TooltipBehavior(enable: true),
                     series: <LineSeries<_PieData, String>>[
                       LineSeries(
+                        name: "免费单发",
                         dataSource: <_PieData>[
-                          _PieData("jan", 35),
-                          _PieData("Feb", 28),
-                          _PieData("apr", 32),
-                          _PieData("may", 40),
+                          _PieData("凯露（夏日）", 0),
+                          _PieData("珠希（夏日）", 141),
+                          _PieData("环奈", 2),
+                          _PieData("忍（万圣节）", 1),
+                          _PieData("克里斯提娜", 3),
+                          _PieData("环奈（振袖）", 0),
+                          _PieData("雷姆", 2),
+                          _PieData("复刻：凯露（夏日）·佩可莉姆（夏日）", 3),
+                          _PieData("真琴（夏日）", 7),
+                          _PieData("复刻：玲莓（夏日）·珠希（夏日）", 3),
+                          _PieData("真步（夏日）", 120),
+                          _PieData("似似花", 16),
+                          _PieData("镜华（万圣节）", 4),
+                          _PieData("露娜", 4),
+                          _PieData("复刻：千歌（圣诞节）·绫音（圣诞节）", 0),
+                          _PieData("伊莉雅（圣诞节）", 10),
+                          _PieData("凯露（新年）", 20),
+                          _PieData("复刻：日和莉（新年）·优依（新年）", 20),
+                          _PieData("可可萝（新年）", 3),
+                          _PieData("佩可莉姆（公主）", 44),
+                          _PieData("复刻：静流（情人节）", 40),
                         ],
                         xValueMapper: (_PieData pieData, _) => pieData.xData,
                         yValueMapper: (_PieData pieData, _) => pieData.yData,
                         dataLabelSettings: DataLabelSettings(isVisible: true),
+                        markerSettings: MarkerSettings(
+                          isVisible: true,
+                          shape: DataMarkerType.circle,
+                          borderColor: Colors.red,
+                        ),
+                      ),
+                      LineSeries(
+                        name: "免费钻石",
+                        dataSource: <_PieData>[
+                          _PieData("凯露（夏日）", 300),
+                          _PieData("珠希（夏日）", 0),
+                          _PieData("环奈", 20),
+                          _PieData("忍（万圣节）", 110),
+                          _PieData("克里斯提娜", 0),
+                          _PieData("环奈（振袖）", 300),
+                          _PieData("雷姆", 0),
+                          _PieData("复刻：凯露（夏日）·佩可莉姆（夏日）", 80),
+                          _PieData("真琴（夏日）", 30),
+                          _PieData("复刻：玲莓（夏日）·珠希（夏日）", 190),
+                          _PieData("真步（夏日）", 0),
+                          _PieData("似似花", 0),
+                          _PieData("镜华（万圣节）", 296),
+                          _PieData("露娜", 2),
+                          _PieData("复刻：千歌（圣诞节）·绫音（圣诞节）", 300),
+                          _PieData("伊莉雅（圣诞节）", 0),
+                          _PieData("凯露（新年）", 20),
+                          _PieData("复刻：日和莉（新年）·优依（新年）", 20),
+                          _PieData("可可萝（新年）", 60),
+                          _PieData("佩可莉姆（公主）", 0),
+                          _PieData("复刻：静流（情人节）", 50),
+                        ],
+                        xValueMapper: (_PieData pieData, _) => pieData.xData,
+                        yValueMapper: (_PieData pieData, _) => pieData.yData,
+                        dataLabelSettings: DataLabelSettings(isVisible: true),
+                        markerSettings: MarkerSettings(isVisible: true),
                       ),
                     ]),
+                Container(
+                  height: 1200.0,
+                  width: double.infinity,
+                  child: SfCartesianChart(
+                      // onMarkerRender: (MarkerRenderArgs markerargs) {
+                      //   if (markerargs.pointIndex == 2) {
+                      //     markerargs.markerHeight = 10.0;
+                      //     markerargs.markerWidth = 10.0;
+                      //     markerargs.shape = DataMarkerType.circle;
+                      //     markerargs.color = Colors.blueAccent;
+                      //   } else {
+                      //     markerargs.markerHeight = 10.0;
+                      //     markerargs.markerWidth = 10.0;
+                      //     markerargs.shape = DataMarkerType.circle;
+                      //   }
+
+                      //   //print(markerargs.toString());
+                      // },
+                      // onLegendTapped: (LegendTapArgs legendTapArgs) {
+                      //   print(legendTapArgs.toString());
+                      // },
+                      primaryXAxis: CategoryAxis(),
+                      primaryYAxis: NumericAxis(
+                        minimum: 0.0,
+                        maximum: 300.0,
+                        interval: 50.0,
+                      ),
+                      title: ChartTitle(text: "test SfCartesianChart"),
+                      legend: Legend(isVisible: true),
+                      tooltipBehavior: TooltipBehavior(enable: true),
+                      series: <BarSeries<_PieData, String>>[
+                        BarSeries(
+                          name: "免费单发",
+                          color: Color.fromRGBO(8, 142, 255, 1),
+                          dataSource: <_PieData>[
+                            _PieData("凯露（夏日）·弃", 0),
+                            _PieData("珠希（夏日）·弃", 141),
+                            _PieData("环奈·弃", 2),
+                            _PieData("忍（万圣节）", 1),
+                            _PieData("克里斯提娜·弃", 3),
+                            _PieData("矛依未", 110),
+                            _PieData("环奈（振袖）·环奈", 0),
+                            _PieData("雷姆", 2),
+                            _PieData("水黑·水吃", 3),
+                            _PieData("真琴（夏日）", 7),
+                            _PieData("水女仆·水猫剑·女仆弃", 3),
+                            _PieData("真步（夏日）·弃", 120),
+                            _PieData("似似花", 16),
+                            _PieData("镜华（万圣节）", 4),
+                            _PieData("露娜", 4),
+                            _PieData("复刻：圣千歌·圣锤", 0),
+                            _PieData("伊莉雅（圣诞节）", 10),
+                            _PieData("凯露（新年）", 20),
+                            _PieData("春猫·春田", 6),
+                            _PieData("可可萝（新年）", 3),
+                            _PieData("佩可莉姆（公主）", 44),
+                            _PieData("复刻：静流（情人节）", 40),
+                            _PieData("可可萝（公主）", 0),
+                            _PieData("优衣（公主）", 1),
+                            _PieData("流夏（夏日）", 1),
+                          ],
+                          xValueMapper: (_PieData pieData, _) => pieData.xData,
+                          yValueMapper: (_PieData pieData, _) => pieData.yData,
+                          dataLabelSettings: DataLabelSettings(isVisible: true),
+                        ),
+                        BarSeries(
+                          name: "免费钻石",
+                          dataSource: <_PieData>[
+                            _PieData("凯露（夏日）·弃", 300),
+                            _PieData("珠希（夏日）·弃", 0),
+                            _PieData("环奈·弃", 20),
+                            _PieData("忍（万圣节）", 110),
+                            _PieData("克里斯提娜·弃", 0),
+                            _PieData("矛依未", 0),
+                            _PieData("环奈（振袖）·环奈", 300),
+                            _PieData("雷姆", 0),
+                            _PieData("水黑·水吃", 80),
+                            _PieData("真琴（夏日）", 30),
+                            _PieData("水女仆·水猫剑·女仆弃", 190),
+                            _PieData("真步（夏日）·弃", 0),
+                            _PieData("似似花", 0),
+                            _PieData("镜华（万圣节）", 296),
+                            _PieData("露娜", 2),
+                            _PieData("复刻：圣千歌·圣锤", 300),
+                            _PieData("伊莉雅（圣诞节）", 0),
+                            _PieData("凯露（新年）", 20),
+                            _PieData("春猫·春田", 294),
+                            _PieData("可可萝（新年）", 60),
+                            _PieData("佩可莉姆（公主）", 0),
+                            _PieData("复刻：静流（情人节）", 50),
+                            _PieData("可可萝（公主）", 40),
+                            _PieData("优衣（公主）", 32),
+                            _PieData("流夏（夏日）", 21),
+                          ],
+                          xValueMapper: (_PieData pieData, _) => pieData.xData,
+                          yValueMapper: (_PieData pieData, _) => pieData.yData,
+                          dataLabelSettings: DataLabelSettings(isVisible: true),
+                          //markerSettings: MarkerSettings(isVisible: true),
+                        ),
+                      ]),
+                ),
+
                 Container(
                   height: 250.0,
                   width: double.infinity,
@@ -372,7 +529,7 @@ late int _touchIndex = -1;
                     ColumnSeries(
                       dataSource: _chartColumnSeriesData,
                       xValueMapper: (_ColumnData data, _) => data.x as String,
-                      yValueMapper: (_ColumnData data, _) => data.y,
+                      yValueMapper: (_ColumnData data, _) => data.y as num,
                       emptyPointSettings: EmptyPointSettings(
                         mode: EmptyPointMode.drop,
                         color: Colors.red,

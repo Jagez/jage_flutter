@@ -1,0 +1,17 @@
+# flutter_native_splash-development.yaml
+flutter_native_splash:
+  color: "#ffffff"
+  image: images/maou/post-image-5329941.png
+  # 2.0.0 版本以上？
+  branding: images/4.0x/icon_quest_31002.png
+  color_dark: "#121212"
+  image_dark: images/maou/post-image-5329941.png
+  branding_dark: images/4.0x/icon_quest_31002.png
+
+  android_12:
+    image: images/maou/post-image-5329941.png
+    icon_background_color: "#ffffff"
+    image_dark: images/maou/post-image-5329941.png
+    icon_background_color_dark: "#121212"
+
+  web: false

@@ -121,6 +121,32 @@ class _DemoListWidgetState extends State<DemoListWidget> {
           children: [
             ElevatedButton(
               onPressed: () {
+                
+                Navigator.pushNamed(context, '/pcr');
+              },
+              child: Text("公主连结 Re:dive!"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                
+                Navigator.pushNamed(context, '/question');
+              },
+              child: Text("知识问答"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/social');
+              },
+              child: Text("social"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/media');
+              },
+              child: Text("media"),
+            ),
+            ElevatedButton(
+              onPressed: () {
                 Navigator.pushNamed(context, '/filemanager');
               },
               child: Text("filemanager"),

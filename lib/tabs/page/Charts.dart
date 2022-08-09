@@ -84,6 +84,7 @@ class _ChartsPageState extends State<ChartsPage> {
                         child: Image.asset(
                           "assets/icon/voice1_2x.png",
                           width: 30.0,
+                          color: Color.fromRGBO(8, 255, 255, 1.0),
                         ),
                       ),
                     ),
@@ -122,6 +123,7 @@ class _ChartsPageState extends State<ChartsPage> {
                             ),
                           ),
                           textAlign: TextAlign.left,
+                          onChanged: (str) {},
                           style: TextStyle(
                             color: Colors.white60,
                             fontSize: 15.0,
@@ -143,6 +145,7 @@ class _ChartsPageState extends State<ChartsPage> {
                         child: Image.asset(
                           "assets/icon/emot2_2x.png",
                           width: 30.0,
+                          color: Color.fromRGBO(8, 255, 255, 1.0),
                         ),
                       ),
                     ),
@@ -152,7 +155,7 @@ class _ChartsPageState extends State<ChartsPage> {
                     child: Padding(
                       padding: EdgeInsets.only(left: 5.0, right: 5.0),
                       child: GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           //print(widget.arguments["targetId"]);
                         },
                         child: Container(
@@ -164,6 +167,7 @@ class _ChartsPageState extends State<ChartsPage> {
                           child: Image.asset(
                             "assets/icon/file2_2x.png",
                             width: 30.0,
+                            color: Color.fromRGBO(8, 255, 255, 1.0),
                           ),
                         ),
                       ),
