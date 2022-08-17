@@ -17,8 +17,6 @@ class _DesignPageState extends State<DesignPage> {
   static Map _bgTheme = {'r': 24, 'g': 24, 'b': 58};
   double point = 0.00;
 
-  
-
   static Color _getBackgroundColor(double opacity) {
     return Color.fromRGBO(_bgColor['r'], _bgColor['g'], _bgColor['b'], opacity);
   }
@@ -27,7 +25,7 @@ class _DesignPageState extends State<DesignPage> {
     return Color.fromRGBO(_bgTheme['r'], _bgTheme['g'], _bgTheme['b'], opacity);
   }
 
-  static  List<Widget> _widgetOptions = <Widget>[
+  static List<Widget> _widgetOptions = <Widget>[
     Container(
       width: double.infinity,
       color: _getBackgroundColor(1.0),
@@ -43,22 +41,46 @@ class _DesignPageState extends State<DesignPage> {
             child: Row(
               children: [
                 Text("data"),
-                SizedBox(width: 30,),
+                SizedBox(
+                  width: 30,
+                ),
                 Text("data"),
               ],
             ),
           ),
-          MessageItemWidget(targetId: 10,),
-          MessageItemWidget(targetId: 11,),
-          MessageItemWidget(targetId: 12,),
-          MessageItemWidget(targetId: 13,),
-          MessageItemWidget(targetId: 14,),
-          MessageItemWidget(targetId: 15,),
-          MessageItemWidget(targetId: 16,),
-          MessageItemWidget(targetId: 17,),
-          MessageItemWidget(targetId: 18,),
-          MessageItemWidget(targetId: 19,),
-          MessageItemWidget(targetId: 21,),
+          MessageItemWidget(
+            targetId: 10,
+          ),
+          MessageItemWidget(
+            targetId: 11,
+          ),
+          MessageItemWidget(
+            targetId: 12,
+          ),
+          MessageItemWidget(
+            targetId: 13,
+          ),
+          MessageItemWidget(
+            targetId: 14,
+          ),
+          MessageItemWidget(
+            targetId: 15,
+          ),
+          MessageItemWidget(
+            targetId: 16,
+          ),
+          MessageItemWidget(
+            targetId: 17,
+          ),
+          MessageItemWidget(
+            targetId: 18,
+          ),
+          MessageItemWidget(
+            targetId: 19,
+          ),
+          MessageItemWidget(
+            targetId: 21,
+          ),
         ],
       ),
     ),
@@ -119,7 +141,7 @@ class _DesignPageState extends State<DesignPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Container(
         height: 70.0,
-        //color: Color.fromRGBO(30, 30, 73, 0.0),   //不能与decoration的color一起使用
+        //color: Color.fromRGBO(30, 30, 73, 0.0), //不能与decoration的color一起使用
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20),
@@ -135,6 +157,8 @@ class _DesignPageState extends State<DesignPage> {
           backgroundColor: Color.fromRGBO(255, 255, 255, 0.0),
           selectedLabelStyle: TextStyle(fontSize: 12.0, fontFamily: "SAO"),
           unselectedLabelStyle: TextStyle(fontSize: 12.0, fontFamily: "SAO"),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
           onTap: (index) {
             setState(() {
               this._index = index;

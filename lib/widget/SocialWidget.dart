@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jage_app/function/SocialInfo.dart';
 import 'package:jage_app/widget/MediaWidget.dart';
 
 import 'ContentText.dart';
-
-class SocialInfo {
-  final String header;
-  final String title;
-  final String subtitle;
-  final String content;
-  SocialInfo(Key? key, this.header, this.title, this.content, this.subtitle) {}
-}
 
 class SocialWidget extends StatefulWidget {
   final SocialInfo info;
@@ -39,9 +32,10 @@ class _SocialWidgetState extends State<SocialWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ListTile(
+            dense: true,
             leading: CircleAvatar(
               backgroundImage: Image.network(widget.info.header)
-                  .image, //"http://jage.cktyun.com/1.png"
+                  .image, //"http://jage.cktyun.com/a.png"
             ),
             title: Text(
               "飞天神喵",
@@ -65,7 +59,7 @@ class _SocialWidgetState extends State<SocialWidget> {
               },
             ),
           ),
-          MediaWidget(),
+          //MediaWidget(),
           Container(
             child: Wrap(
               //direction: Axis.horizontal,
@@ -113,22 +107,34 @@ class _SocialWidgetState extends State<SocialWidget> {
           ),
           Row(
             children: [
-              Icon(
-                Icons.thumb_up_outlined,
-                color: Theme.of(context).primaryColor,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.thumb_up_outlined,
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
-              Icon(
-                Icons.forum_outlined,
-                color: Theme.of(context).primaryColor,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.forum_outlined,
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
-              Icon(
-                Icons.share_outlined,
-                color: Theme.of(context).primaryColor,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.share_outlined,
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
               Spacer(),
-              Icon(
-                Icons.more_horiz,
-                color: Theme.of(context).primaryColor,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.more_horiz,
+                  color: Theme.of(context).primaryColor,
+                ),
               )
             ],
           )

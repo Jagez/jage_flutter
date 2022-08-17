@@ -13,11 +13,12 @@ class _ChartsContentState extends State<ChartsContent> {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       //crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
           child: Container(
-            margin: EdgeInsets.fromLTRB(20, 5, 20, 10),
+            margin: EdgeInsets.fromLTRB(20, 15, 5, 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20.0),
@@ -43,6 +44,10 @@ class _ChartsContentState extends State<ChartsContent> {
             ),
           ),
         ),
+        CircleAvatar(
+          backgroundImage: Image.network("http://jage.cktyun.com/a.png")
+              .image, //"http://jage.cktyun.com/a.png"
+        )
       ],
     );
   }
