@@ -33,7 +33,7 @@ class _ContentTextWidgetState extends State<ContentTextWidget> {
     return Container(
       //decoration: _decoration,
       child: LayoutBuilder(
-        builder: (context, size) {
+        builder: (BuildContext context, BoxConstraints constraints) {
           final painter = TextPainter(
             text: TextSpan(
               text: _contentText,
@@ -41,7 +41,8 @@ class _ContentTextWidgetState extends State<ContentTextWidget> {
             maxLines: contentMaxLines,
             textDirection: _textDirection,
           );
-          painter.layout(maxWidth: size.maxWidth);
+          print("width: $constraints.minWidth");
+          painter.layout(maxWidth: constraints.maxWidth);
           if (!painter.didExceedMaxLines) {
             return Text(
               _contentText,

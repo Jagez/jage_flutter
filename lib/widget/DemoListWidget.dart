@@ -188,6 +188,31 @@ class _DemoListWidgetState extends State<DemoListWidget> {
                   },
                   child: Text("最后的晚餐"),
                 ),
+                TextField(
+                  autofocus: false,
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(12.0),
+                    hintText: "Message",
+                    hintStyle: TextStyle(
+                      color: Colors.white30,
+                      fontSize: 15.0,
+                      fontFamily: "SAO",
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.red,
+                        style: BorderStyle.solid,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    color: Colors.white60,
+                    fontSize: 15.0,
+                  ),
+                ),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/sewa');
@@ -504,6 +529,9 @@ class _DemoListWidgetState extends State<DemoListWidget> {
                       },
                     )
                   ],
+                ),
+                SizedBox(
+                  height: 70,
                 ),
               ],
             ),

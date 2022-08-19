@@ -126,12 +126,12 @@ class _TabsState extends State<Tabs> {
                   ),
                   accountEmail: Container(
                     child: Text(
-                          "lwk283587151@outlook.com",
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            color: Color(0xFF592BBC),
-                          ),
-                        ),
+                      "lwk283587151@outlook.com",
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Color(0xFF592BBC),
+                      ),
+                    ),
                   ),
                 ),
                 Padding(

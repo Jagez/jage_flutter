@@ -11,6 +11,8 @@ class _PrincessConnectPageState extends State<PrincessConnectPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(33, 34, 65, 1.0),
+      extendBody: true,
       appBar: AppBar(
         title: Text("公主连结"),
       ),

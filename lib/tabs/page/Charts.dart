@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../../widget/PopupMenu.dart';
@@ -16,18 +18,51 @@ class _ChartsPageState extends State<ChartsPage> {
   final ValueNotifier<String> mSendButton =
       ValueNotifier<String>("assets/icon/file2_2x.png");
 
-  List<Widget> mMessagesList = <Widget>[];
-
+  final ValueNotifier<List<Widget>> mMessagesList =
+      ValueNotifier<List<Widget>>([]);
+  String mMessage = "";
+  FocusNode _focusNode = FocusNode();
+  TextEditingController _textEditingController = TextEditingController();
+  ScrollController _scrollController = ScrollController();
   @override
   void initState() {
     super.initState();
-    mMessagesList.add(SizedBox(
-      height: 70.0,
+    _textEditingController.addListener(() {
+      mMessage = _textEditingController.text;
+    });
+    //_scrollController.keepScrollOffset;
+    mMessagesList.value.add(ChartsContent(arguments: {
+      "contentText": "士大夫精神的粉红色短裤",
+      'textDirection': TextDirection.rtl, //
+      'textStyle': TextStyle(
+        color: Color.fromRGBO(244, 244, 247, 1.0),
+      ),
+    }));
+    mMessagesList.value.add(ChartsContent(arguments: {
+      "contentText": "及我为哦为哦哦",
+      'textDirection': TextDirection.rtl, //
+      'textStyle': TextStyle(
+        color: Color.fromRGBO(244, 244, 247, 1.0),
+      ),
+    }));
+    mMessagesList.value.add(ChartsContent(arguments: {
+      "contentText":
+          "keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDragkeyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag",
+      'textDirection': TextDirection.rtl, //
+      'textStyle': TextStyle(
+        color: Color.fromRGBO(244, 244, 247, 1.0),
+      ),
+    }));
+    mMessagesList.value.add(ChartsContent(arguments: {
+      "contentText": "据欸金额开具的空姐哦哦哦",
+      'textDirection': TextDirection.rtl, //
+      'textStyle': TextStyle(
+        color: Color.fromRGBO(244, 244, 247, 1.0),
+      ),
+    }));
+    mMessagesList.value.add(SizedBox(
+      height: 70,
     ));
-    mMessagesList.add(ChartsContent());
-    mMessagesList.add(ChartsContent());
-    mMessagesList.add(ChartsContent());
-    mMessagesList.add(ChartsContent());
   }
 
   @override
@@ -78,33 +113,30 @@ class _ChartsPageState extends State<ChartsPage> {
           children: [
             //Spacer(),
             //_buildMessageList(),
-            ListView.builder(
-              shrinkWrap: true,
-              reverse: true,
-              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              itemBuilder: (context, index) {
-                return mMessagesList[index];
-              },
+
+            ValueListenableBuilder<List<Widget>>(
+              builder: _buildList,
+              valueListenable: mMessagesList,
             ),
-            ListView(
-              shrinkWrap: true,
-              reverse: true,
-              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              children: [
-                SizedBox(
-                  height: 70.0,
-                ),
-                ChartsContent(),
-                ChartsContent(),
-                ChartsContent(),
-                ChartsContent(),
-                ChartsContent(),
-                ChartsContent(),
-                ChartsContent(),
-                ChartsContent(),
-                ChartsContent(),
-              ],
-            ),
+            // ListView(
+            //   shrinkWrap: true,
+            //   reverse: true,
+            //   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            //   children: [
+            //     SizedBox(
+            //       height: 70.0,
+            //     ),
+            //     ChartsContent(),
+            //     ChartsContent(),
+            //     ChartsContent(),
+            //     ChartsContent(),
+            //     ChartsContent(),
+            //     ChartsContent(),
+            //     ChartsContent(),
+            //     ChartsContent(),
+            //     ChartsContent(),
+            //   ],
+            // ),
             ////_buildMessageInput(),
             Align(
               alignment: Alignment(1, 1),
@@ -192,10 +224,14 @@ class _ChartsPageState extends State<ChartsPage> {
                     ),
                   ),
                   textAlign: TextAlign.left,
+                  controller: _textEditingController,
                   //判断文本框是否为空,不为空则需改变按钮
                   onChanged: (str) {
                     if (str.isNotEmpty) {
                       mSendButton.value = "assets/icon/send.png";
+                      setState(() {
+                        mMessage = str;
+                      });
                     } else {
                       mSendButton.value = "assets/icon/file2_2x.png";
                     }
@@ -232,7 +268,37 @@ class _ChartsPageState extends State<ChartsPage> {
               padding: EdgeInsets.only(left: 5.0, right: 5.0),
               child: GestureDetector(
                 onTap: () {
-                  //print(widget.arguments["targetId"]);
+                  print(mMessage);
+                  //清除输入框的焦点
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  setState(() {
+                    mMessagesList.value[mMessagesList.value.length - 1] =
+                        ChartsContent(arguments: {
+                      //'id': Random().nextInt(100),
+                      "contentText": mMessage,
+                      'textDirection': TextDirection.rtl, //
+                      'textStyle': TextStyle(
+                        color: Color.fromRGBO(244, 244, 247, 1.0),
+                      ),
+                    });
+                    //mMessagesList.value.add();
+                    mMessagesList.value.add(Expanded(
+                      flex: 0,
+                      child: SizedBox(
+                        height: 70,
+                      ),
+                    ));
+                    // _scrollController.animateTo(1,
+                    //     duration: Duration(milliseconds: 300),
+                    //     curve: Curves.ease);
+                  });
+                  mSendButton.value = "assets/icon/file2_2x.png";
+                  _textEditingController.clear();
+                  //不能在数据刷新之前滑动，所以加个延时动作
+                  Future.delayed(Duration(milliseconds: 300), () {
+                    _scrollController
+                        .jumpTo(_scrollController.position.maxScrollExtent);
+                  });
                 },
                 child: ValueListenableBuilder<String>(
                   builder: _buildIcon,
@@ -261,10 +327,32 @@ class _ChartsPageState extends State<ChartsPage> {
     );
   }
 
+  ListView _buildList(BuildContext context, List<Widget> list, Widget? child) {
+    return ListView.builder(
+      controller: _scrollController,
+      itemCount: list.length,
+      shrinkWrap: true,
+      reverse: false,
+      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+      itemBuilder: (context, index) {
+        // if (list.length < index) {
+        //   return list[index];
+        // } else {
+        //   return SizedBox(
+        //     height: 70,
+        //   );
+        // }
+        return list[index];
+      },
+    );
+  }
+
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
     mSendButton.dispose();
+    mMessagesList.dispose();
+    _textEditingController.dispose();
   }
 }
