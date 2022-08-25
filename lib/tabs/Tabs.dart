@@ -40,6 +40,7 @@ class _TabsState extends State<Tabs> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         extendBody: true, //bottombar缺口为透明
         appBar: AppBar(
           title: Text(

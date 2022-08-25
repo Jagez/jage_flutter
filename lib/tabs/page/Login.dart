@@ -9,6 +9,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  FocusNode emailFocusNode = FocusNode();
+  FocusNode pwdFocusNode = FocusNode();
+  //FocusScopeNode focusScopeNode = FocusScopeNode();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,39 +59,116 @@ class _LoginPageState extends State<LoginPage> {
                     bottomRight: Radius.circular(10.0),
                   ),
                 ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
-                      child: CupertinoTextField(
-                        placeholder: "Username",
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
-                      child: CupertinoTextField(
-                        obscureText: true,
-                        obscuringCharacter: '*',
-                        placeholder: "Password",
-                        style: TextStyle(),
-                      ),
-                    ),
-                    ButtonBar(
-                      alignment: MainAxisAlignment.center,
-                      buttonPadding: EdgeInsets.only(left: 20, right: 20),
-                      children: [
-                        ElevatedButton(
-                          child: Text("Login In"),
-                          onPressed: () {},
+                child: Form(
+                  key: widget.key,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          focusNode: emailFocusNode,
+                          //键盘显示聚焦到下一个输入框,即下一项
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (value) {
+                            // bool res = FocusScope.of(context).nextFocus();
+                            // print(res);
+                            FocusScope.of(context).requestFocus(pwdFocusNode);
+                          },
+                          decoration: InputDecoration(
+                            labelText: "Email",
+                            //顶部文本在输入内容时显示
+                            floatingLabelBehavior: FloatingLabelBehavior.auto,
+                            contentPadding: EdgeInsets.all(12.0),
+                            //未聚焦时下划线的颜色
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color.fromRGBO(2, 180, 254, 1.0),
+                              ),
+                            ),
+                            //聚焦时下划线的颜色
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.green,
+                                width: 2,
+                              ),
+                            ),
+                            hintText: "Email",
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 15.0,
+                              fontFamily: "SAO",
+                            ),
+                          ),
+                          keyboardType: TextInputType.emailAddress,
+                          onChanged: (value) {},
                         ),
-                        ElevatedButton(
-                          child: Text("Sign Up"),
-                          onPressed: () {},
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+                        child: TextFormField(
+                          focusNode: pwdFocusNode,
+                          textInputAction: TextInputAction.done,
+                          decoration: InputDecoration(
+                            labelText: "Password",
+                            floatingLabelBehavior: FloatingLabelBehavior.auto,
+                            contentPadding: EdgeInsets.all(12.0),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color.fromRGBO(2, 180, 254, 1.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.green,
+                                width: 2,
+                              ),
+                            ),
+                            hintText: "Password",
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 15.0,
+                              fontFamily: "SAO",
+                            ),
+                            // border: OutlineInputBorder(
+                            //   borderSide: BorderSide(
+                            //     color: Colors.red,
+                            //     style: BorderStyle.solid,
+                            //     width: 1.0,
+                            //   ),
+                            //   borderRadius: BorderRadius.circular(15),
+                            // ),
+                          ),
+                          //密文
+                          obscureText: true,
+                          //enableSuggestions: true,
+                          onChanged: (vlaue) {},
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
+              ),
+              ButtonBar(
+                alignment: MainAxisAlignment.center,
+                buttonPadding: EdgeInsets.only(left: 30, right: 30),
+                children: [
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                          Color.fromRGBO(2, 180, 254, 1.0)),
+                    ),
+                    child: Text("Login In"),
+                    onPressed: () {},
+                  ),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                          Color.fromRGBO(2, 180, 254, 1.0)),
+                    ),
+                    child: Text("Sign Up"),
+                    onPressed: () {},
+                  ),
+                ],
               ),
             ],
           ),
