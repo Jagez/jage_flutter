@@ -27,11 +27,11 @@ public class MainActivity extends FlutterActivity {
             //设置透明顶部状态栏
             getWindow().setStatusBarColor(0);
             //全屏，即隐藏状态栏
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
             //显示状态栏
             //getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-           getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                   | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        //    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        //            | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
 }
