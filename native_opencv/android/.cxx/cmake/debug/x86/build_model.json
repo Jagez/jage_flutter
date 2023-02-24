@@ -21,7 +21,7 @@
       ],
       "buildRoot": "E:\\flutter_project\\jage_app\\native_opencv\\android\\.cxx\\cmake\\debug\\x86",
       "cmakeToolchain": "E:\\Android\\android-sdk-windows\\ndk\\23.1.7779620\\build\\cmake\\android.toolchain.cmake",
-      "cmakeExecutable": "E:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "cmakeExecutable": "C:\\Users\\LWK28\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
       "variables": [
         {
           "name": "CMAKE_CXX_FLAGS",
@@ -73,7 +73,7 @@
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
-          "value": "E:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+          "value": "C:\\Users\\LWK28\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
         },
         {
           "name": "CMAKE_SYSTEM_NAME",
@@ -189,9 +189,9 @@
       "cmakeToolchainFile": "E:\\Android\\android-sdk-windows\\ndk\\23.1.7779620\\build\\cmake\\android.toolchain.cmake",
       "cmake": {
         "isValidCmakeAvailable": true,
-        "cmakeExe": "E:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "cmakeExe": "C:\\Users\\LWK28\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
         "minimumCmakeVersion": "3.10.2",
-        "ninjaExe": "E:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "ninjaExe": "C:\\Users\\LWK28\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
         "isPreferCmakeFileApiEnabled": true
       },
       "stlSharedObjectMap": {
@@ -209,7 +209,7 @@
         "rootBuildGradleFolder": "E:\\flutter_project\\jage_app\\android",
         "cxxFolder": "E:\\flutter_project\\jage_app\\android\\.cxx",
         "compilerSettingsCacheFolder": "E:\\flutter_project\\jage_app\\android\\.cxx",
-        "sdkFolder": "E:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk",
+        "sdkFolder": "C:\\Users\\LWK28\\AppData\\Local\\Android\\sdk",
         "isNativeCompilerSettingsCacheEnabled": false,
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,

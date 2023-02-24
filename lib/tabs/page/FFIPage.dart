@@ -41,7 +41,7 @@ class _FFIPageState extends State<FFIPage> {
             'process_image');
     Process_img_Func erode_img_func = opencvLib
         .lookupFunction<Native_erode_img_Func, Erode_img_Func>('erodePic');
-    String str1 = "/storage/emulated/0/Pictures/1.png";
+    String str1 = "/sdcard/Pictures/index_gray.png";///storage/emulated/0/Pictures/1.png
     String dir = "";
     String s1 = "";
     String s2 = "";

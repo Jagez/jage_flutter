@@ -12,7 +12,48 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
+
+  bool _bHidden = false;
+
+@override
+  void initState() {
+    super.initState();
+
+    //启用监听生命周期状态
+    WidgetsBinding.instance!.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    WidgetsBinding.instance!.removeObserver(this);
+  }
+
+//
+//  监听生命周期状态
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    print("didChangeAppLifecycleState: $_bHidden");
+    setState(() {
+      _bHidden = state != AppLifecycleState.resumed;
+    });
+    switch(state)
+    {
+      
+      case AppLifecycleState.resumed:
+        break;
+      case AppLifecycleState.inactive:
+        //_bHidden = true;
+        break;
+      case AppLifecycleState.paused:
+        break;
+      case AppLifecycleState.detached:
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +77,25 @@ class _HomePageState extends State<HomePage> {
           //   ],
           // ),
         ),
-        body: NotificationListener<ScrollNotification>(
-          onNotification: (ScrollNotification notification){
-            ScrollMetrics scrollMetrics = notification.metrics;
-            print("axis: ${scrollMetrics.axis}");     //轴
-            print("pixels: ${scrollMetrics.pixels}"); //当前的像素x/y坐标
-            print("atEdge: ${scrollMetrics.atEdge}"); //是否在两端
-            return true;
-          },
-          child: TabBarView(
-            children: [
-              DemoListWidget(),
-              DemoListWidget(),
-            ],
-          )
+        body: Stack(
+          children: [
+            NotificationListener<ScrollNotification>(
+              onNotification: (ScrollNotification notification){
+                ScrollMetrics scrollMetrics = notification.metrics;
+                //print("axis: ${scrollMetrics.axis}");     //轴
+                //print("pixels: ${scrollMetrics.pixels}"); //当前的像素x/y坐标
+                //print("atEdge: ${scrollMetrics.atEdge}"); //是否在两端
+                return true;
+              },
+              child: TabBarView(
+                children: [
+                  DemoListWidget(),
+                  DemoListWidget(),
+                ],
+              )
+            ),
+            if(_bHidden) Container(color: Colors.orange,),
+          ],
         ));
   }
 }

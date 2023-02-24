@@ -1,4 +1,4 @@
-Executable : E:\Android\adt-bundle-windows-x86_64-20140702\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+Executable : C:\Users\LWK28\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
 arguments : 
 -C
 E:\flutter_project\jage_app\native_opencv\android\.cxx\cmake\debug\armeabi-v7a

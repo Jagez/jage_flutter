@@ -5,14 +5,14 @@
   ],
   "cleanCommandsComponents": [
     [
-      "E:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+      "C:\\Users\\LWK28\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
       "-C",
       "E:\\flutter_project\\jage_app\\native_opencv\\android\\.cxx\\cmake\\debug\\x86_64",
       "clean"
     ]
   ],
   "buildTargetsCommandComponents": [
-    "E:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "C:\\Users\\LWK28\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
     "-C",
     "E:\\flutter_project\\jage_app\\native_opencv\\android\\.cxx\\cmake\\debug\\x86_64",
     "{LIST_OF_TARGETS_TO_BUILD}"
@@ -20,7 +20,7 @@
   "libraries": {
     "native-lib-Debug-x86_64": {
       "buildCommandComponents": [
-        "E:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "C:\\Users\\LWK28\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
         "-C",
         "E:\\flutter_project\\jage_app\\native_opencv\\android\\.cxx\\cmake\\debug\\x86_64",
         "native-lib"
