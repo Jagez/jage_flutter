@@ -32,19 +32,41 @@ class _DesignPageState extends State<DesignPage> {
       child: ListView(
         children: [
           Container(
-            height: 20,
-            width: 20,
+            //height: 20,
+            //width: 20,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
               color: Color(0x18183A),
             ),
             child: Row(
               children: [
-                Text("data"),
+                OutlinedButton(
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      side: BorderSide(
+                        color: Colors.white,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text("Recent")),
                 SizedBox(
-                  width: 30,
+                  width: 20,
                 ),
-                Text("data"),
+                OutlinedButton(
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      side: BorderSide(
+                        color: Colors.white,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text("Recent")),
               ],
             ),
           ),

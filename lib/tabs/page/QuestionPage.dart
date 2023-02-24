@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:jage_app/widget/ChartsContentItem.dart';
 import 'package:jage_app/widget/ContentText.dart';
@@ -117,12 +119,11 @@ class _QuestionPageState extends State<QuestionPage> {
                   // ),
                   child: Padding(
                     padding: const EdgeInsets.all(18.0),
-                    child: 
-                    ValueListenableBuilder<dynamic>(
+                    child: ValueListenableBuilder<dynamic>(
                       builder: _buildTest,
                       valueListenable: _index,
                     ),
-                    
+
                     //不能刷新
                     // ValueListenableBuilder<List>(
                     //   builder: _buildSelection,

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import '../../widget/PopupMenu.dart';
 import '../../widget/ChartsContentItem.dart';
 
@@ -42,7 +43,8 @@ class _ChartsPageState extends State<ChartsPage> {
       "contentText": "及我为哦为哦哦",
       'textDirection': TextDirection.rtl, //
       'textStyle': TextStyle(
-        color: Color.fromRGBO(244, 244, 247, 1.0),
+        fontSize: 16,
+        color: Colors.red,
       ),
     }));
     mMessagesList.value.add(ChartsContent(arguments: {
@@ -111,48 +113,19 @@ class _ChartsPageState extends State<ChartsPage> {
           //keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           //direction: Axis.vertical,
           children: [
-            //Spacer(),
-            //_buildMessageList(),
-
-            ValueListenableBuilder<List<Widget>>(
-              builder: _buildList,
-              valueListenable: mMessagesList,
+            RefreshIndicator(
+              onRefresh: this.onRefresh,
+              child: ValueListenableBuilder<List<Widget>>(
+                builder: _buildList,
+                valueListenable: mMessagesList,
+              ),
             ),
-            // ListView(
-            //   shrinkWrap: true,
-            //   reverse: true,
-            //   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-            //   children: [
-            //     SizedBox(
-            //       height: 70.0,
-            //     ),
-            //     ChartsContent(),
-            //     ChartsContent(),
-            //     ChartsContent(),
-            //     ChartsContent(),
-            //     ChartsContent(),
-            //     ChartsContent(),
-            //     ChartsContent(),
-            //     ChartsContent(),
-            //     ChartsContent(),
-            //   ],
-            // ),
-            ////_buildMessageInput(),
             Align(
               alignment: Alignment(1, 1),
               child: _buildMessageInput(),
             ),
           ],
         ),
-      ),
-      //bottomNavigationBar: ,
-    );
-  }
-
-  Widget _buildMessageList() {
-    return Container(
-      child: ListView(
-        children: [],
       ),
     );
   }
@@ -288,9 +261,6 @@ class _ChartsPageState extends State<ChartsPage> {
                         height: 70,
                       ),
                     ));
-                    // _scrollController.animateTo(1,
-                    //     duration: Duration(milliseconds: 300),
-                    //     curve: Curves.ease);
                   });
                   mSendButton.value = "assets/icon/file2_2x.png";
                   _textEditingController.clear();
@@ -327,6 +297,10 @@ class _ChartsPageState extends State<ChartsPage> {
     );
   }
 
+  Future onRefresh() {
+    return Future.delayed(Duration(milliseconds: 0), () {});
+  }
+
   ListView _buildList(BuildContext context, List<Widget> list, Widget? child) {
     return ListView.builder(
       controller: _scrollController,
@@ -335,14 +309,44 @@ class _ChartsPageState extends State<ChartsPage> {
       reverse: false,
       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       itemBuilder: (context, index) {
-        // if (list.length < index) {
-        //   return list[index];
-        // } else {
-        //   return SizedBox(
-        //     height: 70,
-        //   );
-        // }
-        return list[index];
+        return Slidable(
+          actionPane: SlidableScrollActionPane(),
+          key: Key(index.toString()),
+          // dismissal: SlidableDismissal(
+          //   child: SlidableDrawerDismissal(),
+          //   onDismissed: (actionType) {},
+          //   //onWillDismiss: (actionType) {},
+          // ),
+          actionExtentRatio: 0.15,
+          child: list[index],
+          actions: <Widget>[
+            // IconSlideAction(
+            //   caption: 'Archive',
+            //   //color: Colors.blue,
+            //   icon: Icons.archive,
+            //   onTap: () => print('2222'),
+            //   closeOnTap: false,
+            // ),
+            Container(
+              alignment: Alignment.center,
+              //height: 20,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(0, 86, 253, 1.0),
+                //borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Text(
+                "撤消？",
+                style: TextStyle(color: Colors.red),
+              ),
+            ),
+            // IconSlideAction(
+            //   caption: 'Share',
+            //   //color: Colors.indigo,
+            //   icon: Icons.share,
+            //   onTap: () {},
+            // ),
+          ],
+        );
       },
     );
   }
@@ -354,5 +358,6 @@ class _ChartsPageState extends State<ChartsPage> {
     mSendButton.dispose();
     mMessagesList.dispose();
     _textEditingController.dispose();
+    _scrollController.dispose();
   }
 }

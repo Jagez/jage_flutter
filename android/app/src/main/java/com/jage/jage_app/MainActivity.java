@@ -26,6 +26,7 @@ public class MainActivity extends FlutterActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             //设置透明顶部状态栏
             getWindow().setStatusBarColor(0);
+            //！！！全屏会导致软键盘无法弹起
             //全屏，即隐藏状态栏
             //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
             //显示状态栏

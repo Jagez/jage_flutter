@@ -36,13 +36,9 @@ class _MessageItemWidgetState extends State<MessageItemWidget> {
         onTap: () {
           //print(widget.key.toString());
           setState(() {
-            Navigator.pushNamed(
-              context
-              , '/charts'
-              , arguments: {
-                  "targetId": widget.targetId,
-                }
-              );
+            Navigator.pushNamed(context, '/charts', arguments: {
+              "targetId": widget.targetId,
+            });
           });
         },
         child: Padding(
@@ -54,9 +50,31 @@ class _MessageItemWidgetState extends State<MessageItemWidget> {
             child: ListTile(
               leading: Hero(
                 tag: widget.targetId.toString(),
-                child: CircleAvatar(
-                backgroundImage: AssetImage("images/icon_quest_31002.png"),
-              ),
+                child: Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: 24,
+                      backgroundImage:
+                          AssetImage("images/icon_quest_31002.png"),
+                    ),
+                    Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: Container(
+                        height: 16.0,
+                        width: 16.0,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 3,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               title: Text(
                 "Jage",

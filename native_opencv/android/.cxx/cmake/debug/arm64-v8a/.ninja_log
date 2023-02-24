@@ -1,0 +1,13 @@
+# ninja log v5
+1	2851	684503777	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	1f81bd138c69d85e
+2856	3187	684503778	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	437419ab0cfefa45
+19	790	684504368	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	a20bdf4f1f51a1a2
+48	1407	684505124	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	5fb5503a717a6ad1
+33	1256	684515787	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	3f35acafe31803a3
+5	852	684543998	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	3eb8c9fae28cffc4
+41	3411	684782772	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	1f81bd138c69d85e
+3411	4134	684782773	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	3eb8c9fae28cffc4
+48	3646	684880594	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	1f81bd138c69d85e
+3647	4788	684880595	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	6d9a1eacec08066a
+6	4634	684935451	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	1f81bd138c69d85e
+4635	5321	684935451	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	6d9a1eacec08066a

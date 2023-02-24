@@ -30,6 +30,10 @@ dependencies:
     #本地库
   # flutter_package:
   #   path: ../flutter_package
+
+  native_opencv:
+    path: native_opencv
+
   fl_chart: ^0.36.3
   http: ^0.13.3
   location: ^4.3.0
@@ -97,6 +101,10 @@ dependencies:
   synchronized: ^3.0.0
   flutter_rating_bar: ^4.0.0
   battery_plus: ^2.0.1
+  ffi: ^1.2.1
+  dio: ^4.0.6
+  permission_handler: ^8.1.6
+  gallery_saver: ^2.3.2
   #dio: ^4.0.6
   #get: ^4.6.1
   

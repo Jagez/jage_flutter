@@ -51,8 +51,8 @@ class _BattlePageState extends State<BattlePage> {
     return Flex(
       direction: Axis.horizontal,
       children: [
-        _buildIconItem("images/unit/icon_unit_002112.png", 10),
-        _buildIconItem("images/unit/icon_unit_002112.png", 111),
+        _buildIconItem("images/unit/icon_unit_002112.png", 10, 5),
+        _buildIconItem("images/unit/icon_unit_002112.png", 111, 3),
         Spacer(),
       ],
     );
@@ -61,25 +61,25 @@ class _BattlePageState extends State<BattlePage> {
   Widget _buildStar(bool isLess) {
     if (isLess) {
       return Container(
-        height: 8.0,
-        width: 8.0,
+        height: 10.0,
+        width: 10.0,
         child: Image.asset("assets/icon/29.png"),
       );
     } else {
       return Container(
-        height: 8.0,
-        width: 8.0,
-        child: Image.asset("assets/icon/13.png"),
+        height: 10.0,
+        width: 10.0,
+        child: Image.asset("assets/icon/26.png"),
       );
     }
   }
 
-  Widget _buildIconItem(String icon, int level) {
+  Widget _buildIconItem(String icon, int level, int star) {
     return Padding(
       padding: const EdgeInsets.all(3.0),
       child: Container(
-        height: 56, //64
-        width: 56,
+        height: 68, //64
+        width: 68,
         decoration: BoxDecoration(
             image: DecorationImage(
           image: AssetImage(icon),
@@ -116,7 +116,7 @@ class _BattlePageState extends State<BattlePage> {
               alignment: Alignment(-1.0, 1.0),
               child: Padding(
                 padding: const EdgeInsets.only(left: 3, bottom: 3),
-                child: _buildRowStar(1),
+                child: _buildRowStar(star),
               ),
             ),
           ],
@@ -135,8 +135,8 @@ class _BattlePageState extends State<BattlePage> {
       });
       list.add(
         Container(
-          height: 8.0,
-          width: 8.0,
+          height: 10.0,
+          width: 10.0,
           child: Image.asset("assets/icon/31.png"),
         ),
       );
@@ -149,8 +149,8 @@ class _BattlePageState extends State<BattlePage> {
       subList = List.generate(
           5 - count,
           (index) => Container(
-                height: 8.0,
-                width: 8.0,
+                height: 10.0,
+                width: 10.0,
                 child: Image.asset("assets/icon/29.png"),
               ));
       tempList = list + subList;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:jage_app/tabs/page/FFIPage.dart';
 //import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:jage_app/tabs/page/MediaPage.dart';
 import 'package:jage_app/tabs/page/PrincessConnectPage.dart';
@@ -80,6 +81,7 @@ class JageApp extends StatelessWidget {
     '/pcr': (context) => PrincessConnectPage(),
     '/battle': (context) => BattlePage(),
     '/music': (context) => MusicPage(),
+    '/ffi': (context) => FFIPage(),
   };
   JageApp({Key? key}) : super(key: key);
   @override

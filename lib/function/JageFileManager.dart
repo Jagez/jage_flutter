@@ -36,56 +36,64 @@ import 'package:path_provider/path_provider.dart';
 /// 8、getDownloadsDirectory 下载目录 PC only
 ///   Android/iOS：抛出[UnsupportedError]异常
 ///
-// class JageFileManager {
-//   Future<File> getLocalFile() async {
-//     Directory? directory;
-//     Directory? libarayDir;
-//     List<Directory>? sdDirectory;
-//     Directory? appDirectory;
-//     Directory? downloadDirectory;
-//     Directory? tempDirectory;
-//     if (Platform.isWindows) {
-//       directory = await getApplicationDocumentsDirectory();
-//       downloadDirectory = await getDownloadsDirectory();
-//     } else if (Platform.isAndroid) {
-//       //程序外部存储目录
-//       //  /storage/emulated/0/Android/data/com.jage.jage_app/files
-//       directory = await getExternalStorageDirectory();
-//       sdDirectory = await getExternalStorageDirectories();
-//       //获取应用程序内部存储目录（Root权限才能查看）
-//       //  /data/user/0/com.jage.jage_app/files
-//       appDirectory = await getApplicationSupportDirectory();
-//       tempDirectory = await getTemporaryDirectory();
-//     } else if (Platform.isIOS) {
-//       directory = await getApplicationSupportDirectory();
-//       libarayDir = await getLibraryDirectory();
-//       downloadDirectory = await getDownloadsDirectory();
-//     }
+class JageFileManager {
+  Future<File> getLocalFile() async {
+    Directory? directory;
+    Directory? libarayDir;
+    List<Directory>? sdDirectory;
+    Directory? appDirectory;
+    Directory? downloadDirectory;
+    Directory? tempDirectory;
+    if (Platform.isWindows) {
+      directory = await getApplicationDocumentsDirectory();
+      downloadDirectory = await getDownloadsDirectory();
+    } else if (Platform.isAndroid) {
+      //程序外部存储目录
+      //  /storage/emulated/0/Android/data/com.jage.jage_app/files
+      directory = await getExternalStorageDirectory();
+      sdDirectory = await getExternalStorageDirectories();
+      //获取应用程序内部存储目录（Root权限才能查看）
+      //  /data/user/0/com.jage.jage_app/files
+      appDirectory = await getApplicationSupportDirectory();
+      tempDirectory = await getTemporaryDirectory();
+    } else if (Platform.isIOS) {
+      directory = await getApplicationSupportDirectory();
+      libarayDir = await getLibraryDirectory();
+      downloadDirectory = await getDownloadsDirectory();
+    }
 
-//     if (directory == null) {
-//       throw MissingPlatformDirectoryException("该目录不存在");
-//     }
-//     String path = directory.path;
-//     print(path);
-//     print("sd: " + sdDirectory.toString());
-//     print("应用程序目录：" + appDirectory!.path);
-//     //print("download目录：" + downloadDirectory!.path);
-//     print("temp: " + tempDirectory!.path);
-//     final file = new File('$path/1.txt');
-//     return file;
-//   }
+    if (directory == null) {
+      throw MissingPlatformDirectoryException("该目录不存在");
+    }
+    String path = directory.path;
+    print(path);
+    print("sd: " + sdDirectory.toString());
+    print("应用程序目录：" + appDirectory!.path);
+    //print("download目录：" + downloadDirectory!.path);
+    print("temp: " + tempDirectory!.path);
+    final file = new File('$path/1.txt');
+    return file;
+  }
 
-//   /// 获取下载目录，不支持Android和iOS
-//   /// return Directory
-//   Directory getDownloadDirectory() async {
-//     Directory downloadDir = await getDownloadDirectory();
+  /// 获取下载目录，不支持Android和iOS
+  /// return Directory
+  Future<String> getDownloadDirectory() async {
+    var downloadDir = await getDownloadDirectory();
 
-//     if (downloadDir == null) {
-//       throw UnsupportedError("当前操作系统不支持等效路径!");
-//     }
-//     //downloadDir.create(recursive: true);
-//     return downloadDir;
-//   }
+    if (downloadDir == null) {
+      throw UnsupportedError("当前操作系统不支持等效路径!");
+    }
+    //downloadDir.create(recursive: true);
+    return downloadDir;
+  }
 
-//   Future<
-// }
+  Future<String> getAppDirectory() async {
+    var appDir = await getExternalStorageDirectory();
+
+    if (appDir == null) {
+      throw UnsupportedError("当前操作系统不支持等效路径!");
+    }
+    //downloadDir.create(recursive: true);
+    return appDir.path;
+  }
+}

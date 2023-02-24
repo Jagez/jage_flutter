@@ -124,6 +124,12 @@ class _DemoListWidgetState extends State<DemoListWidget> {
               children: [
                 ElevatedButton(
                   onPressed: () {
+                    Navigator.pushNamed(context, '/ffi');
+                  },
+                  child: Text("FFI"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
                     //Navigator.pushNamed(context, '/update');
                   },
                   child: Text("检查更新APP"),

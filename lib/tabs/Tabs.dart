@@ -43,6 +43,7 @@ class _TabsState extends State<Tabs> {
         resizeToAvoidBottomInset: true,
         extendBody: true, //bottombar缺口为透明
         appBar: AppBar(
+          elevation: 0,
           title: Text(
             "Jage Flutter",
             style: TextStyle(
@@ -67,7 +68,7 @@ class _TabsState extends State<Tabs> {
           //     Tab(text: "热播",),
           //   ],
           // ),
-          backgroundColor: Colors.black,
+          //backgroundColor: Colors.black,
         ),
         endDrawer: Drawer(),
         drawer: Drawer(
@@ -203,99 +204,94 @@ class _TabsState extends State<Tabs> {
 
   Widget _buildBottomBar() {
     return BottomAppBar(
-      elevation: 2,
+      //elevation: 2,
       shape: CircularNotchedRectangle(),
       color: Colors.yellow,
-      notchMargin: 5,
+      clipBehavior: Clip.antiAlias,
+      notchMargin: 15,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: GestureDetector(
-              child: Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                direction: Axis.vertical,
-                children: <Widget>[
-                  Icon(Icons.home),
-                  Text("Home"),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: GestureDetector(
-              onTap: () {
-                setState(() {});
-              },
-              child: Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                direction: Axis.vertical,
-                children: <Widget>[
-                  Icon(Icons.category),
-                  Text("Category"),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 30,
-          ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: GestureDetector(
-              onTap: () {
-                setState(() {});
-              },
-              child: Wrap(
-                direction: Axis.vertical,
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: <Widget>[
-                  Icon(Icons.settings),
-                  Text("Setting"),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: GestureDetector(
-              onTap: () {
-                setState(() {});
-              },
-              child: Wrap(
-                direction: Axis.vertical,
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: <Widget>[
-                  Icon(Icons.people_outlined),
-                  Text("Profile"),
-                ],
-              ),
-            ),
-          ),
-          // Padding(
-          //   padding: EdgeInsets.all(10),
-          //   child: GestureDetector(
-          //     onTap: (){
-          //       setState(() {
-          //         _bottomNavIndex = 3;
-          //       });
-          //     },
-          //     child: Wrap(
-          //       direction: Axis.vertical,
-          //       crossAxisAlignment: WrapCrossAlignment.center,
-          //       children: <Widget>[
-          //         Icon(Icons.people_outlined),
-          //         Text("Profile"),
-          //       ],
-          //     ),
-          //   ),
-          // )
-        ],
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // children: [
+        //   Padding(
+        //     padding: EdgeInsets.all(10),
+        //     child: GestureDetector(
+        //       child: Container(
+        //         height: 50,
+        //         child: Column(
+        //           //crossAxisAlignment: WrapCrossAlignment.center,
+        //           //direction: Axis.vertical,
+        //           children: <Widget>[
+        //             Icon(Icons.home),
+        //             Text("首页"),
+        //           ],
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        //   Padding(
+        //     padding: EdgeInsets.all(10),
+        //     child: GestureDetector(
+        //       onTap: () {
+        //         setState(() {});
+        //       },
+        //       child: Container(
+        //         height: 50,
+        //         child: Column(
+        //           //crossAxisAlignment: WrapCrossAlignment.center,
+        //           //direction: Axis.vertical,
+        //           children: <Widget>[
+        //             Icon(Icons.category),
+        //             Text("分类"),
+        //           ],
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        //   SizedBox(
+        //     width: 45,
+        //   ),
+        //   Padding(
+        //     padding: EdgeInsets.all(10),
+        //     child: GestureDetector(
+        //       onTap: () {
+        //         setState(() {});
+        //       },
+        //       child: Container(
+        //         height: 50,
+        //         child: Column(
+        //           //direction: Axis.vertical,
+        //           //crossAxisAlignment: WrapCrossAlignment.center,
+        //           children: <Widget>[
+        //             Icon(Icons.settings),
+        //             Text("动态"),
+        //           ],
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        //   Padding(
+        //     padding: EdgeInsets.all(10),
+        //     child: GestureDetector(
+        //       onTap: () {
+        //         setState(() {});
+        //       },
+        //       child: Container(
+        //         height: 50,
+        //         child: Column(
+        //           //direction: Axis.vertical,
+        //           //crossAxisAlignment: WrapCrossAlignment.center,
+        //           children: <Widget>[
+        //             Icon(Icons.people_outlined),
+        //             Text("我的"),
+        //           ],
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ],
 
-        // children: info.asMap().keys.map((i) => _buildChild(i)).toList()
-        //     ..insertAll(isCenter ? 2 : 4, [SizedBox(width: 30)]),
+        children: info.asMap().keys.map((i) => _buildChild(i)).toList()
+          ..insertAll(isCenter ? 2 : 4, [SizedBox(width: 45)]),
       ),
     );
   }
@@ -307,22 +303,30 @@ class _TabsState extends State<Tabs> {
   Widget _buildChild(int i) {
     var active = i == _position;
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(10),
       child: GestureDetector(
-        onTap: () => setState(() => _position = i),
-        child: Wrap(
-          direction: Axis.vertical,
-          alignment: WrapAlignment.center,
-          children: <Widget>[
-            Icon(
-              iconsMap[info[i]],
-              color: active ? activeColor : Colors.white,
-              size: 30,
-            ),
-            Text(info[i],
-                style: TextStyle(
-                    color: active ? activeColor : Colors.white, fontSize: 14)),
-          ],
+        onTap: () {
+          setState(() {
+            _bottomNavIndex = i;
+          });
+        },
+        child: Container(
+          height: 50,
+          child: Column(
+            //direction: Axis.vertical,
+            //crossAxisAlignment: WrapCrossAlignment.center,
+            children: <Widget>[
+              Icon(
+                iconsMap[info[i]],
+                color: active ? activeColor : Colors.white,
+                size: 25,
+              ),
+              Text(info[i],
+                  style: TextStyle(
+                      color: active ? activeColor : Colors.white,
+                      fontSize: 14)),
+            ],
+          ),
         ),
       ),
     );

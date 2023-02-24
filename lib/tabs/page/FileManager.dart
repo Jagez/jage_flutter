@@ -90,17 +90,29 @@ class _FileManagerState extends State<FileManager> {
         onTap: () {
           print("object");
         },
-        child: Container(
-          margin: EdgeInsets.all(10.0),
-          height: 76.0,
-          width: 76.0,
-          decoration: BoxDecoration(
-            color: Color(value['color']),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          child: Icon(
-            Icons.picture_as_pdf,
-            size: 30.0,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            //margin: EdgeInsets.all(10.0),
+            height: 80.0,
+            width: 80.0,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              border: Border.all(color: Colors.white),
+              color: Color(value["color"]),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blueGrey,
+                  offset: Offset(5.0, 6.0),
+                  blurRadius: 13.0,
+                  spreadRadius: 0.0,
+                ),
+              ],
+            ),
+            child: Icon(
+              Icons.picture_as_pdf,
+              size: 30.0,
+            ),
           ),
         ),
       );
@@ -268,8 +280,18 @@ class _FileManagerState extends State<FileManager> {
           //isList: true 不显示右边下拉菜单,默认显示
           _buildTitleWidget("最近访问", () {}, isList: true),
           Container(
-            height: 370,
-            child: FileSelectIconWidget(),
+            //height: 370,
+            //child: FileSelectIconWidget(),
+            child: Wrap(
+              alignment: WrapAlignment.spaceAround,
+              runSpacing: 25.0,
+              direction: Axis.horizontal,
+              children: _getFileTypeIcons(),
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
+            child: Container(),
           ),
           Divider(),
           _buildTitleWidget("磁盘空间", () {
@@ -318,16 +340,18 @@ class _FileManagerState extends State<FileManager> {
               swapAnimationCurve: Curves.easeInOutQuint,
             ),
           ),
+          Divider(),
           _buildTitleWidget("其他目录", () {
             print("123");
           }),
           Container(
-            height: 76.0,
+            height: 100.0,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: _getOtherDirctoryWidget(),
             ),
           ),
+          Divider(),
           _buildTitleWidget("最近浏览", () {
             print("123");
           }),
@@ -343,5 +367,78 @@ class _FileManagerState extends State<FileManager> {
         ],
       ),
     );
+  }
+
+  List<Widget> _getFileTypeIcons() {
+    var data = fileTypeList.map((value) {
+      return Container(
+        width: 210.0,
+        height: 210.0,
+        constraints: BoxConstraints(
+          maxWidth: 210.0,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          border: Border.all(color: Colors.white),
+          color: Color(value["color"]),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.blueGrey,
+              offset: Offset(5.0, 10.0),
+              blurRadius: 13.0,
+              spreadRadius: 0.0,
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(value["icon"]),
+            Container(
+              height: 40.0,
+              //设置最大最小宽高
+              constraints: const BoxConstraints(
+                minHeight: 30.0,
+              ),
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment(-0.6, -1.0),
+                    child: Text(
+                      value["file_type"],
+                      style: TextStyle(
+                          fontSize: 13.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment(-0.6, 1.0),
+                    child: Text(
+                      value["amount"] + "Files",
+                      style: TextStyle(
+                          fontSize: 13.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w300),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment(0.6, 1.0),
+                    child: Text(
+                      value["size"] + "MB",
+                      style: TextStyle(
+                          fontSize: 13.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    });
+    return data.toList();
   }
 }

@@ -1,0 +1,26 @@
+                    Executable : E:\Android\adt-bundle-windows-x86_64-20140702\sdk\cmake\3.10.2.4988404\bin\cmake.exe
+arguments : 
+-HE:\flutter_project\jage_app\native_opencv\android
+-DCMAKE_CXX_FLAGS=-frtti -fexceptions -std=c++11
+-DCMAKE_FIND_ROOT_PATH=E:\flutter_project\jage_app\native_opencv\android\.cxx\cmake\debug\prefab\x86_64\prefab
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_TOOLCHAIN_FILE=E:\Android\android-sdk-windows\ndk\23.1.7779620\build\cmake\android.toolchain.cmake
+-DANDROID_ABI=x86_64
+-DANDROID_NDK=E:\Android\android-sdk-windows\ndk\23.1.7779620
+-DANDROID_PLATFORM=android-21
+-DCMAKE_ANDROID_ARCH_ABI=x86_64
+-DCMAKE_ANDROID_NDK=E:\Android\android-sdk-windows\ndk\23.1.7779620
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=E:\flutter_project\jage_app\build\native_opencv\intermediates\cmake\debug\obj\x86_64
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=E:\flutter_project\jage_app\build\native_opencv\intermediates\cmake\debug\obj\x86_64
+-DCMAKE_MAKE_PROGRAM=E:\Android\adt-bundle-windows-x86_64-20140702\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=21
+-DANDROID_STL=c++_shared
+-BE:\flutter_project\jage_app\native_opencv\android\.cxx\cmake\debug\x86_64
+-GNinja
+jvmArgs : 
+
+
+                    Build command args: []
+                    Version: 1

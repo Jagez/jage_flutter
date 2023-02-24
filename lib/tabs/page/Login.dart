@@ -12,6 +12,9 @@ class _LoginPageState extends State<LoginPage> {
   FocusNode emailFocusNode = FocusNode();
   FocusNode pwdFocusNode = FocusNode();
   //FocusScopeNode focusScopeNode = FocusScopeNode();
+
+  TextEditingController emailTextController = TextEditingController();
+  TextEditingController pwdTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +69,8 @@ class _LoginPageState extends State<LoginPage> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextFormField(
+                          autovalidateMode: AutovalidateMode.always,
+                          controller: emailTextController,
                           focusNode: emailFocusNode,
                           //键盘显示聚焦到下一个输入框,即下一项
                           textInputAction: TextInputAction.next,
@@ -100,6 +105,13 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           keyboardType: TextInputType.emailAddress,
+                          validator: (value) {
+                            //TODO 查询数据库是否存在该用户
+                            if (value!.length < 5) {
+                              return "curret";
+                            }
+                            return null;
+                          },
                           onChanged: (value) {},
                         ),
                       ),
@@ -129,18 +141,13 @@ class _LoginPageState extends State<LoginPage> {
                               fontSize: 15.0,
                               fontFamily: "SAO",
                             ),
-                            // border: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     color: Colors.red,
-                            //     style: BorderStyle.solid,
-                            //     width: 1.0,
-                            //   ),
-                            //   borderRadius: BorderRadius.circular(15),
-                            // ),
                           ),
                           //密文
                           obscureText: true,
                           //enableSuggestions: true,
+                          validator: (value) {
+                            //TODO 匹配pwd
+                          },
                           onChanged: (vlaue) {},
                         ),
                       ),
@@ -157,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                       backgroundColor: MaterialStateProperty.all(
                           Color.fromRGBO(2, 180, 254, 1.0)),
                     ),
-                    child: Text("Login In"),
+                    child: Text("Sign Up"),
                     onPressed: () {},
                   ),
                   ElevatedButton(
@@ -165,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                       backgroundColor: MaterialStateProperty.all(
                           Color.fromRGBO(2, 180, 254, 1.0)),
                     ),
-                    child: Text("Sign Up"),
+                    child: Text("Login In"),
                     onPressed: () {},
                   ),
                 ],
