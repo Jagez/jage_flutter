@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badges;
 import '../Tabs.dart';
 
 class NewPage extends StatefulWidget {
@@ -38,7 +38,7 @@ class _NewPageState extends State<NewPage> {
         body: TabBarView(
           children: [
             Center(
-              child: Badge(
+              child: badges.Badge(
                 badgeContent: Text(widget.arguments['name']),
                 child: Image.asset("images/icon_quest_31020.png"),
               ),
@@ -46,7 +46,7 @@ class _NewPageState extends State<NewPage> {
             Text("tab 2"),
           ],
         ),
-        floatingActionButton: Badge(
+        floatingActionButton: badges.Badge(
           badgeContent: Text(
             this.content,
             style: TextStyle(fontSize: 18.0),

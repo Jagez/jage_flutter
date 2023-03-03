@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:flutter/services.dart';
+//import 'package:lottie/lottie.dart';
 
 class LottiePage extends StatefulWidget {
   LottiePage({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _LottiePageState extends State<LottiePage> {
       body: ListView(
         children: [
           //新增文件要在终端退出，重新安装app：flutter run
-          Lottie.asset('assets/lottie/bullseye.json'),
+          //Lottie.asset('assets/lottie/bullseye.json'),
         ],
       ),
     );

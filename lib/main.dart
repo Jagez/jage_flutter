@@ -42,7 +42,14 @@ void main() {
   runApp(JageApp());
 }
 
-class JageApp extends StatelessWidget {
+class JageApp extends StatefulWidget {
+  JageApp({Key? key}) : super(key: key);
+
+  @override
+  _JageAppState createState() => _JageAppState();
+}
+
+class _JageAppState extends State<JageApp> with WidgetsBindingObserver {
   final Map<String, Widget Function(BuildContext)> routes = {
     //此处添加路由,可以传参
     //'/': (context)=>Tabs(),
@@ -83,12 +90,55 @@ class JageApp extends StatelessWidget {
     '/music': (context) => MusicPage(),
     '/ffi': (context) => FFIPage(),
   };
-  JageApp({Key? key}) : super(key: key);
+
+  bool _bHidden = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    //启用监听生命周期状态
+    WidgetsBinding.instance!.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    WidgetsBinding.instance!.removeObserver(this);
+  }
+
+//要实现后台遮挡Android不管用
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    print("didChangeAppLifecycleState: $state");
+    setState(() {
+      _bHidden = state != AppLifecycleState.resumed;
+    });
+    switch (state) {
+      case AppLifecycleState.resumed:
+        break;
+      case AppLifecycleState.inactive:
+        //_bHidden = true;
+        break;
+      case AppLifecycleState.paused:
+        break;
+      case AppLifecycleState.detached:
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Tabs(),
+      home: Stack(
+        children: [      //Tabs()
+          if (_bHidden) Container(color: Colors.orange[800],),
+          Tabs(),
+        ],
+      ),
       //darkTheme: darkThemeData(context),
       themeMode: ThemeMode.light,
       //initialRoute: '/',    //初始化根组件

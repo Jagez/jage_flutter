@@ -6,7 +6,7 @@ ThemeData darkThemeData(BuildContext context) {
   return ThemeData.dark().copyWith(
     splashFactory: new JageNoSplashFactory(),
     primaryColor: kPrimaryColor,
-    buttonColor: kButtonColor,
+    //buttonColor: kButtonColor,
     scaffoldBackgroundColor: kContextColorLightTheme,
     //appBarTheme: appBarTheme,
     iconTheme: IconThemeData(color: kContentColorDarkTheme),

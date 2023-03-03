@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badges;
 
 Map _bgColor = {'r': 30, 'g': 30, 'b': 73};
 Map _bgTheme = {'r': 24, 'g': 24, 'b': 58};
@@ -91,7 +91,7 @@ class _MessageItemWidgetState extends State<MessageItemWidget> {
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 5, 5, 0),
-                    child: Badge(
+                    child: badges.Badge(
                       badgeContent: Text(
                         "3",
                         style: TextStyle(

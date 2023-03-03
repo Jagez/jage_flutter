@@ -122,6 +122,7 @@ class _DemoListWidgetState extends State<DemoListWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                CircularProgressIndicator(),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/ffi');

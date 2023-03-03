@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 import '../../widget/PopupMenu.dart';
 import '../../widget/ChartsContentItem.dart';
 
@@ -244,7 +245,7 @@ class _ChartsPageState extends State<ChartsPage> {
                   print(mMessage);
                   //清除输入框的焦点
                   FocusScope.of(context).requestFocus(FocusNode());
-                  setState(() {
+                  setState(() async {
                     mMessagesList.value[mMessagesList.value.length - 1] =
                         ChartsContent(arguments: {
                       //'id': Random().nextInt(100),
@@ -255,12 +256,19 @@ class _ChartsPageState extends State<ChartsPage> {
                       ),
                     });
                     //mMessagesList.value.add();
-                    mMessagesList.value.add(Expanded(
-                      flex: 0,
-                      child: SizedBox(
-                        height: 70,
-                      ),
-                    ));
+                    if (mMessage.isNotEmpty) {
+                      print(mMessage);
+                      mMessagesList.value.add(Expanded(
+                        flex: 0,
+                        child: SizedBox(
+                          height: 70,
+                        ),
+                      ));
+
+                      final List<AssetEntity>? result =
+                          await AssetPicker.pickAssets(context);
+                      print(result?.length);
+                    }
                   });
                   mSendButton.value = "assets/icon/file2_2x.png";
                   _textEditingController.clear();
@@ -310,42 +318,52 @@ class _ChartsPageState extends State<ChartsPage> {
       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       itemBuilder: (context, index) {
         return Slidable(
-          actionPane: SlidableScrollActionPane(),
+          endActionPane: const ActionPane(motion: ScrollMotion(), children: [
+            SlidableAction(
+              onPressed: null,
+              backgroundColor: Color(0xFFFE4A49),
+              foregroundColor: Colors.white,
+              icon: Icons.delete,
+              label: 'Delete',
+            ),
+            // Container(
+            //   alignment: Alignment.center,
+            //   //height: 20,
+            //   decoration: BoxDecoration(
+            //     color: Color.fromRGBO(0, 86, 253, 1.0),
+            //     //borderRadius: BorderRadius.circular(10.0),
+            //   ),
+            //   child: Text(
+            //     "撤消？",
+            //     style: TextStyle(color: Colors.red),
+            //   ),
+            // ),
+          ]), //SlidableScrollActionPane(),
           key: Key(index.toString()),
           // dismissal: SlidableDismissal(
           //   child: SlidableDrawerDismissal(),
           //   onDismissed: (actionType) {},
           //   //onWillDismiss: (actionType) {},
           // ),
-          actionExtentRatio: 0.15,
+          //actionExtentRatio: 0.15,
           child: list[index],
-          actions: <Widget>[
-            // IconSlideAction(
-            //   caption: 'Archive',
-            //   //color: Colors.blue,
-            //   icon: Icons.archive,
-            //   onTap: () => print('2222'),
-            //   closeOnTap: false,
-            // ),
-            Container(
-              alignment: Alignment.center,
-              //height: 20,
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(0, 86, 253, 1.0),
-                //borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Text(
-                "撤消？",
-                style: TextStyle(color: Colors.red),
-              ),
-            ),
-            // IconSlideAction(
-            //   caption: 'Share',
-            //   //color: Colors.indigo,
-            //   icon: Icons.share,
-            //   onTap: () {},
-            // ),
-          ],
+          //actions: <Widget>[
+          // IconSlideAction(
+          //   caption: 'Archive',
+          //   //color: Colors.blue,
+          //   icon: Icons.archive,
+          //   onTap: () => print('2222'),
+          //   closeOnTap: false,
+          // ),
+
+          //),
+          // IconSlideAction(
+          //   caption: 'Share',
+          //   //color: Colors.indigo,
+          //   icon: Icons.share,
+          //   onTap: () {},
+          // ),
+          //],
         );
       },
     );

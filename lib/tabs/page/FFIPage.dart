@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:jage_app/function/JageFileManager.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:gallery_saver/gallery_saver.dart';
+import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 // Pointer<Int8> 对应C 的char*
 // Dart传参时使用的char*，Utf.toUtf8(String)
@@ -41,8 +42,8 @@ class _FFIPageState extends State<FFIPage> {
             'process_image');
     Process_img_Func erode_img_func = opencvLib
         .lookupFunction<Native_erode_img_Func, Erode_img_Func>('erodePic');
-    String str1 = "/sdcard/Pictures/index_gray.png";///storage/emulated/0/Pictures/1.png
-    String dir = "";
+    String str1 = "/storage/emulated/0/Pictures/index_gray.png";///storage/emulated/0/Pictures/1.png
+    String dir = "/storage/emulated/0/Pictures/Screenshots/Screenshot_2023.03.01_22.56.26.880.png"; //await JageFileManager().getAppDirectory();
     String s1 = "";
     String s2 = "";
     Pointer<Int8> na = str1.toNativeUtf8().cast<Int8>();
@@ -64,22 +65,29 @@ class _FFIPageState extends State<FFIPage> {
             Text("OpenCV version: $str"),
             ElevatedButton(
               onPressed: () async {
-                dir = await JageFileManager().getAppDirectory();
                 print(dir);
-                s1 = dir + "1.png";
-                s2 = dir + "/2.png";
+
+                
+                final List<AssetEntity>? result = 
+                    await AssetPicker.pickAssets(context);
+                    String? path = result![0].relativePath;
+                    String? title = result[0].title;
+                String? thumPic = path! + "/" + title!;
+                na = thumPic.toNativeUtf8().cast<Int8>();
+                s1 = thumPic;
+                s2 = path + "/2.png";
                 setState(() {
-                  //dir += "/1.png";
+                  dir = s2;
                 });
-                process_img_func(na, s1.toNativeUtf8().cast<Int8>());
-                erode_img_func(na, s2.toNativeUtf8().cast<Int8>());
                 print("s1: " + s1);
                 print("s2: " + s2);
+                process_img_func(na, s1.toNativeUtf8().cast<Int8>());
+                erode_img_func(na, s2.toNativeUtf8().cast<Int8>());
               },
               child: Text("opencv"),
             ),
             Image.file(
-              File("/data/user/0/com.jage.jage_app/cache/index_gray.png"),
+              File(s2),
               fit: BoxFit.fill,
             ),
           ],

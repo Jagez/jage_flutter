@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:path_provider/path_provider.dart';
@@ -10,15 +12,13 @@ class NewsPage extends StatefulWidget {
 }
 
 class _NewsPageState extends State<NewsPage> {
-
-  void demo()async{
+  void demo() async {
     var tempDir = await getTemporaryDirectory();
     String tempPath = tempDir.path;
     var appDocDir = await getApplicationDocumentsDirectory();
     String appDocPath = appDocDir.path;
     print(tempPath);
     print(appDocPath);
-
   }
 
   @override
@@ -26,16 +26,28 @@ class _NewsPageState extends State<NewsPage> {
     return Slidable(
       key: Key("wq"),
       //controller: slidableController,
-      actionPane:
-          SlidableScrollActionPane(), // 侧滑菜单出现方式 SlidableScrollActionPane SlidableDrawerActionPane SlidableStrechActionPane
-      actionExtentRatio: 0.20, // 侧滑按钮所占的宽度
+      endActionPane: const ActionPane(
+        motion: ScrollMotion(),
+        children: [
+          SlidableAction(
+            flex: 2,
+            onPressed: null,
+            backgroundColor: Color(0xFF7BC043),
+            foregroundColor: Colors.white,
+            icon: Icons.archive,
+            label: 'Archive',
+          ),
+          
+        ],
+      ), // 侧滑菜单出现方式 SlidableScrollActionPane SlidableDrawerActionPane SlidableStrechActionPane
+      //actionExtentRatio: 0.20, // 侧滑按钮所占的宽度
       enabled: true, // 是否启用侧滑 默认启用
-      dismissal: SlidableDismissal(
-        child: SlidableDrawerDismissal(),
-        onDismissed: (actionType) {
-        },
-        //onWillDismiss: (actionType) {},
-      ),
+      // dismissal: SlidableDismissal(
+      //   child: SlidableDrawerDismissal(),
+      //   onDismissed: (actionType) {
+      //   },
+      //   //onWillDismiss: (actionType) {},
+      // ),
       child: Container(
         color: Colors.white,
         child: ListTile(
@@ -48,36 +60,6 @@ class _NewsPageState extends State<NewsPage> {
           subtitle: Text('SlidableDrawerDelegate'),
         ),
       ),
-      actions: <Widget>[
-        IconSlideAction(
-          caption: 'Archive',
-          color: Colors.blue,
-          icon: Icons.archive,
-          onTap: () => print('2222'),
-          closeOnTap: false,
-        ),
-        IconSlideAction(
-          caption: 'Share',
-          color: Colors.indigo,
-          icon: Icons.share,
-          onTap: () => demo(),
-        ),
-      ],
-      secondaryActions: <Widget>[
-        IconSlideAction(
-          caption: 'More',
-          color: Colors.black45,
-          icon: Icons.more_horiz,
-          //onTap: () => _showSnackBar('More'),
-        ),
-        IconSlideAction(
-          caption: 'Delete',
-          color: Colors.red,
-          icon: Icons.delete,
-          closeOnTap: false,
-          //onTap: () => _showSnackBar('Delete', index),
-        ),
-      ],
     );
     ;
   }

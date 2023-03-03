@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\LWK28\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HE:\flutter_project\jage_app\native_opencv\android -BE:\flutter_project\jage_app\native_opencv\android\.cxx\cmake\debug\armeabi-v7a
+  command = E:\Android\adt-bundle-windows-x86_64-20140702\sdk\cmake\3.10.2.4988404\bin\cmake.exe -HE:\flutter_project\jage_app\native_opencv\android -BE:\flutter_project\jage_app\native_opencv\android\.cxx\cmake\debug\armeabi-v7a
   description = Re-running CMake...
   generator = 1
 
@@ -51,7 +51,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = C:\Users\LWK28\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe -t clean
+  command = E:\Android\adt-bundle-windows-x86_64-20140702\sdk\cmake\3.10.2.4988404\bin\ninja.exe -t clean
   description = Cleaning all built files...
 
 
@@ -59,6 +59,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = C:\Users\LWK28\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe -t targets
+  command = E:\Android\adt-bundle-windows-x86_64-20140702\sdk\cmake\3.10.2.4988404\bin\ninja.exe -t targets
   description = All primary targets available:
 
