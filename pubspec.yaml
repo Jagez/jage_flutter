@@ -91,6 +91,7 @@ dependencies:
   wechat_assets_picker: ^8.4.0
   battery_plus: ^3.0.3
   lottie: ^2.2.0
+  cached_network_image: ^3.2.3
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -83,7 +83,7 @@ class _DemoListWidgetState extends State<DemoListWidget> {
   Widget _customBottomSheet() => BottomSheet(
         onClosing: () {},
         builder: (_) => (Container(
-          height: 200,
+          height: 800,
           width: double.infinity,
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -93,8 +93,8 @@ class _DemoListWidgetState extends State<DemoListWidget> {
               fit: BoxFit.cover,
             ),
             borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10.0),
-                topRight: Radius.circular(10.0)),
+                topLeft: Radius.circular(80.0),
+                topRight: Radius.circular(80.0)),
           ),
           child: Text("bottomSheet"),
         )),

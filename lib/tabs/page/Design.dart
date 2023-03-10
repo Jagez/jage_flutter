@@ -42,8 +42,7 @@ class _DesignPageState extends State<DesignPage> {
               children: [
                 OutlinedButton(
                     style: TextButton.styleFrom(
-                      primary: Colors.white,
-                      side: BorderSide(
+                      foregroundColor: Colors.white, side: BorderSide(
                         color: Colors.white,
                       ),
                       shape: RoundedRectangleBorder(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jage_app/function/SocialInfo.dart';
 import 'package:jage_app/widget/SocialWidget.dart';
+import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 class SocialPage extends StatefulWidget {
   SocialPage({Key? key}) : super(key: key);
@@ -11,6 +12,8 @@ class SocialPage extends StatefulWidget {
 
 class _SocialPageState extends State<SocialPage> {
   late SocialInfo info1;
+  List<AssetEntity> imageEntityList = [];
+
 
   @override
   void initState() {
@@ -40,7 +43,19 @@ class _SocialPageState extends State<SocialPage> {
         width: double.infinity,
         child: ListView(
           children: [
-            SocialWidget(info: info1),
+            Container(
+              child: ElevatedButton(
+                child: Text("选择图片"), 
+                onPressed: () async {
+                  final List<AssetEntity>? assets = await AssetPicker.pickAssets(context);
+                  if (assets!.length > 0) {
+                    setState(() {
+                      imageEntityList = assets;
+                    });
+                  }
+
+            },),),
+            SocialWidget(info: info1, selecedAssets: imageEntityList,),
             //SocialWidget(),
             //SocialWidget(),
             //SocialWidget(),

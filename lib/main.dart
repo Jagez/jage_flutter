@@ -34,6 +34,7 @@ import 'tabs/page/BatteryInfo.dart';
 import 'tabs/page/FileManager.dart';
 import 'tabs/page/QuestionPage.dart';
 import 'tabs/page/FileSelectPage.dart';
+import 'tabs/page/SocialPushPage.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
@@ -50,6 +51,8 @@ class JageApp extends StatefulWidget {
 }
 
 class _JageAppState extends State<JageApp> with WidgetsBindingObserver {
+  bool _isGrey = false;
+
   final Map<String, Widget Function(BuildContext)> routes = {
     //此处添加路由,可以传参
     //'/': (context)=>Tabs(),
@@ -89,6 +92,8 @@ class _JageAppState extends State<JageApp> with WidgetsBindingObserver {
     '/battle': (context) => BattlePage(),
     '/music': (context) => MusicPage(),
     '/ffi': (context) => FFIPage(),
+    '/social-push': (context) => SocialPush(),
+
   };
 
   bool _bHidden = false;
@@ -98,14 +103,14 @@ class _JageAppState extends State<JageApp> with WidgetsBindingObserver {
     super.initState();
 
     //启用监听生命周期状态
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
     super.dispose();
 
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
   }
 
 //要实现后台遮挡Android不管用
@@ -131,46 +136,56 @@ class _JageAppState extends State<JageApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    return _isGrey 
+    ? ColorFiltered(
+      colorFilter: ColorFilter.mode(Colors.grey, BlendMode.saturation),
+      child: _buildMaterialApp(),
+    )
+    : _buildMaterialApp();
+  }
+
+  Widget _buildMaterialApp() {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Stack(
-        children: [      //Tabs()
-          if (_bHidden) Container(color: Colors.orange[800],),
-          Tabs(),
-        ],
-      ),
-      //darkTheme: darkThemeData(context),
-      themeMode: ThemeMode.light,
-      //initialRoute: '/',    //初始化根组件
-      onGenerateRoute: (RouteSettings settings) {
-        final String? name = settings.name;
-        final Function? pageContentBuilder = this.routes[name];
-        if (pageContentBuilder != null) {
-          //带参
-          if (settings.arguments != null) {
-            final Route route = MaterialPageRoute(
-              builder: (context) =>
-                  pageContentBuilder(context, arguments: settings.arguments),
-            );
-            return route;
-            //不带参
-          } else {
-            final Route route = MaterialPageRoute(
-              builder: (context) => pageContentBuilder(context),
-            );
-            return route;
+        debugShowCheckedModeBanner: false,
+        home: Stack(
+          children: [      //Tabs()
+            if (_bHidden) Container(color: Colors.orange[800],),
+            Tabs(),
+          ],
+        ),
+        //darkTheme: darkThemeData(context),
+        themeMode: ThemeMode.light,
+        //initialRoute: '/',    //初始化根组件
+        onGenerateRoute: (RouteSettings settings) {
+          final String? name = settings.name;
+          final Function? pageContentBuilder = this.routes[name];
+          if (pageContentBuilder != null) {
+            //带参
+            if (settings.arguments != null) {
+              final Route route = MaterialPageRoute(
+                builder: (context) =>
+                    pageContentBuilder(context, arguments: settings.arguments),
+              );
+              return route;
+              //不带参
+            } else {
+              final Route route = MaterialPageRoute(
+                builder: (context) => pageContentBuilder(context),
+              );
+              return route;
+            }
           }
-        }
-      },
-      //国际化
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: [
-        Locale('en', 'US'),
-        Locale('zh', 'CH'),
-      ],
-    );
+          return null;
+        },
+        //国际化
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale('en', 'US'),
+          Locale('zh', 'CH'),
+        ],
+      );
   }
 }

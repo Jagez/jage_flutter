@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:jage_app/function/SocialInfo.dart';
 import 'package:jage_app/widget/MediaWidget.dart';
+import 'package:jage_app/widget/SocialGridImage.dart';
+import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 import 'ContentText.dart';
 
 class SocialWidget extends StatefulWidget {
   final SocialInfo info;
+  final List<AssetEntity> selecedAssets;
   SocialWidget({
     Key? key,
     required this.info,
+    required this.selecedAssets,
   }) : super(key: key);
 
   @override
@@ -60,6 +64,7 @@ class _SocialWidgetState extends State<SocialWidget> {
             ),
           ),
           //MediaWidget(),
+          SocialGridImage(selecedAssets: widget.selecedAssets),
           Container(
             child: Wrap(
               //direction: Axis.horizontal,
@@ -108,12 +113,16 @@ class _SocialWidgetState extends State<SocialWidget> {
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(
-                  Icons.thumb_up_outlined,
-                  color: Theme.of(context).primaryColor,
-                ),
-              ),
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/social-push");
+                    },
+                    child: Icon(
+                      Icons.thumb_up_outlined,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  )),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Icon(

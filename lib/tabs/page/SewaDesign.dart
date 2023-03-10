@@ -54,7 +54,7 @@ class _SewaDesignPageState extends State<SewaDesignPage> {
               style: TextStyle(
                 color: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .color!
                     .withOpacity(0.64),
               ),
