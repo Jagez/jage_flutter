@@ -21,143 +21,70 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  animated_text_kit: ^4.2.2
+  badges: ^3.0.2
+  battery_plus: ^3.0.3
+  cached_network_image: ^3.2.3
+  camera: ^0.10.3+2
+  connectivity_plus: ^3.0.3
+  cupertino_icons: ^1.0.5
+  device_info_plus: ^8.1.0
+  dio: ^5.0.1
+  extended_image: ^7.0.2
+  ffi: ^2.0.1
+  file: ^6.1.4
+  firebase_messaging: ^10.0.4
+  fl_chart: ^0.36.3
   flutter:
     sdk: flutter
-
+  flutter_blurhash: ^0.7.0
+  flutter_ffmpeg: ^0.4.2
+  flutter_local_notifications: ^8.2.0
   flutter_localizations:
     sdk: flutter
-  
-    #本地库
-  # flutter_package:
-  #   path: ../flutter_package
-
+  flutter_native_splash: ^2.2.18
+  flutter_rating_bar: ^4.0.1
+  flutter_slidable: ^2.0.0
+  flutter_spinkit: ^5.1.0
+  flutter_staggered_grid_view: ^0.6.2
+  gallery_saver: ^2.3.2
+  geolocator: ^9.0.2
+  get: ^4.6.5
+  glassmorphism: ^3.0.0
+  hive: ^2.2.3
+  http: ^0.13.5
+  image_picker: ^0.8.6+4
+  in_app_update: ^4.0.1
+  intl: ^0.17.0
+  just_audio: ^0.9.31
+  location: ^4.3.0
+  lottie: ^2.2.0
+  mime: ^1.0.4
   native_opencv:
     path: native_opencv
-
-  fl_chart: ^0.36.3
-  http: ^0.13.5
-  location: ^4.3.0
-  firebase_messaging: ^10.0.4
-  # win32: ^2.2.5
-  scroll_to_index: ^2.0.0
-  video_player: ^2.1.12
-  # 徽章
-  badges: ^3.0.2
-  # 地理定位器
-  geolocator: ^9.0.2
-  shared_preferences: ^2.0.18
-  cupertino_icons: ^1.0.5
-  flutter_ffmpeg: ^0.4.2
-  device_info_plus: ^8.1.0
-  camera: ^0.10.3+2
-  image_picker: ^0.8.6+4
-  file: ^6.1.4
-  mime: ^1.0.4
-  redux: ^5.0.0
-  flutter_native_splash: ^2.2.18
-  provider: ^6.0.5
-  intl: ^0.17.0
-  wakelock: ^0.6.2
-  sensors_plus: ^2.0.2
-  flutter_spinkit: ^5.1.0
-  flutter_slidable: ^2.0.0
   path_provider: ^2.0.13
-  signature: ^5.3.2
-  url_launcher: ^6.1.10
-  rxdart: ^0.27.7
-  flutter_blurhash: ^0.7.0
-  sentry_flutter: ^6.21.0
-  animated_text_kit: ^4.2.2
-  just_audio: ^0.9.31
-  connectivity_plus: ^3.0.3
-  share_plus: ^6.3.1
-  get: ^4.6.5
-  hive: ^2.2.3
-  timeline_tile: ^2.0.0
-  qr_flutter: ^4.0.0
-  qr_code_scanner: ^1.0.1
-  syncfusion_flutter_charts: ^20.4.52
-  flutter_local_notifications: ^8.2.0
-  transparent_image: ^2.0.1
-  syncfusion_flutter_maps: ^20.4.52
-  shimmer: ^2.0.0
-  in_app_update: ^4.0.1
-  synchronized: ^3.0.1
-  flutter_rating_bar: ^4.0.1
-  ffi: ^2.0.1
-  dio: ^5.0.1
   permission_handler: ^10.2.0
-  gallery_saver: ^2.3.2
-  wechat_assets_picker: ^8.4.0
-  battery_plus: ^3.0.3
-  lottie: ^2.2.0
-  cached_network_image: ^3.2.3
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  #cupertino_icons: ^1.0.2
-  #win32: ^2.0.5
-  # flutter_ffmpeg: ^0.4.2
-  #device_info_plus: ^2.1.0
-  # camera: ^0.10.0+1
-  #image_picker: ^0.8.3
-  #file: ^6.1.2
-  #mime: ^1.0.0
-  #redux: ^5.0.0
-  ## flutter_native_splash ^1.2.1
-  #flutter_native_splash: ^1.2.1   
-  #provider: ^5.0.0
-  #firebase_auth: ^3.0.1
-#
-  #intl: ^0.17.0
-  ##flutter_swiper: ^1.1.6
-  #wakelock: ^0.5.3+3
-  #sensors_plus: ^1.0.2
-  #flutter_spinkit: ^5.0.0
-  #flutter_slidable: ^0.6.0
-  ##battery_plus: ^1.1.1
-  #path_provider: ^2.0.2
-  ## speech_to_text: ^5.0.0
-  #signature: ^4.1.1
-  #url_launcher: ^6.0.10
-  #rxdart: ^0.27.2
-  #flutter_blurhash: ^0.6.0
-  #sentry_flutter: ^6.0.0
-  #animated_text_kit: ^4.2.1
-  #just_audio: ^0.9.11
-  #connectivity_plus: ^1.1.0
-  #share_plus: ^2.1.4
-  ## lottie: ^1.1.0
-  #get: ^4.3.8
-  #hive: ^2.0.4
- ## audioplayers: ^0.20.1
-  #timeline_tile: ^2.0.0
-  #qr_flutter: ^4.0.0
-  #qr_code_scanner: ^0.5.2
-  #syncfusion_flutter_charts: ^19.3.55
-  #flutter_local_notifications: ^5.0.0+4
-  ##easy_localization: ^3.0.0
-  #shared_preferences: ^2.0.7
-  ##tencent_im_sdk_plugin: ^3.9.2
-  #transparent_image: ^2.0.0
-  #syncfusion_flutter_maps: ^19.4.56-beta
-  #shimmer: ^2.0.0
-  #camera: ^0.9.2+2
-  #in_app_update: ^3.0.0
-  #synchronized: ^3.0.0
-  #flutter_rating_bar: ^4.0.0
-  ##battery_plus: ^2.0.1
-  #ffi: ^1.2.1
-  #dio: ^4.0.6
-  #permission_handler: ^8.1.6
-  #gallery_saver: ^2.3.2
-  #wechat_assets_picker: ^6.0.4
-  #battery_plus: ^2.0.1
-  #lottie: ^1.2.2
-  #dio: ^4.0.6
-  #get: ^4.6.1
-  
+  provider: ^6.0.5
+  qr_code_scanner: ^1.0.1
+  qr_flutter: ^4.0.0
+  redux: ^5.0.0
+  rxdart: ^0.27.7
+  scroll_to_index: ^2.0.0
+  sensors_plus: ^2.0.2
+  sentry_flutter: ^6.21.0
+  share_plus: ^6.3.1
+  shared_preferences: ^2.0.18
+  shimmer: ^2.0.0
+  signature: ^5.3.2
+  syncfusion_flutter_charts: ^20.4.52
+  syncfusion_flutter_maps: ^20.4.52
+  synchronized: ^3.0.1
+  timeline_tile: ^2.0.0
+  transparent_image: ^2.0.1
+  url_launcher: ^6.1.10
+  video_player: ^2.1.12
+  wakelock: ^0.6.2
+  wechat_assets_picker: ^8.4.1
 
 dev_dependencies:
   flutter_test:
@@ -165,7 +92,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
 
@@ -179,6 +105,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - images/22.png
     - assets/icon/247.png
     - assets/icon/26.png
     - assets/icon/13.png
@@ -1225,7 +1152,7 @@ flutter:
     - images/2.0x/thumb_unit_profile_100111.png
     - images/2.0x/thumb_unit_profile_100131.png
     - images/2.0x/thumb_unit_profile_100211.png
-    - images/2.0x/thumb_unit_profile_100231.png    
+    - images/2.0x/thumb_unit_profile_100231.png
     - images/3.0x/thumb_unit_profile_100111.png
     - images/3.0x/thumb_unit_profile_100131.png
     - images/3.0x/thumb_unit_profile_100211.png
@@ -1678,10 +1605,8 @@ flutter:
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -1704,15 +1629,15 @@ flutter:
   fonts:
     - family: DIGI
       fonts:
-      - asset: assets/fonts/ttf/DS-DIGIB.TTF
+        - asset: assets/fonts/ttf/DS-DIGIB.TTF
     - family: lover
       fonts:
-      - asset: assets/fonts/ttf/lovers.ttf
+        - asset: assets/fonts/ttf/lovers.ttf
     - family: SAO
       fonts:
-      - asset: assets/fonts/sao/FZZY.ttf
+        - asset: assets/fonts/sao/FZZY.ttf
     - family: loverROB
       fonts:
-      - asset: assets/fonts/ttf/Lovers_Quarrel_ROB.ttf
+        - asset: assets/fonts/ttf/Lovers_Quarrel_ROB.ttf
 
   generate: true

@@ -258,7 +258,7 @@ packages:
     source: hosted
     version: "2.0.5"
   extended_image:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: extended_image
       sha256: "75e4b0ad0f8f63eed7935ff2506c809a670f5e6dd0f61304525879d53fc41a17"
@@ -443,6 +443,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "5.1.0"
+  flutter_staggered_grid_view:
+    dependency: "direct main"
+    description:
+      name: flutter_staggered_grid_view
+      sha256: "1312314293acceb65b92754298754801b0e1f26a1845833b740b30415bbbcf07"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.6.2"
   flutter_svg:
     dependency: transitive
     description:
@@ -525,6 +533,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.6.5"
+  glassmorphism:
+    dependency: "direct main"
+    description:
+      name: glassmorphism
+      sha256: c0f65ea2681d4ee6d4125b947946d983335cd44765e835cdc039894b076a6e31
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.0.0"
   hive:
     dependency: "direct main"
     description:
@@ -1461,10 +1477,10 @@ packages:
     dependency: "direct main"
     description:
       name: wechat_assets_picker
-      sha256: "8ddf607e5416b69e25cef1c86c7ffcfe3ad61c368e4cf54e4d4db8e317e9a651"
+      sha256: "93ec8af5670d5c34289ff86d4fd9cfc80930c337112f1f8bf5a57a942a82b337"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "8.4.0"
+    version: "8.4.1"
   win32:
     dependency: transitive
     description:

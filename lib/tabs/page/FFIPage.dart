@@ -29,6 +29,8 @@ class FFIPage extends StatefulWidget {
 }
 
 class _FFIPageState extends State<FFIPage> {
+  var imageKey = UniqueKey();
+
   @override
   Widget build(BuildContext context) {
     final DynamicLibrary opencvLib = DynamicLibrary.open("libnative-lib.so");
@@ -36,24 +38,31 @@ class _FFIPageState extends State<FFIPage> {
     //调用C库函数
     Pointer<Int8> result = verFunc();
     String str = result.cast<Utf8>().toDartString();
+    print("version: " + str);
 
     Process_img_Func process_img_func =
         opencvLib.lookupFunction<Native_process_img_Func, Process_img_Func>(
             'process_image');
-    Process_img_Func erode_img_func = opencvLib
+    Erode_img_Func erode_img_func = opencvLib
         .lookupFunction<Native_erode_img_Func, Erode_img_Func>('erodePic');
-    String str1 = "/storage/emulated/0/Pictures/index_gray.png";///storage/emulated/0/Pictures/1.png
-    String dir = "/storage/emulated/0/Pictures/Screenshots/Screenshot_2023.03.01_22.56.26.880.png"; //await JageFileManager().getAppDirectory();
+    String str1 = "/storage/emulated/0/Pictures/index_gray.png";
+
+    ///storage/emulated/0/Pictures/1.png
+    String dir =
+        "/storage/emulated/0/Pictures/Screenshots/Screenshot_2023.03.01_22.56.26.880.png"; //await JageFileManager().getAppDirectory();
     String s1 = "";
     String s2 = "";
-    Pointer<Int8> na = str1.toNativeUtf8().cast<Int8>();
     JageFileManager().getLocalFile();
     //保存网络图片
     String networkImg =
         "https://www.baidu.com/img/flexible/logo/pc/index_gray.png"; //http://jage.cktyun.com/1.png
-    GallerySaver.saveImage(networkImg).then((success) {
-      print("networkImg is saved.");
-    });
+    // GallerySaver.saveImage(networkImg).then((success) {
+    //   print("networkImg is saved.");
+    // });
+
+    ValueNotifier<String> imagePath = ValueNotifier<String>("");
+    Pointer<Int8> na = s1.toNativeUtf8().cast<Int8>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text("FFI"),
@@ -63,35 +72,68 @@ class _FFIPageState extends State<FFIPage> {
         child: ListView(
           children: [
             Text("OpenCV version: $str"),
-            ElevatedButton(
-              onPressed: () async {
-                print(dir);
+            Container(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        final List<AssetEntity>? result =
+                            await AssetPicker.pickAssets(context);
+                        String? path = result![0].relativePath!;
+                        String? title = result[0].title;
 
-                
-                final List<AssetEntity>? result = 
-                    await AssetPicker.pickAssets(context);
-                    String? path = result![0].relativePath;
-                    String? title = result[0].title;
-                String? thumPic = path! + "/" + title!;
-                na = thumPic.toNativeUtf8().cast<Int8>();
-                s1 = thumPic;
-                s2 = path + "/2.png";
-                setState(() {
-                  dir = s2;
-                });
-                print("s1: " + s1);
-                print("s2: " + s2);
-                process_img_func(na, s1.toNativeUtf8().cast<Int8>());
-                erode_img_func(na, s2.toNativeUtf8().cast<Int8>());
-              },
-              child: Text("opencv"),
+                        String? thumPic = path + '/' + title!;
+                        print(thumPic);
+                        imagePath.value = thumPic;
+                      },
+                      child: Text("选择图片"),
+                    ),
+                  ),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        RegExp regExp = RegExp(r'^.*\/');
+                        String tmp = imagePath.value;
+                        String? res = regExp.firstMatch(tmp)![0];
+                        print("res: " + res!);
+                        imageKey = UniqueKey();
+
+                        na = tmp.toNativeUtf8().cast<Int8>();
+                        s1 = (res! + "process_img_out.png");
+                        s2 = (res! + "erode_img_out.png");
+                        print("s1: " + s1);
+                        print("s2: " + s2);
+                        imagePath.value = s2;
+                        process_img_func(na, s1.toNativeUtf8().cast<Int8>());
+                        Pointer<Int8> log = erode_img_func(na, s2.toNativeUtf8().cast<Int8>());
+                        print("result: " + log.cast<Utf8>().toDartString());  //Pointer: address=0x7b7865bb27f7
+                        print("imagePath.value: " + imagePath.value);
+                      },
+                      child: Text("opencv"),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            Image.file(
-              File(s2),
-              fit: BoxFit.fill,
+            ValueListenableBuilder<String>(
+              builder: _buildImage,
+              valueListenable: imagePath,
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildImage(BuildContext context, String value1, Widget? child) {
+    print("value: " + value1);
+    return Container(
+      child: Image.file(
+        File(value1),
+        height: 150,
+        key: imageKey,
+        fit: BoxFit.contain,
       ),
     );
   }
