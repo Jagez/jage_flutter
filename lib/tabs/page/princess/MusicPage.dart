@@ -9,10 +9,10 @@ class MusicPage extends StatefulWidget {
 
 class _MusicPageState extends State<MusicPage> {
   // 定义ValueNotifier<int> 对象 _counter
-  final ValueNotifier<int> _counter = ValueNotifier<int>(0);
+  final ValueNotifier<String> _counter = ValueNotifier<String>("0");
 
   void _incrementCounter() {
-    _counter.value += 1;
+    _counter.value += "1";
   }
 
   @override
@@ -28,7 +28,7 @@ class _MusicPageState extends State<MusicPage> {
             children: [
               WidgetA(),
               Text('You have pushed the button this many times:'),
-              ValueListenableBuilder<int>(
+              ValueListenableBuilder<String>(
                 builder: _buildWithValue,
                 valueListenable: _counter,
               )
@@ -43,7 +43,7 @@ class _MusicPageState extends State<MusicPage> {
     );
   }
 
-  Widget _buildWithValue(BuildContext context, int value, Widget? child) {
+  Widget _buildWithValue(BuildContext context, String value, Widget? child) {
     return Text(
       '$value',
       style: Theme.of(context).textTheme.headline4,

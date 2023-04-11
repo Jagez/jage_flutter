@@ -59,7 +59,7 @@ class _FFIPageState extends State<FFIPage> {
     // GallerySaver.saveImage(networkImg).then((success) {
     //   print("networkImg is saved.");
     // });
-
+  //注意不要与setstate同时使用
     ValueNotifier<String> imagePath = ValueNotifier<String>("");
     Pointer<Int8> na = s1.toNativeUtf8().cast<Int8>();
 

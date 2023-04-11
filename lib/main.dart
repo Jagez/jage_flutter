@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:jage_app/tabs/page/FFIPage.dart';
+import 'package:jage_app/tabs/page/GalleryPage.dart';
 //import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:jage_app/tabs/page/MediaPage.dart';
 import 'package:jage_app/tabs/page/PrincessConnectPage.dart';
@@ -12,6 +13,7 @@ import 'package:jage_app/tabs/page/WeatherDetail.dart';
 import 'package:jage_app/tabs/page/princess/BattlePage.dart';
 import 'package:jage_app/tabs/page/princess/MusicPage.dart';
 import 'package:jage_app/theme.dart';
+import 'package:jage_app/widget/GalleryWidget.dart';
 import 'tabs/Tabs.dart';
 import 'tabs/page/NewPage.dart';
 import 'tabs/page/TabBarController.dart';
@@ -93,7 +95,7 @@ class _JageAppState extends State<JageApp> with WidgetsBindingObserver {
     '/music': (context) => MusicPage(),
     '/ffi': (context) => FFIPage(),
     '/social-push': (context) => SocialPush(),
-
+    '/gallery': (context) => GalleryPage(),
   };
 
   bool _bHidden = false;

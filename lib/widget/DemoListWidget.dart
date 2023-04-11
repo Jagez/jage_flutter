@@ -66,18 +66,19 @@ class _DemoListWidgetState extends State<DemoListWidget> {
 //这种模式的bottomsheet是阻塞的
   _modelBottomSheet() {
     showModalBottomSheet(
-        context: context,
-        builder: (context) {
-          return Container(
-            child: Column(
-              children: [
-                Text("分享"),
-                Text("分享"),
-                Text("分享"),
-              ],
-            ),
-          );
-        });
+      context: context,
+      builder: (context) {
+        return Container(
+          child: Column(
+            children: [
+              Text("分享"),
+              Text("分享"),
+              Text("分享"),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   Widget _customBottomSheet() => BottomSheet(
@@ -122,6 +123,12 @@ class _DemoListWidgetState extends State<DemoListWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/gallery');
+                  },
+                  child: Text("流水布局"),
+                ),
                 CircularProgressIndicator(),
                 ElevatedButton(
                   onPressed: () {
