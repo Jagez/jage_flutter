@@ -3,5 +3,6 @@
     "files.associations": {
         "vector": "cpp"
     },
-    "commentTranslate.source": "Baidu"
+    "commentTranslate.source": "Bing",
+    "cmake.sourceDirectory": "E:/flutter_project/jage_app/native_opencv/android"
 }

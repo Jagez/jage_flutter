@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jage_app/widget/GalleryWidget.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 class SocialGridImage extends StatefulWidget {
@@ -21,7 +22,9 @@ class SocialGridImage extends StatefulWidget {
 class _SocialGridImageState extends State<SocialGridImage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
+      padding: EdgeInsets.only(left: 5),
+      alignment: Alignment.centerLeft,
       child: Column(
         children: [
           LayoutBuilder(
@@ -48,7 +51,6 @@ class _SocialGridImageState extends State<SocialGridImage> {
   }
 
   GestureDetector _buildAddIcon(BuildContext context, double width) {
-    
     return GestureDetector(
       onTap: () async {
         final List<AssetEntity>? assets = await AssetPicker.pickAssets(
@@ -77,21 +79,53 @@ class _SocialGridImageState extends State<SocialGridImage> {
     );
   }
 
-  Container _buildGridImage(
-      BuildContext context, AssetEntity asset, double width,
+  Widget _buildGridImage(BuildContext context, AssetEntity asset, double width,
       {BoxFit fit = BoxFit.cover}) {
     final AssetEntityImageProvider imageProvider = AssetEntityImageProvider(
         asset,
         isOriginal: false,
         thumbnailSize: ThumbnailSize.square(100));
-    return Container(
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
-      child: Image(
-        image: imageProvider,
+    return Draggable(
+      feedback: Container(
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
+        child: AssetEntityImage(
+          asset,
+          width: width,
+          height: width,
+          fit: fit, //default: BoxFit.cover, 可选: BoxFit.contain, BoxFit.cover, BoxFit.pad,
+          isOriginal: false,
+        ),
+      ),
+      childWhenDragging: Container(
         width: width,
         height: width,
-        fit: fit,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
+      ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return Gallery(
+                  ids: widget.selecedAssets.indexOf(asset),
+                  assets: widget.selecedAssets,
+                );
+              },
+            ),
+          );
+        },
+        child: Container(
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
+          child: Image(
+            image: imageProvider,
+            width: width,
+            height: width,
+            fit: fit,
+          ),
+        ),
       ),
     );
   }

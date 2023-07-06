@@ -18,7 +18,6 @@ class _ChartsContentState extends State<ChartsContent> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     _contentText = widget.arguments['contentText'];

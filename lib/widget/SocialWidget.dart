@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jage_app/function/SocialInfo.dart';
+import 'package:jage_app/tabs/page/SocialPage.dart';
+import 'package:jage_app/tabs/page/SocialPushPage.dart';
 import 'package:jage_app/widget/MediaWidget.dart';
 import 'package:jage_app/widget/SocialGridImage.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
@@ -116,7 +118,16 @@ class _SocialWidgetState extends State<SocialWidget> {
                   padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "/social-push");
+                      //Navigator.pushNamed(context, "/social-push");
+
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return Container(
+                            child: SocialPush(),
+                          );
+                        },
+                      );
                     },
                     child: Icon(
                       Icons.thumb_up_outlined,

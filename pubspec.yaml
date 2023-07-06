@@ -28,6 +28,7 @@ dependencies:
   camera: ^0.10.3+2
   connectivity_plus: ^3.0.3
   cupertino_icons: ^1.0.5
+  dart_ping: ^8.0.1
   device_info_plus: ^8.1.0
   dio: ^5.0.1
   extended_image: ^7.0.2

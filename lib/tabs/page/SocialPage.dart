@@ -14,13 +14,12 @@ class _SocialPageState extends State<SocialPage> {
   late SocialInfo info1;
   List<AssetEntity> imageEntityList = [];
 
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     info1 = SocialInfo(
-      header: "http://jage.cktyun.com/a.png",
+      header: "https://img.moegirl.org.cn/common/9/95/MoegirlPedia-Title.png",
       content: "由丸山くがね 著作、so-bin 担任插画、并曾三度被改编成电视动画的轻小说作品"
           "《OVERLORD》。官方在 8 日所举办的生放送节目中正式告知动画四期制作确定，并释出前导视"
           "觉图、制作团队与声优名单。"
@@ -43,19 +42,10 @@ class _SocialPageState extends State<SocialPage> {
         width: double.infinity,
         child: ListView(
           children: [
-            Container(
-              child: ElevatedButton(
-                child: Text("选择图片"), 
-                onPressed: () async {
-                  final List<AssetEntity>? assets = await AssetPicker.pickAssets(context);
-                  if (assets!.length > 0) {
-                    setState(() {
-                      imageEntityList = assets;
-                    });
-                  }
-
-            },),),
-            SocialWidget(info: info1, selecedAssets: imageEntityList,),
+            SocialWidget(
+              info: info1,
+              selecedAssets: imageEntityList,
+            ),
             //SocialWidget(),
             //SocialWidget(),
             //SocialWidget(),

@@ -65,7 +65,7 @@ class _WeatherPageState extends State<WeatherPage> {
                   softWrap: true,
                   maxLines: 3,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
                   overflow: TextOverflow.ellipsis,
