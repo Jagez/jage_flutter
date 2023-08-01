@@ -56,7 +56,7 @@ class _SocialWidgetState extends State<SocialWidget> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 8.0, bottom: 8.0),
+            margin: EdgeInsets.all(10.0),
             child: ContentTextWidget(
               arguments: {
                 "contentText": widget.info.content,
@@ -95,12 +95,12 @@ class _SocialWidgetState extends State<SocialWidget> {
                   onPressed: () {},
                   child: Text("# 话题"),
                   style: TextButton.styleFrom(
+                    foregroundColor: Color(0xFF439CEE),
                     textStyle: TextStyle(
                       fontSize: 11.0,
                     ),
                     elevation: 0.0,
                     backgroundColor: Color(0xFFF1F7FF),
-                    primary: Color(0xFF439CEE),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(18.0)),
                     ),
@@ -115,44 +115,65 @@ class _SocialWidgetState extends State<SocialWidget> {
           Row(
             children: [
               Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      //Navigator.pushNamed(context, "/social-push");
+                padding: const EdgeInsets.fromLTRB(20.0, 0.0, 8.0, 0.0),
+                child: GestureDetector(
+                  onTap: () {
+                    //Navigator.pushNamed(context, "/social-push");
 
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return Container(
-                            child: SocialPush(),
-                          );
-                        },
-                      );
-                    },
-                    child: Icon(
-                      Icons.thumb_up_outlined,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  )),
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          child: SocialPush(),
+                        );
+                      },
+                    );
+                  },
+                  child: Icon(
+                    Icons.thumb_up_outlined,
+                    size: 30.0,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+              ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(
-                  Icons.forum_outlined,
-                  color: Theme.of(context).primaryColor,
+                padding: const EdgeInsets.fromLTRB(5.0, 0, 10.0, 0.0),
+                child: Text(
+                  "1",
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor, fontSize: 20.0),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Icon(
-                  Icons.share_outlined,
+                  Icons.forum_outlined,
+                  size: 30.0,
                   color: Theme.of(context).primaryColor,
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(5.0, 0, 10.0, 0.0),
+                child: Text("1", style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 20.0), ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.share_outlined,
+                  size: 30.0,
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(5.0, 0, 10.0, 0.0),
+                child: Text("1", style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 20.0), ),
               ),
               Spacer(),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Icon(
                   Icons.more_horiz,
+                  size: 30.0,
                   color: Theme.of(context).primaryColor,
                 ),
               )

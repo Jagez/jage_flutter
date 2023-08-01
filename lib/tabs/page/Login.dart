@@ -34,9 +34,9 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Container(
                 margin: EdgeInsets.only(
-                  top: 40.0,
-                  left: 40.0,
-                  right: 40.0,
+                  top: 70.0,
+                  left: 70.0,
+                  right: 70.0,
                 ),
                 height: 100,
                 width: double.infinity,
@@ -52,8 +52,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Container(
                 margin: EdgeInsets.only(
-                  left: 40.0,
-                  right: 40.0,
+                  left: 70.0,
+                  right: 70.0,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -165,7 +165,9 @@ class _LoginPageState extends State<LoginPage> {
                           Color.fromRGBO(2, 180, 254, 1.0)),
                     ),
                     child: Text("Sign Up"),
-                    onPressed: () {},
+                    onPressed: () {
+                      FocusScope.of(context).unfocus();
+                    },
                   ),
                   ElevatedButton(
                     style: ButtonStyle(
@@ -173,7 +175,9 @@ class _LoginPageState extends State<LoginPage> {
                           Color.fromRGBO(2, 180, 254, 1.0)),
                     ),
                     child: Text("Login In"),
-                    onPressed: () {},
+                    onPressed: () {
+                      FocusScope.of(context).unfocus();
+                    },
                   ),
                 ],
               ),

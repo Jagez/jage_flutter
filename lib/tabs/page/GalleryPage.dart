@@ -30,26 +30,18 @@ class _GalleryPageState extends State<GalleryPage> {
           ),
           childrenDelegate: SliverChildBuilderDelegate(
             (context, index) {
-              return Draggable(
-                feedback: Container(
-                  width: 100,
-                  height: 100,
-                  color: 	Color(0xFFFFFFFF), //White with black outline.
-
+              return Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.blueGrey.withOpacity(0.5),
+                      blurRadius: 3,
+                      spreadRadius: 3,
+                    ),
+                  ],
                 ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.blueGrey.withOpacity(0.5),
-                        blurRadius: 3,
-                        spreadRadius: 3,
-                      ),
-                    ],
-                  ),
-                  child: Image.asset("images/22.png"),
-                ),
+                child: Image.asset("images/22.png"),
               );
             },
           ),

@@ -46,6 +46,10 @@ class _SocialPageState extends State<SocialPage> {
               info: info1,
               selecedAssets: imageEntityList,
             ),
+            SocialWidget(
+              info: info1,
+              selecedAssets: imageEntityList,
+            ),
             //SocialWidget(),
             //SocialWidget(),
             //SocialWidget(),

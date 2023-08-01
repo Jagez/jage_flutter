@@ -40,12 +40,12 @@ CMAKE SERVER: {
     "-DCMAKE_CXX_FLAGS\u003d-frtti -fexceptions -std\u003dc++11",
     "-DCMAKE_FIND_ROOT_PATH\u003dE:\\flutter_project\\jage_app\\native_opencv\\android\\.cxx\\cmake\\debug\\prefab\\arm64-v8a\\prefab",
     "-DCMAKE_BUILD_TYPE\u003dDebug",
-    "-DCMAKE_TOOLCHAIN_FILE\u003dE:\\Android\\android-sdk-windows\\ndk\\23.1.7779620\\build\\cmake\\android.toolchain.cmake",
+    "-DCMAKE_TOOLCHAIN_FILE\u003dE:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake",
     "-DANDROID_ABI\u003darm64-v8a",
-    "-DANDROID_NDK\u003dE:\\Android\\android-sdk-windows\\ndk\\23.1.7779620",
+    "-DANDROID_NDK\u003dE:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\ndk\\21.4.7075529",
     "-DANDROID_PLATFORM\u003dandroid-21",
     "-DCMAKE_ANDROID_ARCH_ABI\u003darm64-v8a",
-    "-DCMAKE_ANDROID_NDK\u003dE:\\Android\\android-sdk-windows\\ndk\\23.1.7779620",
+    "-DCMAKE_ANDROID_NDK\u003dE:\\Android\\adt-bundle-windows-x86_64-20140702\\sdk\\ndk\\21.4.7075529",
     "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
     "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dE:\\flutter_project\\jage_app\\build\\native_opencv\\intermediates\\cmake\\debug\\obj\\arm64-v8a",
     "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dE:\\flutter_project\\jage_app\\build\\native_opencv\\intermediates\\cmake\\debug\\obj\\arm64-v8a",
@@ -62,68 +62,12 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake:94 (include)\n  CMakeLists.txt\n\n","title":"Warning","type":"message"}
+CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"Check for working C compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe","type":"message"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
 
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake:94 (include)
-  CMakeLists.txt
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake:94 (include)
-  CMakeLists.txt
-
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"Check for working C compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: Check for working C compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe
-CMAKE SERVER: Check for working C compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
+CMAKE SERVER: Check for working C compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe
+CMAKE SERVER: Check for working C compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe
 CMAKE SERVER: 
 
 CMAKE SERVER: [== "CMake Server" ==[
@@ -136,12 +80,12 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"Check for working C compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works","type":"message"}
+CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"Check for working C compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works","type":"message"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
 
-CMAKE SERVER: Check for working C compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works
-CMAKE SERVER: Check for working C compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works
+CMAKE SERVER: Check for working C compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works
+CMAKE SERVER: Check for working C compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe -- works
 CMAKE SERVER: 
 
 CMAKE SERVER: [== "CMake Server" ==[
@@ -152,34 +96,6 @@ CMAKE SERVER: ]== "CMake Server" ==]
 
 CMAKE SERVER: Detecting C compiler ABI info
 CMAKE SERVER: Detecting C compiler ABI info
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
 CMAKE SERVER: 
 
 CMAKE SERVER: [== "CMake Server" ==[
@@ -212,34 +128,6 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
 CMAKE SERVER: {"cookie":"","inReplyTo":"configure","progressCurrent":96,"progressMaximum":1000,"progressMessage":"Configuring","progressMinimum":0,"type":"progress"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
@@ -248,65 +136,9 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
 CMAKE SERVER: {"cookie":"","inReplyTo":"configure","progressCurrent":126,"progressMaximum":1000,"progressMessage":"Configuring","progressMinimum":0,"type":"progress"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 CMAKE SERVER: 
 
@@ -330,40 +162,12 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"Check for working CXX compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe","type":"message"}
+CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"Check for working CXX compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe","type":"message"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
 
-CMAKE SERVER: Check for working CXX compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe
-CMAKE SERVER: Check for working CXX compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
+CMAKE SERVER: Check for working CXX compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe
+CMAKE SERVER: Check for working CXX compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe
 CMAKE SERVER: 
 
 CMAKE SERVER: [== "CMake Server" ==[
@@ -376,12 +180,12 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"Check for working CXX compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works","type":"message"}
+CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"Check for working CXX compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works","type":"message"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
 
-CMAKE SERVER: Check for working CXX compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works
-CMAKE SERVER: Check for working CXX compiler: E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works
+CMAKE SERVER: Check for working CXX compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works
+CMAKE SERVER: Check for working CXX compiler: E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe -- works
 CMAKE SERVER: 
 
 CMAKE SERVER: [== "CMake Server" ==[
@@ -392,34 +196,6 @@ CMAKE SERVER: ]== "CMake Server" ==]
 
 CMAKE SERVER: Detecting CXX compiler ABI info
 CMAKE SERVER: Detecting CXX compiler ABI info
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
 CMAKE SERVER: 
 
 CMAKE SERVER: [== "CMake Server" ==[
@@ -452,65 +228,9 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
 CMAKE SERVER: {"cookie":"","inReplyTo":"configure","progressCurrent":237,"progressMaximum":1000,"progressMessage":"Configuring","progressMinimum":0,"type":"progress"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 CMAKE SERVER: 
 
@@ -524,65 +244,9 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
 CMAKE SERVER: {"cookie":"","inReplyTo":"configure","progressCurrent":287,"progressMaximum":1000,"progressMessage":"Configuring","progressMinimum":0,"type":"progress"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: 
-
-CMAKE SERVER: [== "CMake Server" ==[
-
-CMAKE SERVER: {"cookie":"","inReplyTo":"configure","message":"CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake's built-in compiler identification.\nCall Stack (most recent call first):\n  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)\n\n","title":"Warning","type":"message"}
-
-CMAKE SERVER: ]== "CMake Server" ==]
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-CMAKE SERVER: CMake Warning at E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake:416 (message):
-  An old version of CMake is being used that cannot automatically detect
-  compiler attributes.  Compiler identification is being bypassed.  Some
-  values may be wrong or missing.  Update to CMake 3.19 or newer to use
-  CMake's built-in compiler identification.
-Call Stack (most recent call first):
-  E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake:55 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
-  E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 CMAKE SERVER: 
 
@@ -669,7 +333,7 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"buildFiles":[{"isCMake":true,"isTemporary":false,"sources":["E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystem.cmake.in","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-C.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-CXX.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompilerABI.c","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in"]},{"isCMake":false,"isTemporary":false,"sources":["CMakeLists.txt","E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake","E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android-legacy.toolchain.cmake","E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/platforms.cmake","E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/compiler_id.cmake","E:/Android/android-sdk-windows/ndk/23.1.7779620/build/cmake/android.toolchain.cmake"]},{"isCMake":false,"isTemporary":true,"sources":[".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake",".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeCCompiler.cmake",".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.c",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.c",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.c",".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeCCompiler.cmake",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx",".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake"]}],"cmakeRootDirectory":"E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10","cookie":"","inReplyTo":"cmakeInputs","sourceDirectory":"E:/flutter_project/jage_app/native_opencv/android","type":"reply"}
+CMAKE SERVER: {"buildFiles":[{"isCMake":true,"isTemporary":false,"sources":["E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystem.cmake.in","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-C.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-CXX.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompilerABI.c","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in"]},{"isCMake":false,"isTemporary":false,"sources":["CMakeLists.txt","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/build/cmake/platforms.cmake","E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake"]},{"isCMake":false,"isTemporary":true,"sources":[".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeSystem.cmake",".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeCCompiler.cmake",".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.c",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.c",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.c",".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeCCompiler.cmake",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx",".cxx/cmake/debug/arm64-v8a/CMakeFiles/feature_tests.cxx",".cxx/cmake/debug/arm64-v8a/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake"]}],"cmakeRootDirectory":"E:/Android/adt-bundle-windows-x86_64-20140702/sdk/cmake/3.10.2.4988404/share/cmake-3.10","cookie":"","inReplyTo":"cmakeInputs","sourceDirectory":"E:/flutter_project/jage_app/native_opencv/android","type":"reply"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
 
@@ -683,7 +347,7 @@ CMAKE SERVER:
 
 CMAKE SERVER: [== "CMake Server" ==[
 
-CMAKE SERVER: {"configurations":[{"name":"Debug","projects":[{"buildDirectory":"E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a","name":"Project","sourceDirectory":"E:/flutter_project/jage_app/native_opencv/android","targets":[{"artifacts":["E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so"],"buildDirectory":"E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a","fileGroups":[{"compileFlags":"-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -std=c++11 -fno-limit-debug-info  -fPIC  ","defines":["native_lib_EXPORTS"],"includePath":[{"path":"E:/flutter_project/jage_app/native_opencv/android/src/main/cpp/include"}],"isGenerated":false,"language":"CXX","sources":["src/main/cpp/native-lib.cpp"]}],"fullName":"libnative-lib.so","linkFlags":"-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments","linkLibraries":"..\\..\\..\\..\\src\\main\\nativeLibs\\arm64-v8a\\libopencv_java4.so -llog -landroid -latomic -lm","linkPath":"-LE:\\flutter_project\\jage_app\\native_opencv\\android\\src\\main\\nativeLibs\\arm64-v8a","linkerLanguage":"CXX","name":"native-lib","sourceDirectory":"E:/flutter_project/jage_app/native_opencv/android","sysroot":"E:/Android/android-sdk-windows/ndk/23.1.7779620/toolchains/llvm/prebuilt/windows-x86_64/sysroot","type":"SHARED_LIBRARY"}]}]}],"cookie":"","inReplyTo":"codemodel","type":"reply"}
+CMAKE SERVER: {"configurations":[{"name":"Debug","projects":[{"buildDirectory":"E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a","name":"Project","sourceDirectory":"E:/flutter_project/jage_app/native_opencv/android","targets":[{"artifacts":["E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so"],"buildDirectory":"E:/flutter_project/jage_app/native_opencv/android/.cxx/cmake/debug/arm64-v8a","fileGroups":[{"compileFlags":"-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -std=c++11 -O0 -fno-limit-debug-info  -fPIC  ","defines":["native_lib_EXPORTS"],"includePath":[{"path":"E:/flutter_project/jage_app/native_opencv/android/src/main/cpp/include"}],"isGenerated":false,"language":"CXX","sources":["src/main/cpp/native-lib.cpp"]}],"fullName":"libnative-lib.so","linkFlags":"-Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments","linkLibraries":"..\\..\\..\\..\\src\\main\\nativeLibs\\arm64-v8a\\libopencv_java4.so -llog -landroid -latomic -lm","linkPath":"-LE:\\flutter_project\\jage_app\\native_opencv\\android\\src\\main\\nativeLibs\\arm64-v8a","linkerLanguage":"CXX","name":"native-lib","sourceDirectory":"E:/flutter_project/jage_app/native_opencv/android","sysroot":"E:/Android/adt-bundle-windows-x86_64-20140702/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot","type":"SHARED_LIBRARY"}]}]}],"cookie":"","inReplyTo":"codemodel","type":"reply"}
 
 CMAKE SERVER: ]== "CMake Server" ==]
 

@@ -62,6 +62,7 @@ class _FFIPageState extends State<FFIPage> {
   //注意不要与setstate同时使用
     ValueNotifier<String> imagePath = ValueNotifier<String>("");
     Pointer<Int8> na = s1.toNativeUtf8().cast<Int8>();
+    bool isSelected = false;
 
     return Scaffold(
       appBar: AppBar(
@@ -86,6 +87,7 @@ class _FFIPageState extends State<FFIPage> {
                         String? thumPic = path + '/' + title!;
                         print(thumPic);
                         imagePath.value = thumPic;
+                        isSelected = true;
                       },
                       child: Text("选择图片"),
                     ),
@@ -116,6 +118,7 @@ class _FFIPageState extends State<FFIPage> {
                 ],
               ),
             ),
+            isSelected ? SizedBox() :
             ValueListenableBuilder<String>(
               builder: _buildImage,
               valueListenable: imagePath,
