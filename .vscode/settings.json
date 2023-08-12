@@ -1,8 +1,12 @@
 {
     "cmake.configureOnOpen": false,
     "files.associations": {
-        "vector": "cpp"
+        "vector": "cpp",
+        "xlocale": "cpp",
+        "xlocinfo": "cpp",
+        "xstring": "cpp"
     },
     "commentTranslate.source": "Bing",
-    "cmake.sourceDirectory": "E:/flutter_project/jage_app/native_opencv/android"
+    "cmake.sourceDirectory": "E:/flutter_project/jage_app/native_opencv/android",
+    "C_Cpp.errorSquiggles": "enabled"
 }

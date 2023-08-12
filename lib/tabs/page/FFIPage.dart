@@ -3,10 +3,12 @@ import 'dart:io';
 
 import 'package:ffi/ffi.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:jage_app/function/JageFileManager.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
+import 'package:native_opencv/native_opencv.dart';
 
 // Pointer<Int8> 对应C 的char*
 // Dart传参时使用的char*，Utf.toUtf8(String)
@@ -14,12 +16,15 @@ typedef Native_Str = Pointer<Int8> Function();
 typedef FFI_Str = Pointer<Int8> Function();
 
 // 此处的Void是对应C的void
+// void process_image(char* inputImagePath, char* outputImagePath) 
 typedef Native_process_img_Func = Void Function(Pointer<Int8>, Pointer<Int8>);
 typedef Process_img_Func = void Function(Pointer<Int8>, Pointer<Int8>);
 
+// const char * erodePic(char * inputImagePath, char *outputImagePath)
 typedef Native_erode_img_Func = Pointer<Int8> Function(
     Pointer<Int8>, Pointer<Int8>);
 typedef Erode_img_Func = Pointer<Int8> Function(Pointer<Int8>, Pointer<Int8>);
+
 
 class FFIPage extends StatefulWidget {
   FFIPage({Key? key}) : super(key: key);
@@ -45,6 +50,8 @@ class _FFIPageState extends State<FFIPage> {
             'process_image');
     Erode_img_Func erode_img_func = opencvLib
         .lookupFunction<Native_erode_img_Func, Erode_img_Func>('erodePic');
+
+
     String str1 = "/storage/emulated/0/Pictures/index_gray.png";
 
     ///storage/emulated/0/Pictures/1.png
@@ -88,6 +95,17 @@ class _FFIPageState extends State<FFIPage> {
                         print(thumPic);
                         imagePath.value = thumPic;
                         isSelected = true;
+
+                        RegExp regExp = RegExp(r'^.*\/');
+                        String tmp = imagePath.value;
+                        String? res = regExp.firstMatch(tmp)![0];
+                        s2 = (res! + "dnn_img_out.png");
+
+                        String modelFile = await NativeOpencv().getAssetFilePath(
+                          "opencv/MobileNetV2SSD/MobileNetSSD_deploy.caffemodel",
+                          "opencv/MobileNetV2SSD/MobileNetSSD_deploy.prototxt",
+                          imagePath.value, s2);
+                        //print("dnn file: ");
                       },
                       child: Text("选择图片"),
                     ),
@@ -102,15 +120,20 @@ class _FFIPageState extends State<FFIPage> {
                         imageKey = UniqueKey();
 
                         na = tmp.toNativeUtf8().cast<Int8>();
-                        s1 = (res! + "process_img_out.png");
-                        s2 = (res! + "erode_img_out.png");
+                        s1 = (res+ "process_img_out.png");
+                        s2 = (res+ "dnn_img_out.png");
                         print("s1: " + s1);
                         print("s2: " + s2);
                         imagePath.value = s2;
-                        process_img_func(na, s1.toNativeUtf8().cast<Int8>());
-                        Pointer<Int8> log = erode_img_func(na, s2.toNativeUtf8().cast<Int8>());
-                        print("result: " + log.cast<Utf8>().toDartString());  //Pointer: address=0x7b7865bb27f7
-                        print("imagePath.value: " + imagePath.value);
+                        // process_img_func(na, s1.toNativeUtf8().cast<Int8>());
+                        // Pointer<Int8> log = erode_img_func(na, s2.toNativeUtf8().cast<Int8>());
+                        // print("result: " + log.cast<Utf8>().toDartString());  //Pointer: address=0x7b7865bb27f7
+                        // print("imagePath.value: " + imagePath.value);
+
+                        // Dnn test
+                        String model_path = "assets/opencv/MobileNetV2SSD/MobileNetSSD_deploy.caffemodel";
+                        String config_path = "assets/opencv/MobileNetV2SSD/MobileNetSSD_deploy.prototxt";
+                        // dnn_func(model_path.toNativeUtf8().cast<Int8>(), config_path.toNativeUtf8().cast<Int8>(), na, s2.toNativeUtf8().cast<Int8>());
                       },
                       child: Text("opencv"),
                     ),

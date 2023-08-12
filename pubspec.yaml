@@ -119,8 +119,11 @@ flutter:
     - images/unit/
     - images/weather/
     - assets/icon/
+    - assets/spine/
+    - assets/spine/chibi/
     - assets/icon/atlas/
-    - assets/lottie/bullseye.json
+    - assets/lottie/
+    - assets/opencv/MobileNetV2SSD/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

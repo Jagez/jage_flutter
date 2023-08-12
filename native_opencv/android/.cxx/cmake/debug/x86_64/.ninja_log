@@ -1,3 +1,21 @@
 # ninja log v5
 0	1041	712617381	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
 1043	1157	712617381	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4
+2	1075	713409915	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
+1075	1377	713409915	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4
+2	1174	713452285	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
+1175	1290	713452285	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4
+2	1031	713457413	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
+1032	1152	713457413	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4
+3	1029	713476929	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
+1029	1152	713476929	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4
+2	1022	713478910	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
+1022	1144	713478910	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4
+2	1034	713482174	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
+1034	1160	713482174	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4
+2	1066	713486335	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
+1066	1197	713486335	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4
+2	1062	713496439	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
+1062	1210	713496439	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4
+2	1044	713497407	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	a32f6eb155eeef74
+1044	1168	713497407	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/x86_64/libnative-lib.so	d5a779607c5aeac4

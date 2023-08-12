@@ -1,3 +1,21 @@
 # ninja log v5
 1	1300	712617378	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
 1302	1396	712617378	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5
+1	1467	713409911	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
+1467	1758	713409911	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5
+6	1408	713452281	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
+1408	1499	713452281	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5
+8	1594	713457410	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
+1595	1691	713457410	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5
+2	1170	713476925	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
+1170	1268	713476925	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5
+6	1410	713478906	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
+1410	1522	713478906	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5
+6	1566	713482170	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
+1566	1669	713482170	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5
+1	1209	713486332	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
+1209	1321	713486332	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5
+6	1549	713496435	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
+1549	1669	713496435	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5
+4	1844	713497403	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	72cb7b38b9a9c10c
+1844	1952	713497403	E:/flutter_project/jage_app/build/native_opencv/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	284e1ac93fbc91e5

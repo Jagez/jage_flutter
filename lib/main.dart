@@ -7,6 +7,7 @@ import 'package:jage_app/tabs/page/MediaPage.dart';
 import 'package:jage_app/tabs/page/PrincessConnectPage.dart';
 import 'package:jage_app/tabs/page/Signature.dart';
 import 'package:jage_app/tabs/page/SocialPage.dart';
+import 'package:jage_app/tabs/page/SpinePage.dart';
 import 'package:jage_app/tabs/page/TimeLine.dart';
 import 'package:jage_app/tabs/page/Weather.dart';
 import 'package:jage_app/tabs/page/WeatherDetail.dart';
@@ -14,6 +15,7 @@ import 'package:jage_app/tabs/page/princess/BattlePage.dart';
 import 'package:jage_app/tabs/page/princess/MusicPage.dart';
 import 'package:jage_app/theme.dart';
 import 'package:jage_app/widget/GalleryWidget.dart';
+import 'package:spine_flutter/spine_flutter.dart' as M;
 import 'tabs/Tabs.dart';
 import 'tabs/page/NewPage.dart';
 import 'tabs/page/TabBarController.dart';
@@ -39,9 +41,12 @@ import 'tabs/page/FileSelectPage.dart';
 import 'tabs/page/SocialPushPage.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await M.initSpineFlutter(enableMemoryDebugging: true);
   // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   runApp(JageApp());
 }
 
@@ -96,6 +101,7 @@ class _JageAppState extends State<JageApp> with WidgetsBindingObserver {
     '/ffi': (context) => FFIPage(),
     '/social-push': (context) => SocialPush(),
     '/gallery': (context) => GalleryPage(),
+    '/spine': (context) => SpinePage(),
   };
 
   bool _bHidden = false;

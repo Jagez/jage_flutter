@@ -125,6 +125,11 @@ class _DemoListWidgetState extends State<DemoListWidget> {
               children: [
                 ElevatedButton(
                   onPressed: () {
+                    Navigator.pushNamed(context, '/spine');
+                  },
+                  child: Text("Spine"),
+                ),ElevatedButton(
+                  onPressed: () {
                     Navigator.pushNamed(context, '/gallery');
                   },
                   child: Text("流水布局"),
