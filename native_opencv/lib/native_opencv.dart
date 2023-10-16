@@ -65,7 +65,7 @@ class NativeOpencv {
       }).catchError((onError) {
         print('文件写入失败: $onError');
       });
-
+      
       dnn_func(modelFilePath.toNativeUtf8().cast<Int8>(), configFilePath.toNativeUtf8().cast<Int8>()
           ,inputImagePath.toNativeUtf8().cast<Int8>(), outputImagePath.toNativeUtf8().cast<Int8>() );
       final String str = await _channel

@@ -317,9 +317,9 @@ class _FileManagerState extends State<FileManager> {
             child: PieChart(
               PieChartData(
                 pieTouchData: PieTouchData(
-                  touchCallback: (PieTouchResponse pieTouchResponse) {
+                  touchCallback: (event, pieTouchResponse) {
                     setState(() {
-                      if (pieTouchResponse.touchedSection == null) {
+                      if (pieTouchResponse!.touchedSection == null) {
                         _touchIndex = -1;
                         return;
                       }

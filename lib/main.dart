@@ -1,5 +1,7 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:jage_app/tabs/page/Camera.dart';
 import 'package:jage_app/tabs/page/FFIPage.dart';
 import 'package:jage_app/tabs/page/GalleryPage.dart';
 //import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -40,6 +42,7 @@ import 'tabs/page/QuestionPage.dart';
 import 'tabs/page/FileSelectPage.dart';
 import 'tabs/page/SocialPushPage.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'tabs/page/fl_test.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,12 +50,15 @@ Future<void> main() async {
   // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  runApp(JageApp());
+  final cameras = await availableCameras();
+  final firstCamera = cameras.first;
+  runApp(JageApp(camera: firstCamera,));
 }
 
 class JageApp extends StatefulWidget {
-  JageApp({Key? key}) : super(key: key);
+  JageApp({Key? key, required this.camera,}) : super(key: key);
 
+  final CameraDescription camera;
   @override
   _JageAppState createState() => _JageAppState();
 }
@@ -60,7 +66,15 @@ class JageApp extends StatefulWidget {
 class _JageAppState extends State<JageApp> with WidgetsBindingObserver {
   bool _isGrey = false;
 
-  final Map<String, Widget Function(BuildContext)> routes = {
+  late final Map<String, Widget Function(BuildContext)> routes;
+
+  bool _bHidden = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    routes = {
     //此处添加路由,可以传参
     //'/': (context)=>Tabs(),
     '/page': (context, {arguments}) => (NewPage(arguments: arguments)),
@@ -102,14 +116,9 @@ class _JageAppState extends State<JageApp> with WidgetsBindingObserver {
     '/social-push': (context) => SocialPush(),
     '/gallery': (context) => GalleryPage(),
     '/spine': (context) => SpinePage(),
+    '/fl_test': (context) => LineChartSample5(),
+    '/camera': (context) => CameraPage(camera: widget.camera,),
   };
-
-  bool _bHidden = false;
-
-  @override
-  void initState() {
-    super.initState();
-
     //启用监听生命周期状态
     WidgetsBinding.instance.addObserver(this);
   }

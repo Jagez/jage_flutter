@@ -34,8 +34,9 @@ class FFIPage extends StatefulWidget {
 }
 
 class _FFIPageState extends State<FFIPage> {
-  var imageKey = UniqueKey();
+  //var imageKey = UniqueKey();
 
+  ValueNotifier<UniqueKey> imageKey = ValueNotifier<UniqueKey>(UniqueKey());
   @override
   Widget build(BuildContext context) {
     final DynamicLibrary opencvLib = DynamicLibrary.open("libnative-lib.so");
@@ -86,6 +87,10 @@ class _FFIPageState extends State<FFIPage> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () async {
+                        final cacheDir = await getTemporaryDirectory();
+                        if (cacheDir.existsSync()) {
+                          cacheDir.deleteSync(recursive: true);
+                        }
                         final List<AssetEntity>? result =
                             await AssetPicker.pickAssets(context);
                         String? path = result![0].relativePath!;
@@ -112,12 +117,16 @@ class _FFIPageState extends State<FFIPage> {
                   ),
                   Expanded(
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        final cacheDir = await getTemporaryDirectory();
+                        if (cacheDir.existsSync()) {
+                          cacheDir.deleteSync(recursive: true);
+                        }
                         RegExp regExp = RegExp(r'^.*\/');
                         String tmp = imagePath.value;
                         String? res = regExp.firstMatch(tmp)![0];
+                        RegExp lastName_regExp = RegExp(r'[^\/]*$');
                         print("res: " + res!);
-                        imageKey = UniqueKey();
 
                         na = tmp.toNativeUtf8().cast<Int8>();
                         s1 = (res+ "process_img_out.png");
@@ -125,15 +134,12 @@ class _FFIPageState extends State<FFIPage> {
                         print("s1: " + s1);
                         print("s2: " + s2);
                         imagePath.value = s2;
+                        imageKey.value = UniqueKey();
                         // process_img_func(na, s1.toNativeUtf8().cast<Int8>());
                         // Pointer<Int8> log = erode_img_func(na, s2.toNativeUtf8().cast<Int8>());
                         // print("result: " + log.cast<Utf8>().toDartString());  //Pointer: address=0x7b7865bb27f7
                         // print("imagePath.value: " + imagePath.value);
 
-                        // Dnn test
-                        String model_path = "assets/opencv/MobileNetV2SSD/MobileNetSSD_deploy.caffemodel";
-                        String config_path = "assets/opencv/MobileNetV2SSD/MobileNetSSD_deploy.prototxt";
-                        // dnn_func(model_path.toNativeUtf8().cast<Int8>(), config_path.toNativeUtf8().cast<Int8>(), na, s2.toNativeUtf8().cast<Int8>());
                       },
                       child: Text("opencv"),
                     ),
@@ -158,7 +164,7 @@ class _FFIPageState extends State<FFIPage> {
       child: Image.file(
         File(value1),
         height: 150,
-        key: imageKey,
+        key: imageKey.value,
         fit: BoxFit.contain,
       ),
     );
